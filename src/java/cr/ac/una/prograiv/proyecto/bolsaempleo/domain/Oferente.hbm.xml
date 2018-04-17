@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-abr-2018 15:58:15 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Oferente" table="oferente" catalog="mydb" optimistic-lock="version">
+        <id name="pkCedula" type="string">
+            <column name="Pk_Cedula" length="10" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="localizacion" class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Localizacion" fetch="select">
+            <column name="Fk_Localizacion" />
+        </many-to-one>
+        <many-to-one name="usuario" class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Usuario" fetch="select">
+            <column name="Fk_Id_usuario" length="100" not-null="true" unique="true" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="nombre" length="45" not-null="true" />
+        </property>
+        <property name="apellido1" type="string">
+            <column name="apellido1" length="45" not-null="true" />
+        </property>
+        <property name="apellido2" type="string">
+            <column name="apellido2" length="45" not-null="true" />
+        </property>
+        <property name="nacionalidad" type="string">
+            <column name="nacionalidad" length="45" not-null="true" />
+        </property>
+        <property name="correo" type="string">
+            <column name="correo" length="45" not-null="true" unique="true" />
+        </property>
+        <property name="residencia" type="string">
+            <column name="residencia" length="45" />
+        </property>
+        <set name="subcategorias" table="caracteristicasoferente" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="Pk_Fk_Id_oferente" length="10" not-null="true" />
+            </key>
+            <many-to-many entity-name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Subcategoria">
+                <column name="Pk_Fk_Id_subcategoria" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="puestos" table="aplicacionpuesto" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="PK_Fk_Id_oferente" length="10" not-null="true" />
+            </key>
+            <many-to-many entity-name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Puesto">
+                <column name="Pk_Fk_Id_puesto" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

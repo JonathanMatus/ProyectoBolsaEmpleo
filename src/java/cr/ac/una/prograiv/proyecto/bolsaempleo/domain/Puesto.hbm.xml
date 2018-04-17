@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-abr-2018 15:58:15 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Puesto" table="puesto" catalog="mydb" optimistic-lock="version">
+        <id name="pkIdPuesto" type="int">
+            <column name="Pk_Id_Puesto" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="empresa" class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Empresa" fetch="select">
+            <column name="Fk_id_Emp" not-null="true" />
+        </many-to-one>
+        <property name="tipoPublicacion" type="string">
+            <column name="tipo_publicacion" length="45" not-null="true" />
+        </property>
+        <property name="salario" type="string">
+            <column name="salario" length="45" not-null="true" />
+        </property>
+        <set name="oferentes" table="aplicacionpuesto" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="Pk_Fk_Id_puesto" not-null="true" />
+            </key>
+            <many-to-many entity-name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Oferente">
+                <column name="PK_Fk_Id_oferente" length="10" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="subcategorias" table="subcategoriapuesto" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="Pk_Fk_Id_puesto" not-null="true" />
+            </key>
+            <many-to-many entity-name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Subcategoria">
+                <column name="Pk_Fk_Id_subcategoria" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>
