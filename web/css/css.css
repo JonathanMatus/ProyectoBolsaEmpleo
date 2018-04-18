@@ -1,0 +1,248 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 05-abr-2018, 17:35:08
+    Author     : patei
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.encabezado{
+    background: rgba(76,76,76,1);
+    background: -moz-linear-gradient(left, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(82,82,82,1) 23%, rgba(76,76,76,1) 32%, rgba(71,71,71,1) 39%, rgba(0,0,0,1) 51%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(76,76,76,1)), color-stop(12%, rgba(89,89,89,1)), color-stop(23%, rgba(82,82,82,1)), color-stop(32%, rgba(76,76,76,1)), color-stop(39%, rgba(71,71,71,1)), color-stop(51%, rgba(0,0,0,1)), color-stop(60%, rgba(17,17,17,1)), color-stop(76%, rgba(43,43,43,1)), color-stop(91%, rgba(28,28,28,1)), color-stop(100%, rgba(19,19,19,1)));
+    background: -webkit-linear-gradient(left, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(82,82,82,1) 23%, rgba(76,76,76,1) 32%, rgba(71,71,71,1) 39%, rgba(0,0,0,1) 51%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%);
+    background: -o-linear-gradient(left, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(82,82,82,1) 23%, rgba(76,76,76,1) 32%, rgba(71,71,71,1) 39%, rgba(0,0,0,1) 51%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%);
+    background: -ms-linear-gradient(left, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(82,82,82,1) 23%, rgba(76,76,76,1) 32%, rgba(71,71,71,1) 39%, rgba(0,0,0,1) 51%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%);
+    background: linear-gradient(to right, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(82,82,82,1) 23%, rgba(76,76,76,1) 32%, rgba(71,71,71,1) 39%, rgba(0,0,0,1) 51%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313', GradientType=1 );
+    width: auto;
+    max-width: available;
+    max-height: 100px;
+    height: 60px;
+    position: relative;
+}
+.encabezado img{
+    margin-top: 5px;
+    height: 50px;
+    width: 150px;
+}
+
+
+/*----------------------------------------------*/
+
+/*                top nav*/
+/* Add a black background color to the top navigation */
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+    height: 50px;
+}
+.topnav input[type="text"]{
+    color:black;
+}
+/* Style the links inside the navigation bar */
+.topnav a,.topnav input, .topnav button {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+    float: right;
+}
+.topnav img{
+    height: 25px;
+    width: 25px;
+}
+#registro{
+    background-color: #4CAF50;
+}
+#registro:hover{
+    background-color: #ddd;
+    color: black;
+}
+
+/*----------------------Footer-----------------------------*/
+#myFooter {
+    background-color: #3c3d41;
+    color: white;
+    padding-top: 30px;
+}
+#myFooter p{
+    word-break: break-all;  
+    color:white;
+    text-align: center;
+    font-family: 'Asap Condensed';
+}
+
+
+#myFooter .footer-copyright {
+    background-color: #333333;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+}
+
+#myFooter .row {
+    margin-bottom: 60px;
+}
+
+
+
+#myFooter .footer-copyright p {
+    margin: 10px;
+    color: #ccc;
+}
+
+.content{
+    flex: 1 0 auto;
+    -webkit-flex: 1 0 auto;
+
+
+}
+
+#myFooter{
+    flex: 0 0 auto;
+    -webkit-flex: 0 0 auto;
+
+}
+.footer{
+    padding-top: 25px;
+    border-top: 2px solid #2E2E2E;
+}
+/*---------------------------------------------------*/
+.carousel {
+    width:auto;
+    height:auto;
+    max-height: 400px;
+}
+.carouselCont{
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+.carousel-inner img{
+    height: auto;
+    max-height: 360px;
+    width: auto;
+    max-width: available;
+    margin: auto; 
+}
+/*------------------Pagina contacto---------------------------------*/
+.fondo h1{
+    font-family: Montserrat;
+}
+.fondo button{
+    width: 20%;
+    margin: auto;
+}
+/*---------------------------------------------------*/
+
+
+
+.modal-header {
+    background-color:#5882FA;
+    padding-bottom: 5px;	
+    color: #1C2833  ;
+    padding: 2px;
+    border-top: 8px solid #1C2833  ;
+}
+.modal-header h3{
+    text-align: center;
+    color:white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/*Campo ingresar contraseña*/
+.panel-login input[type="text"],.panel-login input[type="email"],.panel-login input[type="password"] {
+    height: 45px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+
+}
+
+.btn-login:optional {
+    background-color: #59B2E0;
+    /*    outline: none;*/
+    color: #fff;
+    font-size: 15px;
+    width: 30%;
+    font-weight: normal;
+    /*    padding: 15px 20px;*/
+    text-transform: uppercase;
+    border-color: #59B2E6;
+    margin: auto;
+    text-align: center;
+}
+.btnLogin {
+    text-align: center;
+
+}
+.btn-login:hover,
+.btn-login:focus {
+
+    color: #fff;
+    background-color: #53A3CD;
+    border-color: #53A3CD;
+}
+.forgot-password {
+    text-decoration: underline;
+    color: #888;
+}
+.forgot-password:hover,
+.forgot-password:focus {
+    text-decoration: underline;
+    color: #666;
+}
+
+
+/*----------------------------------------------------*/
+.diseño{
+    height: 300px;
+    max-width: 80%;
+    width: auto;
+    border:1px solid black;
+    -webkit-box-shadow: 10px 10px 56px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 56px 1px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 56px 1px rgba(0,0,0,0.75);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.diseño p{
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    word-break:  keep-all;
+    text-align: justify;
+}
+/*----------------------------------------------------*/
