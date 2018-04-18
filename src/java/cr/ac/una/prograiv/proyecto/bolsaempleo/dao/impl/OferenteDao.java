@@ -15,7 +15,7 @@ import org.hibernate.HibernateException;
  *
  * @author patei
  */
-public class OferenteDao extends HibernateUtil implements IBaseDAO<Oferente, Integer>{
+public class OferenteDao extends HibernateUtil implements IBaseDAO<Oferente, String>{
     public void save(Oferente o) {
 
         try {
@@ -61,7 +61,7 @@ public class OferenteDao extends HibernateUtil implements IBaseDAO<Oferente, Int
     }
 
     @Override
-    public Oferente findById(Integer id) {
+    public Oferente findById(String id) {
         Oferente oferentes = null;
         try {
             iniciaOperacion();
