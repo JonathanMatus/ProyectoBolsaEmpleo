@@ -34,7 +34,7 @@
         <!-- responsive top nav -->
         <div class="topnav">
           
-            <a class="active" href="PeginaPrincipal.jsp">Inicio</a>
+            <a class="active" href="PaginaPrincipal.jsp">Inicio</a>
             <a href="vistas/registroEmpresa.jsp">Empresa</a>
             <a href="vistas/contacto.jsp">Contacto</a>
             <div class="topnav-right">
@@ -44,10 +44,10 @@
                 <button type="button" id="buscar"><img src="img/search.png" alt="buscar" class="img-responsive"/></button>
 
                  <button type="button" id="ingresar" data-toggle="modal" data-target="#squarespaceModal"> <img src="img/login.png" alt="login" class="img-responsive"/></button>
-                <a id="registro" href="vistas/registro.jsps"> <img src="img/registro.png" alt="registro" class="img-responsive"/></a>
+                <a id="registro" href="vistas/registro.jsp"> <img src="img/registro.png" alt="registro" class="img-responsive"/></a>
             </div>
         </div>
-      
+       
         <!---------------------Carrousel-------------------->
         <div class="container carouselCont">
 
