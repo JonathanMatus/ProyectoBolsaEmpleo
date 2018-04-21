@@ -1,7 +1,8 @@
 package cr.ac.una.prograiv.proyecto.bolsaempleo.domain;
-// Generated 17-abr-2018 15:58:10 by Hibernate Tools 4.3.1
+// Generated 21/04/2018 11:42:36 AM by Hibernate Tools 4.3.1
 
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,7 +15,9 @@ public class Subcategoria  implements java.io.Serializable {
      private int pkIdSubcategoria;
      private Categoria categoria;
      private int fkIdCategoria;
-     private String nombre;
+     private String nombreSub;
+     private int ultimoUsuario;
+     private Date fechaCambios;
      private Set<Puesto> puestos = new HashSet<Puesto>(0);
      private Set<Oferente> oferentes = new HashSet<Oferente>(0);
 
@@ -22,15 +25,19 @@ public class Subcategoria  implements java.io.Serializable {
     }
 
 	
-    public Subcategoria(Categoria categoria, int fkIdCategoria, String nombre) {
+    public Subcategoria(Categoria categoria, int fkIdCategoria, String nombreSub, int ultimoUsuario, Date fechaCambios) {
         this.categoria = categoria;
         this.fkIdCategoria = fkIdCategoria;
-        this.nombre = nombre;
+        this.nombreSub = nombreSub;
+        this.ultimoUsuario = ultimoUsuario;
+        this.fechaCambios = fechaCambios;
     }
-    public Subcategoria(Categoria categoria, int fkIdCategoria, String nombre, Set<Puesto> puestos, Set<Oferente> oferentes) {
+    public Subcategoria(Categoria categoria, int fkIdCategoria, String nombreSub, int ultimoUsuario, Date fechaCambios, Set<Puesto> puestos, Set<Oferente> oferentes) {
        this.categoria = categoria;
        this.fkIdCategoria = fkIdCategoria;
-       this.nombre = nombre;
+       this.nombreSub = nombreSub;
+       this.ultimoUsuario = ultimoUsuario;
+       this.fechaCambios = fechaCambios;
        this.puestos = puestos;
        this.oferentes = oferentes;
     }
@@ -56,12 +63,26 @@ public class Subcategoria  implements java.io.Serializable {
     public void setFkIdCategoria(int fkIdCategoria) {
         this.fkIdCategoria = fkIdCategoria;
     }
-    public String getNombre() {
-        return this.nombre;
+    public String getNombreSub() {
+        return this.nombreSub;
     }
     
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreSub(String nombreSub) {
+        this.nombreSub = nombreSub;
+    }
+    public int getUltimoUsuario() {
+        return this.ultimoUsuario;
+    }
+    
+    public void setUltimoUsuario(int ultimoUsuario) {
+        this.ultimoUsuario = ultimoUsuario;
+    }
+    public Date getFechaCambios() {
+        return this.fechaCambios;
+    }
+    
+    public void setFechaCambios(Date fechaCambios) {
+        this.fechaCambios = fechaCambios;
     }
     public Set<Puesto> getPuestos() {
         return this.puestos;

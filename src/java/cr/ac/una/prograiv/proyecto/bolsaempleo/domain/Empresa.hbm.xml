@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 17-abr-2018 15:58:15 by Hibernate Tools 4.3.1 -->
+<!-- Generated 21/04/2018 11:42:38 AM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Empresa" table="empresa" catalog="mydb" optimistic-lock="version">
+    <class name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Empresa" table="empresa" catalog="mydbproyecto" optimistic-lock="version">
         <id name="pkIdEmp" type="int">
             <column name="PK_Id_Emp" />
             <generator class="assigned" />
@@ -12,7 +12,7 @@
             <column name="Fk_Localizacion" not-null="true" />
         </many-to-one>
         <many-to-one name="usuario" class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Usuario" fetch="select">
-            <column name="Fk_Id_Usuario" length="100" not-null="true" unique="true" />
+            <column name="Usuario_PK_Usuario" not-null="true" />
         </many-to-one>
         <property name="nombre" type="string">
             <column name="nombre" length="45" not-null="true" />
@@ -25,6 +25,12 @@
         </property>
         <property name="descripcion" type="string">
             <column name="descripcion" />
+        </property>
+        <property name="ultimoUsuario" type="int">
+            <column name="ultimoUsuario" not-null="true" />
+        </property>
+        <property name="fechaCambios" type="date">
+            <column name="fechaCambios" length="10" not-null="true" />
         </property>
         <set name="puestos" table="puesto" inverse="true" lazy="true" fetch="select">
             <key>

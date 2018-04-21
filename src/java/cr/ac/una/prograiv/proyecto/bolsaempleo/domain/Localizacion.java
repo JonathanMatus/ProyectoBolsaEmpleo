@@ -1,7 +1,8 @@
 package cr.ac.una.prograiv.proyecto.bolsaempleo.domain;
-// Generated 17-abr-2018 15:58:10 by Hibernate Tools 4.3.1
+// Generated 21/04/2018 11:42:36 AM by Hibernate Tools 4.3.1
 
 
+import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -12,8 +13,8 @@ public class Localizacion  implements java.io.Serializable {
 
 
      private int pkIdLocalizacion;
-     private int latitud;
-     private int longitud;
+     private BigDecimal latitud;
+     private BigDecimal longitud;
      private Set<Empresa> empresas = new HashSet<Empresa>(0);
      private Set<Oferente> oferentes = new HashSet<Oferente>(0);
 
@@ -21,12 +22,12 @@ public class Localizacion  implements java.io.Serializable {
     }
 
 	
-    public Localizacion(int pkIdLocalizacion, int latitud, int longitud) {
+    public Localizacion(int pkIdLocalizacion, BigDecimal latitud, BigDecimal longitud) {
         this.pkIdLocalizacion = pkIdLocalizacion;
         this.latitud = latitud;
         this.longitud = longitud;
     }
-    public Localizacion(int pkIdLocalizacion, int latitud, int longitud, Set<Empresa> empresas, Set<Oferente> oferentes) {
+    public Localizacion(int pkIdLocalizacion, BigDecimal latitud, BigDecimal longitud, Set<Empresa> empresas, Set<Oferente> oferentes) {
        this.pkIdLocalizacion = pkIdLocalizacion;
        this.latitud = latitud;
        this.longitud = longitud;
@@ -41,18 +42,18 @@ public class Localizacion  implements java.io.Serializable {
     public void setPkIdLocalizacion(int pkIdLocalizacion) {
         this.pkIdLocalizacion = pkIdLocalizacion;
     }
-    public int getLatitud() {
+    public BigDecimal getLatitud() {
         return this.latitud;
     }
     
-    public void setLatitud(int latitud) {
+    public void setLatitud(BigDecimal latitud) {
         this.latitud = latitud;
     }
-    public int getLongitud() {
+    public BigDecimal getLongitud() {
         return this.longitud;
     }
     
-    public void setLongitud(int longitud) {
+    public void setLongitud(BigDecimal longitud) {
         this.longitud = longitud;
     }
     public Set<Empresa> getEmpresas() {

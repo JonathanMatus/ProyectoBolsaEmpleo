@@ -1,7 +1,9 @@
 package cr.ac.una.prograiv.proyecto.bolsaempleo.domain;
-// Generated 17-abr-2018 15:58:10 by Hibernate Tools 4.3.1
+// Generated 21/04/2018 11:42:36 AM by Hibernate Tools 4.3.1
 
 
+import java.math.BigDecimal;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,7 +16,9 @@ public class Puesto  implements java.io.Serializable {
      private int pkIdPuesto;
      private Empresa empresa;
      private String tipoPublicacion;
-     private String salario;
+     private BigDecimal salario;
+     private int ultimoUsuario;
+     private Date fechaCambios;
      private Set<Oferente> oferentes = new HashSet<Oferente>(0);
      private Set<Subcategoria> subcategorias = new HashSet<Subcategoria>(0);
 
@@ -22,17 +26,21 @@ public class Puesto  implements java.io.Serializable {
     }
 
 	
-    public Puesto(int pkIdPuesto, Empresa empresa, String tipoPublicacion, String salario) {
+    public Puesto(int pkIdPuesto, Empresa empresa, String tipoPublicacion, BigDecimal salario, int ultimoUsuario, Date fechaCambios) {
         this.pkIdPuesto = pkIdPuesto;
         this.empresa = empresa;
         this.tipoPublicacion = tipoPublicacion;
         this.salario = salario;
+        this.ultimoUsuario = ultimoUsuario;
+        this.fechaCambios = fechaCambios;
     }
-    public Puesto(int pkIdPuesto, Empresa empresa, String tipoPublicacion, String salario, Set<Oferente> oferentes, Set<Subcategoria> subcategorias) {
+    public Puesto(int pkIdPuesto, Empresa empresa, String tipoPublicacion, BigDecimal salario, int ultimoUsuario, Date fechaCambios, Set<Oferente> oferentes, Set<Subcategoria> subcategorias) {
        this.pkIdPuesto = pkIdPuesto;
        this.empresa = empresa;
        this.tipoPublicacion = tipoPublicacion;
        this.salario = salario;
+       this.ultimoUsuario = ultimoUsuario;
+       this.fechaCambios = fechaCambios;
        this.oferentes = oferentes;
        this.subcategorias = subcategorias;
     }
@@ -58,12 +66,26 @@ public class Puesto  implements java.io.Serializable {
     public void setTipoPublicacion(String tipoPublicacion) {
         this.tipoPublicacion = tipoPublicacion;
     }
-    public String getSalario() {
+    public BigDecimal getSalario() {
         return this.salario;
     }
     
-    public void setSalario(String salario) {
+    public void setSalario(BigDecimal salario) {
         this.salario = salario;
+    }
+    public int getUltimoUsuario() {
+        return this.ultimoUsuario;
+    }
+    
+    public void setUltimoUsuario(int ultimoUsuario) {
+        this.ultimoUsuario = ultimoUsuario;
+    }
+    public Date getFechaCambios() {
+        return this.fechaCambios;
+    }
+    
+    public void setFechaCambios(Date fechaCambios) {
+        this.fechaCambios = fechaCambios;
     }
     public Set<Oferente> getOferentes() {
         return this.oferentes;

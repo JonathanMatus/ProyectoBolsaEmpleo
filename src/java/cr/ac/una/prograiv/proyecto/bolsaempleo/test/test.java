@@ -16,9 +16,7 @@ import java.util.Date;
 public class test {
     
     public static void main(String[] arg) {
-        UsuarioDao usuarioDao = new UsuarioDao();
-        Usuario usuario = new Usuario("pateixo@gmail.com", "pateixo1", "password", new Date(), "Admin");
-        usuarioDao.delete(usuario);
+       
         
     }
 }

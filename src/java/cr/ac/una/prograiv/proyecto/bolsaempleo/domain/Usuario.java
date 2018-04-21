@@ -1,5 +1,5 @@
 package cr.ac.una.prograiv.proyecto.bolsaempleo.domain;
-// Generated 17-abr-2018 15:58:10 by Hibernate Tools 4.3.1
+// Generated 21/04/2018 11:42:36 AM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -12,41 +12,44 @@ import java.util.Set;
 public class Usuario  implements java.io.Serializable {
 
 
-     private String pkEmail;
+     private int pkUsuario;
      private String usuario;
+     private String pkEmail;
      private String password;
      private Date fechaCreacion;
      private String tipo;
-     private Set<Oferente> oferentes = new HashSet<Oferente>(0);
      private Set<Empresa> empresas = new HashSet<Empresa>(0);
+     private Set<Oferente> oferentes = new HashSet<Oferente>(0);
 
     public Usuario() {
     }
 
 	
-    public Usuario(String pkEmail, String usuario, String password, Date fechaCreacion, String tipo) {
-        this.pkEmail = pkEmail;
+    public Usuario(int pkUsuario, String usuario, String pkEmail, String password, Date fechaCreacion, String tipo) {
+        this.pkUsuario = pkUsuario;
         this.usuario = usuario;
+        this.pkEmail = pkEmail;
         this.password = password;
         this.fechaCreacion = fechaCreacion;
         this.tipo = tipo;
     }
-    public Usuario(String pkEmail, String usuario, String password, Date fechaCreacion, String tipo, Set<Oferente> oferentes, Set<Empresa> empresas) {
-       this.pkEmail = pkEmail;
+    public Usuario(int pkUsuario, String usuario, String pkEmail, String password, Date fechaCreacion, String tipo, Set<Empresa> empresas, Set<Oferente> oferentes) {
+       this.pkUsuario = pkUsuario;
        this.usuario = usuario;
+       this.pkEmail = pkEmail;
        this.password = password;
        this.fechaCreacion = fechaCreacion;
        this.tipo = tipo;
-       this.oferentes = oferentes;
        this.empresas = empresas;
+       this.oferentes = oferentes;
     }
    
-    public String getPkEmail() {
-        return this.pkEmail;
+    public int getPkUsuario() {
+        return this.pkUsuario;
     }
     
-    public void setPkEmail(String pkEmail) {
-        this.pkEmail = pkEmail;
+    public void setPkUsuario(int pkUsuario) {
+        this.pkUsuario = pkUsuario;
     }
     public String getUsuario() {
         return this.usuario;
@@ -54,6 +57,13 @@ public class Usuario  implements java.io.Serializable {
     
     public void setUsuario(String usuario) {
         this.usuario = usuario;
+    }
+    public String getPkEmail() {
+        return this.pkEmail;
+    }
+    
+    public void setPkEmail(String pkEmail) {
+        this.pkEmail = pkEmail;
     }
     public String getPassword() {
         return this.password;
@@ -76,19 +86,19 @@ public class Usuario  implements java.io.Serializable {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-    public Set<Oferente> getOferentes() {
-        return this.oferentes;
-    }
-    
-    public void setOferentes(Set<Oferente> oferentes) {
-        this.oferentes = oferentes;
-    }
     public Set<Empresa> getEmpresas() {
         return this.empresas;
     }
     
     public void setEmpresas(Set<Empresa> empresas) {
         this.empresas = empresas;
+    }
+    public Set<Oferente> getOferentes() {
+        return this.oferentes;
+    }
+    
+    public void setOferentes(Set<Oferente> oferentes) {
+        this.oferentes = oferentes;
     }
 
 

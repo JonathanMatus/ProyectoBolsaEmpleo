@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 17-abr-2018 15:58:15 by Hibernate Tools 4.3.1 -->
+<!-- Generated 21/04/2018 11:42:38 AM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Subcategoria" table="subcategoria" catalog="mydb" optimistic-lock="version">
+    <class name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Subcategoria" table="subcategoria" catalog="mydbproyecto" optimistic-lock="version">
         <id name="pkIdSubcategoria" type="int">
             <column name="Pk_Id_subcategoria" />
             <generator class="foreign">
@@ -14,8 +14,14 @@
         <property name="fkIdCategoria" type="int">
             <column name="Fk_Id_categoria" not-null="true" />
         </property>
-        <property name="nombre" type="string">
-            <column name="nombre" length="45" not-null="true" />
+        <property name="nombreSub" type="string">
+            <column name="nombre_Sub" length="45" not-null="true" />
+        </property>
+        <property name="ultimoUsuario" type="int">
+            <column name="ultimoUsuario" not-null="true" />
+        </property>
+        <property name="fechaCambios" type="date">
+            <column name="fechaCambios" length="10" not-null="true" />
         </property>
         <set name="puestos" table="subcategoriapuesto" inverse="false" lazy="true" fetch="select">
             <key>
@@ -30,7 +36,7 @@
                 <column name="Pk_Fk_Id_subcategoria" not-null="true" />
             </key>
             <many-to-many entity-name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Oferente">
-                <column name="Pk_Fk_Id_oferente" length="10" not-null="true" />
+                <column name="Oferente_PK_oferente" not-null="true" />
             </many-to-many>
         </set>
     </class>

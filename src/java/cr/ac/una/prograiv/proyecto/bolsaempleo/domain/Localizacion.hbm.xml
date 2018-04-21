@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 17-abr-2018 15:58:15 by Hibernate Tools 4.3.1 -->
+<!-- Generated 21/04/2018 11:42:38 AM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Localizacion" table="localizacion" catalog="mydb" optimistic-lock="version">
+    <class name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Localizacion" table="localizacion" catalog="mydbproyecto" optimistic-lock="version">
         <id name="pkIdLocalizacion" type="int">
             <column name="PK_Id_localizacion" />
             <generator class="assigned" />
         </id>
-        <property name="latitud" type="int">
-            <column name="latitud" not-null="true" />
+        <property name="latitud" type="big_decimal">
+            <column name="latitud" precision="11" scale="10" not-null="true" />
         </property>
-        <property name="longitud" type="int">
-            <column name="longitud" not-null="true" />
+        <property name="longitud" type="big_decimal">
+            <column name="longitud" precision="11" scale="10" not-null="true" />
         </property>
         <set name="empresas" table="empresa" inverse="true" lazy="true" fetch="select">
             <key>
@@ -22,7 +22,7 @@
         </set>
         <set name="oferentes" table="oferente" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="Fk_Localizacion" />
+                <column name="Fk_Localizacion" not-null="true" />
             </key>
             <one-to-many class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Oferente" />
         </set>

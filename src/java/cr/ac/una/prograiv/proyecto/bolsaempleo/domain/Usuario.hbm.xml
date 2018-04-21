@@ -1,15 +1,18 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 17-abr-2018 15:58:15 by Hibernate Tools 4.3.1 -->
+<!-- Generated 21/04/2018 11:42:38 AM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Usuario" table="usuario" catalog="mydb" optimistic-lock="version">
-        <id name="pkEmail" type="string">
-            <column name="PK_Email" length="100" />
+    <class name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Usuario" table="usuario" catalog="mydbproyecto" optimistic-lock="version">
+        <id name="pkUsuario" type="int">
+            <column name="PK_Usuario" />
             <generator class="assigned" />
         </id>
         <property name="usuario" type="string">
             <column name="usuario" length="16" not-null="true" unique="true" />
+        </property>
+        <property name="pkEmail" type="string">
+            <column name="PK_Email" length="100" not-null="true" unique="true" />
         </property>
         <property name="password" type="string">
             <column name="password" length="32" not-null="true" />
@@ -20,17 +23,17 @@
         <property name="tipo" type="string">
             <column name="tipo" length="45" not-null="true" />
         </property>
-        <set name="oferentes" table="oferente" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="Fk_Id_usuario" length="100" not-null="true" unique="true" />
-            </key>
-            <one-to-many class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Oferente" />
-        </set>
         <set name="empresas" table="empresa" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="Fk_Id_Usuario" length="100" not-null="true" unique="true" />
+                <column name="Usuario_PK_Usuario" not-null="true" />
             </key>
             <one-to-many class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Empresa" />
+        </set>
+        <set name="oferentes" table="oferente" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Usuario_PK_Usuario" not-null="true" />
+            </key>
+            <one-to-many class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Oferente" />
         </set>
     </class>
 </hibernate-mapping>

@@ -1,7 +1,8 @@
 package cr.ac.una.prograiv.proyecto.bolsaempleo.domain;
-// Generated 17-abr-2018 15:58:10 by Hibernate Tools 4.3.1
+// Generated 21/04/2018 11:42:36 AM by Hibernate Tools 4.3.1
 
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,21 +19,25 @@ public class Empresa  implements java.io.Serializable {
      private String correo;
      private String telefono;
      private String descripcion;
+     private int ultimoUsuario;
+     private Date fechaCambios;
      private Set<Puesto> puestos = new HashSet<Puesto>(0);
 
     public Empresa() {
     }
 
 	
-    public Empresa(int pkIdEmp, Localizacion localizacion, Usuario usuario, String nombre, String correo, String telefono) {
+    public Empresa(int pkIdEmp, Localizacion localizacion, Usuario usuario, String nombre, String correo, String telefono, int ultimoUsuario, Date fechaCambios) {
         this.pkIdEmp = pkIdEmp;
         this.localizacion = localizacion;
         this.usuario = usuario;
         this.nombre = nombre;
         this.correo = correo;
         this.telefono = telefono;
+        this.ultimoUsuario = ultimoUsuario;
+        this.fechaCambios = fechaCambios;
     }
-    public Empresa(int pkIdEmp, Localizacion localizacion, Usuario usuario, String nombre, String correo, String telefono, String descripcion, Set<Puesto> puestos) {
+    public Empresa(int pkIdEmp, Localizacion localizacion, Usuario usuario, String nombre, String correo, String telefono, String descripcion, int ultimoUsuario, Date fechaCambios, Set<Puesto> puestos) {
        this.pkIdEmp = pkIdEmp;
        this.localizacion = localizacion;
        this.usuario = usuario;
@@ -40,6 +45,8 @@ public class Empresa  implements java.io.Serializable {
        this.correo = correo;
        this.telefono = telefono;
        this.descripcion = descripcion;
+       this.ultimoUsuario = ultimoUsuario;
+       this.fechaCambios = fechaCambios;
        this.puestos = puestos;
     }
    
@@ -91,6 +98,20 @@ public class Empresa  implements java.io.Serializable {
     
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+    public int getUltimoUsuario() {
+        return this.ultimoUsuario;
+    }
+    
+    public void setUltimoUsuario(int ultimoUsuario) {
+        this.ultimoUsuario = ultimoUsuario;
+    }
+    public Date getFechaCambios() {
+        return this.fechaCambios;
+    }
+    
+    public void setFechaCambios(Date fechaCambios) {
+        this.fechaCambios = fechaCambios;
     }
     public Set<Puesto> getPuestos() {
         return this.puestos;

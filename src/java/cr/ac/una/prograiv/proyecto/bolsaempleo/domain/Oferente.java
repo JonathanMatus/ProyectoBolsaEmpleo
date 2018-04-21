@@ -1,7 +1,8 @@
 package cr.ac.una.prograiv.proyecto.bolsaempleo.domain;
-// Generated 17-abr-2018 15:58:10 by Hibernate Tools 4.3.1
+// Generated 21/04/2018 11:42:36 AM by Hibernate Tools 4.3.1
 
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -11,15 +12,18 @@ import java.util.Set;
 public class Oferente  implements java.io.Serializable {
 
 
-     private String pkCedula;
+     private int pkOferente;
      private Localizacion localizacion;
      private Usuario usuario;
+     private String pkCedula;
      private String nombre;
      private String apellido1;
      private String apellido2;
      private String nacionalidad;
      private String correo;
      private String residencia;
+     private int ultimoUsuario;
+     private Date fechaCambios;
      private Set<Subcategoria> subcategorias = new HashSet<Subcategoria>(0);
      private Set<Puesto> puestos = new HashSet<Puesto>(0);
 
@@ -27,35 +31,42 @@ public class Oferente  implements java.io.Serializable {
     }
 
 	
-    public Oferente(String pkCedula, Usuario usuario, String nombre, String apellido1, String apellido2, String nacionalidad, String correo) {
-        this.pkCedula = pkCedula;
+    public Oferente(int pkOferente, Localizacion localizacion, Usuario usuario, String pkCedula, String nombre, String apellido1, String apellido2, String nacionalidad, String correo, int ultimoUsuario, Date fechaCambios) {
+        this.pkOferente = pkOferente;
+        this.localizacion = localizacion;
         this.usuario = usuario;
+        this.pkCedula = pkCedula;
         this.nombre = nombre;
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;
         this.nacionalidad = nacionalidad;
         this.correo = correo;
+        this.ultimoUsuario = ultimoUsuario;
+        this.fechaCambios = fechaCambios;
     }
-    public Oferente(String pkCedula, Localizacion localizacion, Usuario usuario, String nombre, String apellido1, String apellido2, String nacionalidad, String correo, String residencia, Set<Subcategoria> subcategorias, Set<Puesto> puestos) {
-       this.pkCedula = pkCedula;
+    public Oferente(int pkOferente, Localizacion localizacion, Usuario usuario, String pkCedula, String nombre, String apellido1, String apellido2, String nacionalidad, String correo, String residencia, int ultimoUsuario, Date fechaCambios, Set<Subcategoria> subcategorias, Set<Puesto> puestos) {
+       this.pkOferente = pkOferente;
        this.localizacion = localizacion;
        this.usuario = usuario;
+       this.pkCedula = pkCedula;
        this.nombre = nombre;
        this.apellido1 = apellido1;
        this.apellido2 = apellido2;
        this.nacionalidad = nacionalidad;
        this.correo = correo;
        this.residencia = residencia;
+       this.ultimoUsuario = ultimoUsuario;
+       this.fechaCambios = fechaCambios;
        this.subcategorias = subcategorias;
        this.puestos = puestos;
     }
    
-    public String getPkCedula() {
-        return this.pkCedula;
+    public int getPkOferente() {
+        return this.pkOferente;
     }
     
-    public void setPkCedula(String pkCedula) {
-        this.pkCedula = pkCedula;
+    public void setPkOferente(int pkOferente) {
+        this.pkOferente = pkOferente;
     }
     public Localizacion getLocalizacion() {
         return this.localizacion;
@@ -70,6 +81,13 @@ public class Oferente  implements java.io.Serializable {
     
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+    public String getPkCedula() {
+        return this.pkCedula;
+    }
+    
+    public void setPkCedula(String pkCedula) {
+        this.pkCedula = pkCedula;
     }
     public String getNombre() {
         return this.nombre;
@@ -112,6 +130,20 @@ public class Oferente  implements java.io.Serializable {
     
     public void setResidencia(String residencia) {
         this.residencia = residencia;
+    }
+    public int getUltimoUsuario() {
+        return this.ultimoUsuario;
+    }
+    
+    public void setUltimoUsuario(int ultimoUsuario) {
+        this.ultimoUsuario = ultimoUsuario;
+    }
+    public Date getFechaCambios() {
+        return this.fechaCambios;
+    }
+    
+    public void setFechaCambios(Date fechaCambios) {
+        this.fechaCambios = fechaCambios;
     }
     public Set<Subcategoria> getSubcategorias() {
         return this.subcategorias;
