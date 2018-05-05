@@ -47,6 +47,7 @@ public class EmpresaServlet extends HttpServlet {
             //Se crea el objeto Persona
             Empresa p = new Empresa();
             Localizacion l = new Localizacion();
+            Localizacion l1 = new Localizacion();
 
             //Se crea el objeto de la logica de negocio
             EmpresaBL pBL = new EmpresaBL();
@@ -100,8 +101,8 @@ public class EmpresaServlet extends HttpServlet {
                         lpBL.save(l);
                         List<Localizacion> list=lpBL.findAll(Localizacion.class.getName());
                      
-                        l=lpBL.findById(list.get(list.size()).getPkIdLocalizacion());
-                        p.setLocalizacion(l);
+                        l1=lpBL.findById(list.get(list.size()-1).getPkIdLocalizacion());
+                        p.setLocalizacion(l1);
                         pBL.save(p);
 
                         //Se imprime la respuesta con el response
