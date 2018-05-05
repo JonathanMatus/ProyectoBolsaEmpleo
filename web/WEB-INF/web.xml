@@ -18,11 +18,11 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>EmpresaServlet</servlet-name>
-        <url-pattern>/EmpresaServlet</url-pattern>
+        <url-pattern>/vistas/EmpresaServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>OferenteServlet</servlet-name>
-        <url-pattern>/OferenteServlet</url-pattern>
+        <url-pattern>/vistas/OferenteServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>UsuarioServlet</servlet-name>
