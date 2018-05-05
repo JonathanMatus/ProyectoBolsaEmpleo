@@ -130,33 +130,33 @@
                             <div class="col-sm-12">
 
                                 <div class="row">
-                                    <div class="col-sm-3 form-group">
+                                    <div class="col-sm-3 form-group" id="groupCedula">
                                         <label>Cedula</label>
                                         <input type="text" placeholder="Ingresar Cedula.." class="form-control" id="cedula">
                                     </div>
-                                    <div class="col-sm-3 form-group">
+                                    <div class="col-sm-3 form-group" id="groupNombre">
                                         <label>Nombre</label>
                                         <input type="text" placeholder="Ingresar Nombre.." class="form-control" id="nombre">
                                     </div>
-                                    <div class="col-sm-3 form-group">
+                                    <div class="col-sm-3 form-group" id="groupApellido1">
                                         <label>Primer apellido</label>
                                         <input type="text" placeholder="Ingresar Primer apellido.." class="form-control" id="priApellido">
                                     </div>
-                                    <div class="col-sm-3 form-group">
+                                    <div class="col-sm-3 form-group" id="groupApellido2">
                                         <label>Segundo apellido</label>
                                         <input type="text" placeholder="Ingresar Segundo apellido.." class="form-control" id="segApellido">
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-3 form-group">
+                                    <div class="col-sm-3 form-group" id="groupNacionalidad">
                                         <label>Nacionalidad</label>
                                         <input type="text" placeholder="Ingresar Nacionalidad.." class="form-control" id="nacionalidad">
                                     </div>
-                                    <div class="col-sm-3 form-group">
+                                    <div class="col-sm-3 form-group" id="groupCorreo">
                                         <label>Correo</label>
                                         <input type="email" placeholder="Ingresar Correo.." class="form-control" id="correo">
                                     </div>
-                                    <div class="col-sm-6 form-group">
+                                    <div class="col-sm-6 form-group" id="groupResidencia">
                                         <label>Residencia</label>
                                         <input type="text" placeholder="Ingresar Residencia.." class="form-control" id="residencia">
                                     </div>
@@ -172,7 +172,10 @@
                                     <input type="text" id="lng" readonly="yes">
                                 </div>
 
-                                <div class=" form-group"><button type="button" id="registrar" class="btn btn-lg btn-info">Registrar</button></div>					
+                                <div class=" form-group">
+                                    
+                                    <button type="button" id="registrar" class="btn btn-lg btn-info">Registrar</button>
+                                </div>					
 
                             </div>
                         </form> 

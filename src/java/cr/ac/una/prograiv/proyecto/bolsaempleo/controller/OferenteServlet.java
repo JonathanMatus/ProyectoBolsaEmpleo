@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author patei
+ * @author Estudiante
  */
 public class OferenteServlet extends HttpServlet {
 
@@ -35,10 +35,10 @@ public class OferenteServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet OferentesServlet</title>");            
+            out.println("<title>Servlet OferenteServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet OferentesServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet OferenteServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }

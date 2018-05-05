@@ -132,15 +132,15 @@
                         <form>
                             <div class="col-sm-12">
                                 <div class="row">
-                                    <div class="col-sm-4 form-group">
+                                    <div class="col-sm-4 form-group" id="groupNombre">
                                         <label>Nombre</label>
                                         <input type="text" placeholder="Ingresar Nombre.." class="form-control" id="nombre">
                                     </div>
-                                    <div class="col-sm-4 form-group">
+                                    <div class="col-sm-4 form-group" id="groupCorreo">
                                         <label>Correo</label>
                                         <input type="text" placeholder="Ingresar correo.." class="form-control" id="correo">
                                     </div>
-                                    <div class="col-sm-4 form-group">
+                                    <div class="col-sm-4 form-group" id="groupTelefono">
                                         <label>Telefono</label>
                                         <input type="text" placeholder="Ingresar numero telefono.." class="form-control" id="telefono">
                                     </div>
@@ -148,7 +148,7 @@
                                 <div class="row">
 
                                     <div class="col-sm-12 form-group"><label>Descripcion</label></div>
-                                    <div class="col-sm-4 form-group">
+                                    <div class="col-sm-4 form-group" id="groupDescripcion">
 
                                         <textarea placeholder="Ingresar descripcion.." rows="9" class="form-control" id="descripcion"></textarea>
                                     </div>
@@ -158,7 +158,10 @@
                                         <input type="text" id="lat" readonly="yes"><br>
                                         <input type="text" id="lng" readonly="yes">
                                     </div>
-                                    <div class=" form-group"><button type="button" id="registrar" class="btn btn-lg btn-info">Registrar</button></div>
+                                    <div class=" form-group">
+                                        <input type="hidden" value="agregarEmpresa" id="empresaAction"/>
+                                        <button type="button" id="registrar" class="btn btn-lg btn-info">Registrar</button>
+                                    </div>
                                     					
                                 </div>
                             </div>
