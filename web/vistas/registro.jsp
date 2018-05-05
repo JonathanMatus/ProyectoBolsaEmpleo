@@ -31,6 +31,7 @@
         <script src="../js/jscode.js" type="text/javascript"></script>
         
         <script src="../js/OferenteJS.js" type="text/javascript"></script>
+        <script src="../js/mapsJS.js" type="text/javascript"></script>
     </head>
     <body>
         <div class="container encabezado">
@@ -153,7 +154,7 @@
                                     </div>
                                     <div class="col-sm-3 form-group">
                                         <label>Correo</label>
-                                        <input type="text" placeholder="Ingresar Correo.." class="form-control" id="correo">
+                                        <input type="email" placeholder="Ingresar Correo.." class="form-control" id="correo">
                                     </div>
                                     <div class="col-sm-6 form-group">
                                         <label>Residencia</label>

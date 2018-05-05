@@ -31,6 +31,7 @@
         <link href="../css/css.css" rel="stylesheet" type="text/css"/>
         <script src="../js/jscode.js" type="text/javascript"></script>
         <script src="../js/EmpresaJS.js" type="text/javascript"></script>
+        <script src="../js/mapsJS.js" type="text/javascript"></script>
     </head>
     <body>
 
