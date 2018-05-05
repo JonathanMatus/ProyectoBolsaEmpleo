@@ -5,7 +5,9 @@
  */
 package cr.ac.una.prograiv.proyecto.bolsaempleo.test;
 
+import cr.ac.una.prograiv.proyecto.bolsaempleo.bl.impl.OferenteBL;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.dao.impl.UsuarioDao;
+import cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Oferente;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Usuario;
 import java.util.Date;
 
@@ -16,7 +18,9 @@ import java.util.Date;
 public class test {
     
     public static void main(String[] arg) {
-       
+
         
     }
 }
+
+
