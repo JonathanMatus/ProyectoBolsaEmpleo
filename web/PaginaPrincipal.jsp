@@ -37,6 +37,7 @@
             <a class="active" href="PaginaPrincipal.jsp">Inicio</a>
             <a href="vistas/registroEmpresa.jsp">Empresa</a>
             <a href="vistas/contacto.jsp">Contacto</a>
+            <a href="vistas/administrador.jsp">Administrador</a>
             <div class="topnav-right">
                
                 <button type="button" id="salir"><img src="img/exit.png" alt="exit" class="img-responsive"/></button>

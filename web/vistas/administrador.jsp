@@ -1,7 +1,7 @@
 <%-- 
-    Document   : contacto
-    Created on : 18/04/2018, 12:11:51 PM
-    Author     : Sammy Guergachi <sguergachi at gmail.com>
+    Document   : administrador
+    Created on : 05-may-2018, 14:05:25
+    Author     : patei
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,8 +9,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Contacto</title>
-             <!--CSS Lbrary -->
+        <title>Administrador</title>
+
+
+        <!--CSS Lbrary -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
         <!-- jQuery library -->
@@ -23,30 +25,33 @@
 
         <!--google fonts -->
         <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+
         <link href="../css/css.css" rel="stylesheet" type="text/css"/>
         <script src="../js/jscode.js" type="text/javascript"></script>
+        <link href="../css/administrador.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
+
         <div class="container encabezado">
             <img src="../img/Logo.png" alt="Bolsa Empleo CR" class="img-responsive img-rounded"/>
         </div>
         <!-- responsive top nav -->
         <div class="topnav">
-          
-            <a href="../PaginaPrincipal.jsp">Inicio</a>
-            <a href="registroEmpresa.jsp">Empresa</a>
-            <a class="active"  href="contacto.jsp">Contacto</a>
-            <a href="administrador.jsp">Administrador</a>
+
+            <a  href="../PaginaPrincipal.jsp">Inicio</a>
+            <a  href="registroEmpresa.jsp">Empresa</a>
+            <a href="contacto.jsp">Contacto</a>
+            <a class="active" href="administrador.jsp">Administrador</a>
             <div class="topnav-right">
 
-                <button type="button" id="salir"><img src="../img/exit.png" alt="exit" class="img-responsive"/></button>
+                <button type="button" id="salir"><img src="../img/exit.png"  alt="exit" class="img-responsive"/></button>
                 <input type="text" id="txtBusqueda" placeholder="Buscar..">
+
                 <button type="button" id="buscar"><img src="../img/search.png" alt="buscar" class="img-responsive"/></button>
 
                 <button type="button" id="ingresar" data-toggle="modal" data-target="#squarespaceModal"> <img src="../img/login.png" alt="login" class="img-responsive"/></button>
                 <a id="registro" href="registro.jsp"> <img src="../img/registro.png" alt="registro" class="img-responsive"/></a>
             </div>
-          
         </div>
         <div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -115,62 +120,58 @@
                 </div>
             </div>
         </div>
-        <div class="content fondo">
-            <div class="container">
-                <div class="row main">
-                    <div class="main-login main-center">
-                        <h1>Contactenos.</h1>
-                        <form class="" method="post" action="#">
+        <!----------------------------SideBar------------------------>
+        <div class="contenedorSideBar">
+            <nav class="navbar navbar-default sidebar" role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>      
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Empresa<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a>
+                                <ul class="dropdown-menu forAnimate" role="menu">
+                                    <li><a href="#" id="listaEmpresas">lista empresas</a></li>
+                                    <li><a href="#" id="listaEmpresasSinUsu">lista empresas en espera</a></li>
 
-                            <div class="form-group">
-                                <label for="name" class="cols-sm-2 control-label">Nombre</label>
-                                <div class="cols-sm-10">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                        <input type="text" class="form-control" name="name" id="name"  placeholder="Ingresa tu nombre"/>
-                                    </div>
-                                </div>
-                            </div>
+                                </ul>
+                            </li>                               
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Oferente<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a>
+                                <ul class="dropdown-menu forAnimate" role="menu">
+                                    <li><a href="#" id="listaEmpresas">lista Oferentes</a></li>
+                                    <li><a href="#" id="listaEmpresasSinUsu">lista oferentes en espera</a></li>
+                                </ul>
+                            </li>          
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Puesto<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-briefcase"></span></a>
+                                <ul class="dropdown-menu forAnimate" role="menu">
+                                    <li><a href="#" id="listaEmpresas">lista puestos</a></li>
 
-                            <div class="form-group">
-                                <label for="email" class="cols-sm-2 control-label">Correo Electronico</label>
-                                <div class="cols-sm-10">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                                        <input type="text" class="form-control" name="email" id="email"  placeholder="Ingresa tu Email"/>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="username" class="cols-sm-2 control-label">Telefono</label>
-                                <div class="cols-sm-10">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                                        <input type="text" class="form-control" name="username" id="username"  placeholder="Ingresa tu Telefono"/>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="password" class="cols-sm-2 control-label">Mensaje</label>
-                                <div class="cols-sm-10">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                        <textarea name="message"  class = "form-control" placeholder="Ingresar mensaje"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                            <div class="form-group ">
-                                <button  type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Enviar</button>
-                            </div>
-
-                        </form>
+                                </ul>
+                            </li>                             </ul>
                     </div>
                 </div>
+            </nav>
+            <div id="empresa1">
+                <table class="table table-hover table-condensed" id="tablaEmpresas1" width="100%">
+                    <thead>
+                        <tr>
+                            <td>Nombre</td>
+                            <td>correo</td>
+                            <td>Telefono</td>
+                            <td>Descripcion</td>
+                            <td>localizacion</td>
+                            <td>Accion</td>
+                        </tr>
+                    </thead>
+                </table>
             </div>
         </div>
         <!--footer-->
@@ -178,6 +179,7 @@
             <footer id="myFooter">
                 <div class="container footer">
                     <ul>
+
                         <li><a href="contacto.jsp">Contacto</a></li>
                         <li><a href="acerca.jsp">Sobre nosotros</a></li>
                         <li><a href="registroEmpresa.jsp">Empresa</a></li>

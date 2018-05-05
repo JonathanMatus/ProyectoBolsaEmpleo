@@ -5,6 +5,7 @@
  */
 package cr.ac.una.prograiv.proyecto.bolsaempleo.controller;
 
+import com.google.gson.Gson;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.bl.impl.EmpresaBL;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.bl.impl.LocalizacionBL;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Empresa;
@@ -65,7 +66,10 @@ public class EmpresaServlet extends HttpServlet {
             //**********************************************************************
             String accion = request.getParameter("accion");
             switch (accion) {
-
+                case "consultarEmpresas":
+                    json = new Gson().toJson(pBL.findAll(Empresa.class.getName()));
+                    out.print(json);
+                    break;
                 case "agregarEmpresa":
                 case "modificarEmpresa":
 
@@ -88,20 +92,14 @@ public class EmpresaServlet extends HttpServlet {
                     BigDecimal bigDecimal2 = (BigDecimal) decimalFormat.parse(request.getParameter("longitud"));
                     l.setLongitud(bigDecimal2);
                     // ----------------------------------------------------------------------------
-                   
-                    
 
                     //Guardar Correctamente en la base de datos
-                   
-
-                   
-
                     if (accion.equals("agregarEmpresa")) { //es insertar personas
                         //Se guarda el objeto
                         lpBL.save(l);
-                        List<Localizacion> list=lpBL.findAll(Localizacion.class.getName());
-                     
-                        l1=lpBL.findById(list.get(list.size()-1).getPkIdLocalizacion());
+                        List<Localizacion> list = lpBL.findAll(Localizacion.class.getName());
+
+                        l1 = lpBL.findById(list.get(list.size() - 1).getPkIdLocalizacion());
                         p.setLocalizacion(l1);
                         pBL.save(p);
 

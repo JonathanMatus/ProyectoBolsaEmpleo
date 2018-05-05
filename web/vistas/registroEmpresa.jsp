@@ -44,6 +44,7 @@
             <a  href="../PaginaPrincipal.jsp">Inicio</a>
             <a class="active" href="registroEmpresa.jsp">Empresa</a>
             <a href="contacto.jsp">Contacto</a>
+            <a href="administrador.jsp">Administrador</a>
             <div class="topnav-right">
 
                 <button type="button" id="salir"><img src="../img/exit.png"  alt="exit" class="img-responsive"/></button>

@@ -40,9 +40,10 @@
         <!-- responsive top nav -->
         <div class="topnav">
 
-            <a class="active" href="../PaginaPrincipal.jsp">Inicio</a>
+            <a  href="../PaginaPrincipal.jsp">Inicio</a>
             <a href="registroEmpresa.jsp">Empresa</a>
             <a href="contacto.jsp">Contacto</a>
+            <a href="administrador.jsp">Administrador</a>
             <div class="topnav-right">
 
                 <button type="button" id="salir"><img src="../img/exit.png" alt="exit" class="img-responsive"/></button>
@@ -50,7 +51,7 @@
                 <button type="button" id="buscar"><img src="../img/search.png" alt="buscar" class="img-responsive"/></button>
 
                 <button type="button" id="ingresar" data-toggle="modal" data-target="#squarespaceModal"> <img src="../img/login.png" alt="login" class="img-responsive"/></button>
-                <a id="registro" href="registro.jsp"> <img src="../img/registro.png" alt="registro" class="img-responsive"/></a>
+                <a class="active" id="registro" href="registro.jsp"> <img src="../img/registro.png" alt="registro" class="img-responsive"/></a>
             </div>
         </div>
         <div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
