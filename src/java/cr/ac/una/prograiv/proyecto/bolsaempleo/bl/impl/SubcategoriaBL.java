@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cr.ac.una.prograiv.proyecto.bolsaempleo.bl.imp;
+package cr.ac.una.prograiv.proyecto.bolsaempleo.bl.impl;
 
 import cr.ac.una.prograiv.proyecto.bolsaempleo.bl.BaseBL;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.bl.IBaseBL;

@@ -246,3 +246,14 @@ and open the template in the editor.
     text-align: justify;
 }
 /*----------------------------------------------------*/
+#map {
+    height: 188px;
+    width: 100%;
+    border: 2px solid grey;
+}
+#coordenadas{
+display: none;
+}
+#registrar{
+    margin-left: 15px;
+}

@@ -1,5 +1,5 @@
 package cr.ac.una.prograiv.proyecto.bolsaempleo.domain;
-// Generated 21/04/2018 11:42:36 AM by Hibernate Tools 4.3.1
+// Generated 04-may-2018 22:36:55 by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -12,7 +12,7 @@ import java.util.Set;
 public class Localizacion  implements java.io.Serializable {
 
 
-     private int pkIdLocalizacion;
+     private Integer pkIdLocalizacion;
      private BigDecimal latitud;
      private BigDecimal longitud;
      private Set<Empresa> empresas = new HashSet<Empresa>(0);
@@ -22,24 +22,22 @@ public class Localizacion  implements java.io.Serializable {
     }
 
 	
-    public Localizacion(int pkIdLocalizacion, BigDecimal latitud, BigDecimal longitud) {
-        this.pkIdLocalizacion = pkIdLocalizacion;
+    public Localizacion(BigDecimal latitud, BigDecimal longitud) {
         this.latitud = latitud;
         this.longitud = longitud;
     }
-    public Localizacion(int pkIdLocalizacion, BigDecimal latitud, BigDecimal longitud, Set<Empresa> empresas, Set<Oferente> oferentes) {
-       this.pkIdLocalizacion = pkIdLocalizacion;
+    public Localizacion(BigDecimal latitud, BigDecimal longitud, Set<Empresa> empresas, Set<Oferente> oferentes) {
        this.latitud = latitud;
        this.longitud = longitud;
        this.empresas = empresas;
        this.oferentes = oferentes;
     }
    
-    public int getPkIdLocalizacion() {
+    public Integer getPkIdLocalizacion() {
         return this.pkIdLocalizacion;
     }
     
-    public void setPkIdLocalizacion(int pkIdLocalizacion) {
+    public void setPkIdLocalizacion(Integer pkIdLocalizacion) {
         this.pkIdLocalizacion = pkIdLocalizacion;
     }
     public BigDecimal getLatitud() {

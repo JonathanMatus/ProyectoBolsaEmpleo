@@ -1,5 +1,5 @@
 package cr.ac.una.prograiv.proyecto.bolsaempleo.domain;
-// Generated 21/04/2018 11:42:36 AM by Hibernate Tools 4.3.1
+// Generated 04-may-2018 22:36:55 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -12,7 +12,7 @@ import java.util.Set;
 public class Oferente  implements java.io.Serializable {
 
 
-     private int pkOferente;
+     private Integer pkOferente;
      private Localizacion localizacion;
      private Usuario usuario;
      private String pkCedula;
@@ -31,10 +31,8 @@ public class Oferente  implements java.io.Serializable {
     }
 
 	
-    public Oferente(int pkOferente, Localizacion localizacion, Usuario usuario, String pkCedula, String nombre, String apellido1, String apellido2, String nacionalidad, String correo, int ultimoUsuario, Date fechaCambios) {
-        this.pkOferente = pkOferente;
+    public Oferente(Localizacion localizacion, String pkCedula, String nombre, String apellido1, String apellido2, String nacionalidad, String correo, int ultimoUsuario, Date fechaCambios) {
         this.localizacion = localizacion;
-        this.usuario = usuario;
         this.pkCedula = pkCedula;
         this.nombre = nombre;
         this.apellido1 = apellido1;
@@ -44,8 +42,7 @@ public class Oferente  implements java.io.Serializable {
         this.ultimoUsuario = ultimoUsuario;
         this.fechaCambios = fechaCambios;
     }
-    public Oferente(int pkOferente, Localizacion localizacion, Usuario usuario, String pkCedula, String nombre, String apellido1, String apellido2, String nacionalidad, String correo, String residencia, int ultimoUsuario, Date fechaCambios, Set<Subcategoria> subcategorias, Set<Puesto> puestos) {
-       this.pkOferente = pkOferente;
+    public Oferente(Localizacion localizacion, Usuario usuario, String pkCedula, String nombre, String apellido1, String apellido2, String nacionalidad, String correo, String residencia, int ultimoUsuario, Date fechaCambios, Set<Subcategoria> subcategorias, Set<Puesto> puestos) {
        this.localizacion = localizacion;
        this.usuario = usuario;
        this.pkCedula = pkCedula;
@@ -61,11 +58,11 @@ public class Oferente  implements java.io.Serializable {
        this.puestos = puestos;
     }
    
-    public int getPkOferente() {
+    public Integer getPkOferente() {
         return this.pkOferente;
     }
     
-    public void setPkOferente(int pkOferente) {
+    public void setPkOferente(Integer pkOferente) {
         this.pkOferente = pkOferente;
     }
     public Localizacion getLocalizacion() {

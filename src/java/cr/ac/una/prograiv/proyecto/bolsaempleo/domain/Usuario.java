@@ -1,5 +1,5 @@
 package cr.ac.una.prograiv.proyecto.bolsaempleo.domain;
-// Generated 21/04/2018 11:42:36 AM by Hibernate Tools 4.3.1
+// Generated 04-may-2018 22:36:55 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -12,12 +12,12 @@ import java.util.Set;
 public class Usuario  implements java.io.Serializable {
 
 
-     private int pkUsuario;
+     private Integer pkUsuario;
      private String usuario;
      private String pkEmail;
      private String password;
      private Date fechaCreacion;
-     private String tipo;
+     private int tipo;
      private Set<Empresa> empresas = new HashSet<Empresa>(0);
      private Set<Oferente> oferentes = new HashSet<Oferente>(0);
 
@@ -25,16 +25,14 @@ public class Usuario  implements java.io.Serializable {
     }
 
 	
-    public Usuario(int pkUsuario, String usuario, String pkEmail, String password, Date fechaCreacion, String tipo) {
-        this.pkUsuario = pkUsuario;
+    public Usuario(String usuario, String pkEmail, String password, Date fechaCreacion, int tipo) {
         this.usuario = usuario;
         this.pkEmail = pkEmail;
         this.password = password;
         this.fechaCreacion = fechaCreacion;
         this.tipo = tipo;
     }
-    public Usuario(int pkUsuario, String usuario, String pkEmail, String password, Date fechaCreacion, String tipo, Set<Empresa> empresas, Set<Oferente> oferentes) {
-       this.pkUsuario = pkUsuario;
+    public Usuario(String usuario, String pkEmail, String password, Date fechaCreacion, int tipo, Set<Empresa> empresas, Set<Oferente> oferentes) {
        this.usuario = usuario;
        this.pkEmail = pkEmail;
        this.password = password;
@@ -44,11 +42,11 @@ public class Usuario  implements java.io.Serializable {
        this.oferentes = oferentes;
     }
    
-    public int getPkUsuario() {
+    public Integer getPkUsuario() {
         return this.pkUsuario;
     }
     
-    public void setPkUsuario(int pkUsuario) {
+    public void setPkUsuario(Integer pkUsuario) {
         this.pkUsuario = pkUsuario;
     }
     public String getUsuario() {
@@ -79,11 +77,11 @@ public class Usuario  implements java.io.Serializable {
     public void setFechaCreacion(Date fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
-    public String getTipo() {
+    public int getTipo() {
         return this.tipo;
     }
     
-    public void setTipo(String tipo) {
+    public void setTipo(int tipo) {
         this.tipo = tipo;
     }
     public Set<Empresa> getEmpresas() {

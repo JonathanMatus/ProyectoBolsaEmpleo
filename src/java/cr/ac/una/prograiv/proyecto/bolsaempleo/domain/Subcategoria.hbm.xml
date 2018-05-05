@@ -1,19 +1,16 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 21/04/2018 11:42:38 AM by Hibernate Tools 4.3.1 -->
+<!-- Generated 04-may-2018 22:36:57 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Subcategoria" table="subcategoria" catalog="mydbproyecto" optimistic-lock="version">
-        <id name="pkIdSubcategoria" type="int">
+        <id name="pkIdSubcategoria" type="java.lang.Integer">
             <column name="Pk_Id_subcategoria" />
-            <generator class="foreign">
-                <param name="property">categoria</param>
-            </generator>
+            <generator class="identity" />
         </id>
-        <one-to-one name="categoria" class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Categoria" constrained="true"></one-to-one>
-        <property name="fkIdCategoria" type="int">
+        <many-to-one name="categoria" class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Categoria" fetch="select">
             <column name="Fk_Id_categoria" not-null="true" />
-        </property>
+        </many-to-one>
         <property name="nombreSub" type="string">
             <column name="nombre_Sub" length="45" not-null="true" />
         </property>

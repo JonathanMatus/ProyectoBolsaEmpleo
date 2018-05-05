@@ -3,50 +3,45 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-package cr.ac.una.prograiv.proyecto.bolsaempleo.bl.imp;
+package cr.ac.una.prograiv.proyecto.bolsaempleo.bl.impl;
 
 import cr.ac.una.prograiv.proyecto.bolsaempleo.bl.BaseBL;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.bl.IBaseBL;
-import cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Oferente;
+import cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Empresa;
 import java.util.List;
 
 /**
- * 
+ *
  * @author Sammy Guergachi <sguergachi at gmail.com>
  */
-public class OferenteBL extends BaseBL implements IBaseBL<Oferente, Integer> {
+public class EmpresaBL extends BaseBL implements IBaseBL<Empresa, Integer> {
 
-    public OferenteBL() {
+    public EmpresaBL() {
         super();
     }
 
-    
     @Override
-    public void save(Oferente o) {
+    public void save(Empresa o) {
         this.getDAO(o.getClass().getName()).save(o);
     }
 
     @Override
-    public Oferente merge(Oferente o) {
-            return (Oferente) this.getDAO(o.getClass().getName()).merge(o);
-
+    public Empresa merge(Empresa o) {
+        return (Empresa) this.getDAO(o.getClass().getName()).merge(o);
     }
 
     @Override
     public void delete(Integer o) {
         this.getDAO(o.getClass().getName()).delete(o);
-
     }
 
     @Override
-    public Oferente findById(Integer o) {
-        return (Oferente) this.getDAO(Oferente.class.getName()).findById(o);
-
+    public Empresa findById(Integer o) {
+         return (Empresa) this.getDAO(Empresa.class.getName()).findById(o);
     }
 
     @Override
-    public List<Oferente> findAll(String className) {
+    public List<Empresa> findAll(String className) {
          return this.getDAO(className).findAll();
     }
 

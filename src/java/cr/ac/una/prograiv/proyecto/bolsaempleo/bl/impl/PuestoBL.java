@@ -3,31 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cr.ac.una.prograiv.proyecto.bolsaempleo.bl.imp;
+
+package cr.ac.una.prograiv.proyecto.bolsaempleo.bl.impl;
 
 import cr.ac.una.prograiv.proyecto.bolsaempleo.bl.BaseBL;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.bl.IBaseBL;
-import cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Empresa;
+import cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Puesto;
 import java.util.List;
 
 /**
- *
+ * 
  * @author Sammy Guergachi <sguergachi at gmail.com>
  */
-public class EmpresaBL extends BaseBL implements IBaseBL<Empresa, Integer> {
+public class PuestoBL extends BaseBL implements IBaseBL<Puesto, Integer>{
 
-    public EmpresaBL() {
+    public PuestoBL() {
         super();
     }
 
     @Override
-    public void save(Empresa o) {
+    public void save(Puesto o) {
         this.getDAO(o.getClass().getName()).save(o);
     }
 
     @Override
-    public Empresa merge(Empresa o) {
-        return (Empresa) this.getDAO(o.getClass().getName()).merge(o);
+    public Puesto merge(Puesto o) {
+        return (Puesto) this.getDAO(o.getClass().getName()).merge(o);
     }
 
     @Override
@@ -36,13 +37,13 @@ public class EmpresaBL extends BaseBL implements IBaseBL<Empresa, Integer> {
     }
 
     @Override
-    public Empresa findById(Integer o) {
-         return (Empresa) this.getDAO(Empresa.class.getName()).findById(o);
+    public Puesto findById(Integer o) {
+        return (Puesto) this.getDAO(Puesto.class.getName()).findById(o);
     }
 
     @Override
-    public List<Empresa> findAll(String className) {
-         return this.getDAO(className).findAll();
+    public List<Puesto> findAll(String className) {
+        return this.getDAO(className).findAll();
     }
 
 }

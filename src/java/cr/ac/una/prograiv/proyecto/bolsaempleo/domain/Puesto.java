@@ -1,5 +1,5 @@
 package cr.ac.una.prograiv.proyecto.bolsaempleo.domain;
-// Generated 21/04/2018 11:42:36 AM by Hibernate Tools 4.3.1
+// Generated 04-may-2018 22:36:55 by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -13,7 +13,7 @@ import java.util.Set;
 public class Puesto  implements java.io.Serializable {
 
 
-     private int pkIdPuesto;
+     private Integer pkIdPuesto;
      private Empresa empresa;
      private String tipoPublicacion;
      private BigDecimal salario;
@@ -26,16 +26,14 @@ public class Puesto  implements java.io.Serializable {
     }
 
 	
-    public Puesto(int pkIdPuesto, Empresa empresa, String tipoPublicacion, BigDecimal salario, int ultimoUsuario, Date fechaCambios) {
-        this.pkIdPuesto = pkIdPuesto;
+    public Puesto(Empresa empresa, String tipoPublicacion, BigDecimal salario, int ultimoUsuario, Date fechaCambios) {
         this.empresa = empresa;
         this.tipoPublicacion = tipoPublicacion;
         this.salario = salario;
         this.ultimoUsuario = ultimoUsuario;
         this.fechaCambios = fechaCambios;
     }
-    public Puesto(int pkIdPuesto, Empresa empresa, String tipoPublicacion, BigDecimal salario, int ultimoUsuario, Date fechaCambios, Set<Oferente> oferentes, Set<Subcategoria> subcategorias) {
-       this.pkIdPuesto = pkIdPuesto;
+    public Puesto(Empresa empresa, String tipoPublicacion, BigDecimal salario, int ultimoUsuario, Date fechaCambios, Set<Oferente> oferentes, Set<Subcategoria> subcategorias) {
        this.empresa = empresa;
        this.tipoPublicacion = tipoPublicacion;
        this.salario = salario;
@@ -45,11 +43,11 @@ public class Puesto  implements java.io.Serializable {
        this.subcategorias = subcategorias;
     }
    
-    public int getPkIdPuesto() {
+    public Integer getPkIdPuesto() {
         return this.pkIdPuesto;
     }
     
-    public void setPkIdPuesto(int pkIdPuesto) {
+    public void setPkIdPuesto(Integer pkIdPuesto) {
         this.pkIdPuesto = pkIdPuesto;
     }
     public Empresa getEmpresa() {

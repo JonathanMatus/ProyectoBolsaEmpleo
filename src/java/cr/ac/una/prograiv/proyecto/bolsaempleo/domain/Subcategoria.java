@@ -1,5 +1,5 @@
 package cr.ac.una.prograiv.proyecto.bolsaempleo.domain;
-// Generated 21/04/2018 11:42:36 AM by Hibernate Tools 4.3.1
+// Generated 04-may-2018 22:36:55 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -12,9 +12,8 @@ import java.util.Set;
 public class Subcategoria  implements java.io.Serializable {
 
 
-     private int pkIdSubcategoria;
+     private Integer pkIdSubcategoria;
      private Categoria categoria;
-     private int fkIdCategoria;
      private String nombreSub;
      private int ultimoUsuario;
      private Date fechaCambios;
@@ -25,16 +24,14 @@ public class Subcategoria  implements java.io.Serializable {
     }
 
 	
-    public Subcategoria(Categoria categoria, int fkIdCategoria, String nombreSub, int ultimoUsuario, Date fechaCambios) {
+    public Subcategoria(Categoria categoria, String nombreSub, int ultimoUsuario, Date fechaCambios) {
         this.categoria = categoria;
-        this.fkIdCategoria = fkIdCategoria;
         this.nombreSub = nombreSub;
         this.ultimoUsuario = ultimoUsuario;
         this.fechaCambios = fechaCambios;
     }
-    public Subcategoria(Categoria categoria, int fkIdCategoria, String nombreSub, int ultimoUsuario, Date fechaCambios, Set<Puesto> puestos, Set<Oferente> oferentes) {
+    public Subcategoria(Categoria categoria, String nombreSub, int ultimoUsuario, Date fechaCambios, Set<Puesto> puestos, Set<Oferente> oferentes) {
        this.categoria = categoria;
-       this.fkIdCategoria = fkIdCategoria;
        this.nombreSub = nombreSub;
        this.ultimoUsuario = ultimoUsuario;
        this.fechaCambios = fechaCambios;
@@ -42,11 +39,11 @@ public class Subcategoria  implements java.io.Serializable {
        this.oferentes = oferentes;
     }
    
-    public int getPkIdSubcategoria() {
+    public Integer getPkIdSubcategoria() {
         return this.pkIdSubcategoria;
     }
     
-    public void setPkIdSubcategoria(int pkIdSubcategoria) {
+    public void setPkIdSubcategoria(Integer pkIdSubcategoria) {
         this.pkIdSubcategoria = pkIdSubcategoria;
     }
     public Categoria getCategoria() {
@@ -55,13 +52,6 @@ public class Subcategoria  implements java.io.Serializable {
     
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
-    }
-    public int getFkIdCategoria() {
-        return this.fkIdCategoria;
-    }
-    
-    public void setFkIdCategoria(int fkIdCategoria) {
-        this.fkIdCategoria = fkIdCategoria;
     }
     public String getNombreSub() {
         return this.nombreSub;

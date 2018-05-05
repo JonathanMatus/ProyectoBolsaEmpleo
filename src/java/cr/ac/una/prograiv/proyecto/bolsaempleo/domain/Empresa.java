@@ -1,5 +1,5 @@
 package cr.ac.una.prograiv.proyecto.bolsaempleo.domain;
-// Generated 21/04/2018 11:42:36 AM by Hibernate Tools 4.3.1
+// Generated 04-may-2018 22:36:55 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -12,7 +12,7 @@ import java.util.Set;
 public class Empresa  implements java.io.Serializable {
 
 
-     private int pkIdEmp;
+     private Integer pkIdEmp;
      private Localizacion localizacion;
      private Usuario usuario;
      private String nombre;
@@ -27,18 +27,15 @@ public class Empresa  implements java.io.Serializable {
     }
 
 	
-    public Empresa(int pkIdEmp, Localizacion localizacion, Usuario usuario, String nombre, String correo, String telefono, int ultimoUsuario, Date fechaCambios) {
-        this.pkIdEmp = pkIdEmp;
+    public Empresa(Localizacion localizacion, String nombre, String correo, String telefono, int ultimoUsuario, Date fechaCambios) {
         this.localizacion = localizacion;
-        this.usuario = usuario;
         this.nombre = nombre;
         this.correo = correo;
         this.telefono = telefono;
         this.ultimoUsuario = ultimoUsuario;
         this.fechaCambios = fechaCambios;
     }
-    public Empresa(int pkIdEmp, Localizacion localizacion, Usuario usuario, String nombre, String correo, String telefono, String descripcion, int ultimoUsuario, Date fechaCambios, Set<Puesto> puestos) {
-       this.pkIdEmp = pkIdEmp;
+    public Empresa(Localizacion localizacion, Usuario usuario, String nombre, String correo, String telefono, String descripcion, int ultimoUsuario, Date fechaCambios, Set<Puesto> puestos) {
        this.localizacion = localizacion;
        this.usuario = usuario;
        this.nombre = nombre;
@@ -50,11 +47,11 @@ public class Empresa  implements java.io.Serializable {
        this.puestos = puestos;
     }
    
-    public int getPkIdEmp() {
+    public Integer getPkIdEmp() {
         return this.pkIdEmp;
     }
     
-    public void setPkIdEmp(int pkIdEmp) {
+    public void setPkIdEmp(Integer pkIdEmp) {
         this.pkIdEmp = pkIdEmp;
     }
     public Localizacion getLocalizacion() {
