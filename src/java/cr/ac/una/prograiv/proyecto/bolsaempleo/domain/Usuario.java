@@ -1,5 +1,5 @@
 package cr.ac.una.prograiv.proyecto.bolsaempleo.domain;
-// Generated 04-may-2018 22:36:55 by Hibernate Tools 4.3.1
+// Generated 05-may-2018 8:54:31 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -18,6 +18,8 @@ public class Usuario  implements java.io.Serializable {
      private String password;
      private Date fechaCreacion;
      private int tipo;
+     private Date fechaCambios;
+     private Integer ultimoUsuario;
      private Set<Empresa> empresas = new HashSet<Empresa>(0);
      private Set<Oferente> oferentes = new HashSet<Oferente>(0);
 
@@ -32,12 +34,14 @@ public class Usuario  implements java.io.Serializable {
         this.fechaCreacion = fechaCreacion;
         this.tipo = tipo;
     }
-    public Usuario(String usuario, String pkEmail, String password, Date fechaCreacion, int tipo, Set<Empresa> empresas, Set<Oferente> oferentes) {
+    public Usuario(String usuario, String pkEmail, String password, Date fechaCreacion, int tipo, Date fechaCambios, Integer ultimoUsuario, Set<Empresa> empresas, Set<Oferente> oferentes) {
        this.usuario = usuario;
        this.pkEmail = pkEmail;
        this.password = password;
        this.fechaCreacion = fechaCreacion;
        this.tipo = tipo;
+       this.fechaCambios = fechaCambios;
+       this.ultimoUsuario = ultimoUsuario;
        this.empresas = empresas;
        this.oferentes = oferentes;
     }
@@ -83,6 +87,20 @@ public class Usuario  implements java.io.Serializable {
     
     public void setTipo(int tipo) {
         this.tipo = tipo;
+    }
+    public Date getFechaCambios() {
+        return this.fechaCambios;
+    }
+    
+    public void setFechaCambios(Date fechaCambios) {
+        this.fechaCambios = fechaCambios;
+    }
+    public Integer getUltimoUsuario() {
+        return this.ultimoUsuario;
+    }
+    
+    public void setUltimoUsuario(Integer ultimoUsuario) {
+        this.ultimoUsuario = ultimoUsuario;
     }
     public Set<Empresa> getEmpresas() {
         return this.empresas;

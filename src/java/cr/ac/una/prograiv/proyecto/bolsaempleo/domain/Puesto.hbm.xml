@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 04-may-2018 22:36:57 by Hibernate Tools 4.3.1 -->
+<!-- Generated 05-may-2018 8:54:32 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Puesto" table="puesto" catalog="mydbproyecto" optimistic-lock="version">
         <id name="pkIdPuesto" type="java.lang.Integer">
@@ -15,20 +15,23 @@
             <column name="tipo_publicacion" length="45" not-null="true" />
         </property>
         <property name="salario" type="big_decimal">
-            <column name="salario" precision="7" not-null="true" />
+            <column name="salario" precision="10" not-null="true" />
         </property>
-        <property name="ultimoUsuario" type="int">
-            <column name="ultimoUsuario" not-null="true" />
+        <property name="ultimoUsuario" type="java.lang.Integer">
+            <column name="ultimoUsuario" />
         </property>
         <property name="fechaCambios" type="date">
-            <column name="fechaCambios" length="10" not-null="true" />
+            <column name="fechaCambios" length="10" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="nombre" length="45" not-null="true" />
         </property>
         <set name="oferentes" table="aplicacionpuesto" inverse="false" lazy="true" fetch="select">
             <key>
                 <column name="Pk_Fk_Id_puesto" not-null="true" />
             </key>
             <many-to-many entity-name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Oferente">
-                <column name="Oferente_PK_oferente" not-null="true" />
+                <column name="Oferente_Pk_Cedula" not-null="true" />
             </many-to-many>
         </set>
         <set name="subcategorias" table="subcategoriapuesto" inverse="false" lazy="true" fetch="select">

@@ -1,5 +1,5 @@
 package cr.ac.una.prograiv.proyecto.bolsaempleo.domain;
-// Generated 04-may-2018 22:36:55 by Hibernate Tools 4.3.1
+// Generated 05-may-2018 8:54:31 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -15,7 +15,7 @@ public class Subcategoria  implements java.io.Serializable {
      private Integer pkIdSubcategoria;
      private Categoria categoria;
      private String nombreSub;
-     private int ultimoUsuario;
+     private Integer ultimoUsuario;
      private Date fechaCambios;
      private Set<Puesto> puestos = new HashSet<Puesto>(0);
      private Set<Oferente> oferentes = new HashSet<Oferente>(0);
@@ -24,13 +24,11 @@ public class Subcategoria  implements java.io.Serializable {
     }
 
 	
-    public Subcategoria(Categoria categoria, String nombreSub, int ultimoUsuario, Date fechaCambios) {
+    public Subcategoria(Categoria categoria, String nombreSub) {
         this.categoria = categoria;
         this.nombreSub = nombreSub;
-        this.ultimoUsuario = ultimoUsuario;
-        this.fechaCambios = fechaCambios;
     }
-    public Subcategoria(Categoria categoria, String nombreSub, int ultimoUsuario, Date fechaCambios, Set<Puesto> puestos, Set<Oferente> oferentes) {
+    public Subcategoria(Categoria categoria, String nombreSub, Integer ultimoUsuario, Date fechaCambios, Set<Puesto> puestos, Set<Oferente> oferentes) {
        this.categoria = categoria;
        this.nombreSub = nombreSub;
        this.ultimoUsuario = ultimoUsuario;
@@ -60,11 +58,11 @@ public class Subcategoria  implements java.io.Serializable {
     public void setNombreSub(String nombreSub) {
         this.nombreSub = nombreSub;
     }
-    public int getUltimoUsuario() {
+    public Integer getUltimoUsuario() {
         return this.ultimoUsuario;
     }
     
-    public void setUltimoUsuario(int ultimoUsuario) {
+    public void setUltimoUsuario(Integer ultimoUsuario) {
         this.ultimoUsuario = ultimoUsuario;
     }
     public Date getFechaCambios() {

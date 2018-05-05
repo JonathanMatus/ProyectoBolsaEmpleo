@@ -1,5 +1,5 @@
 package cr.ac.una.prograiv.proyecto.bolsaempleo.domain;
-// Generated 04-may-2018 22:36:55 by Hibernate Tools 4.3.1
+// Generated 05-may-2018 8:54:31 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -19,7 +19,7 @@ public class Empresa  implements java.io.Serializable {
      private String correo;
      private String telefono;
      private String descripcion;
-     private int ultimoUsuario;
+     private Integer ultimoUsuario;
      private Date fechaCambios;
      private Set<Puesto> puestos = new HashSet<Puesto>(0);
 
@@ -27,15 +27,13 @@ public class Empresa  implements java.io.Serializable {
     }
 
 	
-    public Empresa(Localizacion localizacion, String nombre, String correo, String telefono, int ultimoUsuario, Date fechaCambios) {
+    public Empresa(Localizacion localizacion, String nombre, String correo, String telefono) {
         this.localizacion = localizacion;
         this.nombre = nombre;
         this.correo = correo;
         this.telefono = telefono;
-        this.ultimoUsuario = ultimoUsuario;
-        this.fechaCambios = fechaCambios;
     }
-    public Empresa(Localizacion localizacion, Usuario usuario, String nombre, String correo, String telefono, String descripcion, int ultimoUsuario, Date fechaCambios, Set<Puesto> puestos) {
+    public Empresa(Localizacion localizacion, Usuario usuario, String nombre, String correo, String telefono, String descripcion, Integer ultimoUsuario, Date fechaCambios, Set<Puesto> puestos) {
        this.localizacion = localizacion;
        this.usuario = usuario;
        this.nombre = nombre;
@@ -96,11 +94,11 @@ public class Empresa  implements java.io.Serializable {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    public int getUltimoUsuario() {
+    public Integer getUltimoUsuario() {
         return this.ultimoUsuario;
     }
     
-    public void setUltimoUsuario(int ultimoUsuario) {
+    public void setUltimoUsuario(Integer ultimoUsuario) {
         this.ultimoUsuario = ultimoUsuario;
     }
     public Date getFechaCambios() {

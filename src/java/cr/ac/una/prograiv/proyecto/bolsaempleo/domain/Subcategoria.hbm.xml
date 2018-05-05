@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 04-may-2018 22:36:57 by Hibernate Tools 4.3.1 -->
+<!-- Generated 05-may-2018 8:54:32 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Subcategoria" table="subcategoria" catalog="mydbproyecto" optimistic-lock="version">
         <id name="pkIdSubcategoria" type="java.lang.Integer">
@@ -14,11 +14,11 @@
         <property name="nombreSub" type="string">
             <column name="nombre_Sub" length="45" not-null="true" />
         </property>
-        <property name="ultimoUsuario" type="int">
-            <column name="ultimoUsuario" not-null="true" />
+        <property name="ultimoUsuario" type="java.lang.Integer">
+            <column name="ultimoUsuario" />
         </property>
         <property name="fechaCambios" type="date">
-            <column name="fechaCambios" length="10" not-null="true" />
+            <column name="fechaCambios" length="10" />
         </property>
         <set name="puestos" table="subcategoriapuesto" inverse="false" lazy="true" fetch="select">
             <key>
@@ -33,7 +33,7 @@
                 <column name="Pk_Fk_Id_subcategoria" not-null="true" />
             </key>
             <many-to-many entity-name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Oferente">
-                <column name="Oferente_PK_oferente" not-null="true" />
+                <column name="Oferente_Pk_Cedula" not-null="true" />
             </many-to-many>
         </set>
     </class>

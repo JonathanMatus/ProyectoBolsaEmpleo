@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 04-may-2018 22:36:57 by Hibernate Tools 4.3.1 -->
+<!-- Generated 05-may-2018 8:54:32 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Usuario" table="usuario" catalog="mydbproyecto" optimistic-lock="version">
         <id name="pkUsuario" type="java.lang.Integer">
@@ -22,6 +22,12 @@
         </property>
         <property name="tipo" type="int">
             <column name="tipo" not-null="true" />
+        </property>
+        <property name="fechaCambios" type="date">
+            <column name="fechaCambios" length="10" />
+        </property>
+        <property name="ultimoUsuario" type="java.lang.Integer">
+            <column name="ultimoUsuario" />
         </property>
         <set name="empresas" table="empresa" inverse="true" lazy="true" fetch="select">
             <key>

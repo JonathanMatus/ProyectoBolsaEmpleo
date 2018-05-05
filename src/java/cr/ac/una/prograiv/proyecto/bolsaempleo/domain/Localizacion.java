@@ -1,5 +1,5 @@
 package cr.ac.una.prograiv.proyecto.bolsaempleo.domain;
-// Generated 04-may-2018 22:36:55 by Hibernate Tools 4.3.1
+// Generated 05-may-2018 8:54:31 by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;

@@ -1,5 +1,5 @@
 package cr.ac.una.prograiv.proyecto.bolsaempleo.domain;
-// Generated 04-may-2018 22:36:55 by Hibernate Tools 4.3.1
+// Generated 05-may-2018 8:54:31 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -12,17 +12,16 @@ import java.util.Set;
 public class Oferente  implements java.io.Serializable {
 
 
-     private Integer pkOferente;
+     private int pkCedula;
      private Localizacion localizacion;
      private Usuario usuario;
-     private String pkCedula;
      private String nombre;
      private String apellido1;
      private String apellido2;
      private String nacionalidad;
      private String correo;
      private String residencia;
-     private int ultimoUsuario;
+     private Integer ultimoUsuario;
      private Date fechaCambios;
      private Set<Subcategoria> subcategorias = new HashSet<Subcategoria>(0);
      private Set<Puesto> puestos = new HashSet<Puesto>(0);
@@ -31,21 +30,19 @@ public class Oferente  implements java.io.Serializable {
     }
 
 	
-    public Oferente(Localizacion localizacion, String pkCedula, String nombre, String apellido1, String apellido2, String nacionalidad, String correo, int ultimoUsuario, Date fechaCambios) {
-        this.localizacion = localizacion;
+    public Oferente(int pkCedula, Localizacion localizacion, String nombre, String apellido1, String apellido2, String nacionalidad, String correo) {
         this.pkCedula = pkCedula;
+        this.localizacion = localizacion;
         this.nombre = nombre;
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;
         this.nacionalidad = nacionalidad;
         this.correo = correo;
-        this.ultimoUsuario = ultimoUsuario;
-        this.fechaCambios = fechaCambios;
     }
-    public Oferente(Localizacion localizacion, Usuario usuario, String pkCedula, String nombre, String apellido1, String apellido2, String nacionalidad, String correo, String residencia, int ultimoUsuario, Date fechaCambios, Set<Subcategoria> subcategorias, Set<Puesto> puestos) {
+    public Oferente(int pkCedula, Localizacion localizacion, Usuario usuario, String nombre, String apellido1, String apellido2, String nacionalidad, String correo, String residencia, Integer ultimoUsuario, Date fechaCambios, Set<Subcategoria> subcategorias, Set<Puesto> puestos) {
+       this.pkCedula = pkCedula;
        this.localizacion = localizacion;
        this.usuario = usuario;
-       this.pkCedula = pkCedula;
        this.nombre = nombre;
        this.apellido1 = apellido1;
        this.apellido2 = apellido2;
@@ -58,12 +55,12 @@ public class Oferente  implements java.io.Serializable {
        this.puestos = puestos;
     }
    
-    public Integer getPkOferente() {
-        return this.pkOferente;
+    public int getPkCedula() {
+        return this.pkCedula;
     }
     
-    public void setPkOferente(Integer pkOferente) {
-        this.pkOferente = pkOferente;
+    public void setPkCedula(int pkCedula) {
+        this.pkCedula = pkCedula;
     }
     public Localizacion getLocalizacion() {
         return this.localizacion;
@@ -78,13 +75,6 @@ public class Oferente  implements java.io.Serializable {
     
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
-    }
-    public String getPkCedula() {
-        return this.pkCedula;
-    }
-    
-    public void setPkCedula(String pkCedula) {
-        this.pkCedula = pkCedula;
     }
     public String getNombre() {
         return this.nombre;
@@ -128,11 +118,11 @@ public class Oferente  implements java.io.Serializable {
     public void setResidencia(String residencia) {
         this.residencia = residencia;
     }
-    public int getUltimoUsuario() {
+    public Integer getUltimoUsuario() {
         return this.ultimoUsuario;
     }
     
-    public void setUltimoUsuario(int ultimoUsuario) {
+    public void setUltimoUsuario(Integer ultimoUsuario) {
         this.ultimoUsuario = ultimoUsuario;
     }
     public Date getFechaCambios() {
