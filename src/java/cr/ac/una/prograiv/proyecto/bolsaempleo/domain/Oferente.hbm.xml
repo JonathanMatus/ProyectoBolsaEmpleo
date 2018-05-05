@@ -38,21 +38,21 @@
         <property name="fechaCambios" type="date">
             <column name="fechaCambios" length="10" />
         </property>
-        <Bag name="subcategorias" table="caracteristicasoferente" inverse="false" lazy="false" fetch="select">
+        <bag name="subcategorias" table="caracteristicasoferente" inverse="false" lazy="false" fetch="select">
             <key>
                 <column name="Oferente_Pk_Cedula" not-null="true" />
             </key>
-            <many-to-many entity-name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Subcategoria" lazy="false">
+            <many-to-many entity-name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Subcategoria" >
                 <column name="Pk_Fk_Id_subcategoria" not-null="true" />
             </many-to-many>
-        </Bag>
-        <Bag name="puestos" table="aplicacionpuesto" inverse="false" lazy="false" fetch="select">
+        </bag>
+        <bag name="puestos" table="aplicacionpuesto" inverse="false" lazy="false" fetch="select">
             <key>
                 <column name="Oferente_Pk_Cedula" not-null="true" />
             </key>
-            <many-to-many entity-name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Puesto" lazy="false">
+            <many-to-many entity-name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Puesto" >
                 <column name="Pk_Fk_Id_puesto" not-null="true" />
             </many-to-many>
-        </Bag>
+        </bag>
     </class>
 </hibernate-mapping>

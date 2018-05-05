@@ -33,13 +33,13 @@
             <key>
                 <column name="Usuario_PK_Usuario" />
             </key>
-            <one-to-many class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Empresa" lazy="false"/>
+            <one-to-many class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Empresa" />
         </bag>
         <bag name="oferentes" table="oferente" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="Usuario_PK_Usuario" />
             </key>
-            <one-to-many class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Oferente" lazy="false"/>
+            <one-to-many class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Oferente" />
         </bag>
     </class>
 </hibernate-mapping>

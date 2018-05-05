@@ -26,21 +26,21 @@
         <property name="nombre" type="string">
             <column name="nombre" length="45" not-null="true" />
         </property>
-        <Bag name="oferentes" table="aplicacionpuesto" inverse="false" lazy="false" fetch="select">
+        <bag name="oferentes" table="aplicacionpuesto" inverse="false" lazy="false" fetch="select">
             <key>
                 <column name="Pk_Fk_Id_puesto" not-null="true" />
             </key>
-            <many-to-many entity-name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Oferente" lazy="false">
+            <many-to-many entity-name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Oferente" >
                 <column name="Oferente_Pk_Cedula" not-null="true" />
             </many-to-many>
-        </Bag>
-        <Bag name="subcategorias" table="subcategoriapuesto" inverse="false" lazy="false" fetch="select">
+        </bag>
+        <bag name="subcategorias" table="subcategoriapuesto" inverse="false" lazy="false" fetch="select">
             <key>
                 <column name="Pk_Fk_Id_puesto" not-null="true" />
             </key>
-            <many-to-many entity-name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Subcategoria" lazy="false">
+            <many-to-many entity-name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Subcategoria" >
                 <column name="Pk_Fk_Id_subcategoria" not-null="true" />
             </many-to-many>
-        </Bag>
+        </bag>
     </class>
 </hibernate-mapping>

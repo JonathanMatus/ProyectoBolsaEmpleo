@@ -6,6 +6,7 @@
 package cr.ac.una.prograiv.proyecto.bolsaempleo.test;
 
 import cr.ac.una.prograiv.proyecto.bolsaempleo.bl.impl.OferenteBL;
+import cr.ac.una.prograiv.proyecto.bolsaempleo.dao.impl.CategoriaDao;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.dao.impl.UsuarioDao;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Oferente;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Usuario;
@@ -19,7 +20,7 @@ public class test {
     
     public static void main(String[] arg) {
 
-        
+        CategoriaDao cat= new CategoriaDao();
     }
 }
 

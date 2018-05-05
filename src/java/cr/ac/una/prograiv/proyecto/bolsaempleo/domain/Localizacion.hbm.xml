@@ -14,17 +14,17 @@
         <property name="longitud" type="big_decimal">
             <column name="longitud" precision="13" scale="10" not-null="true" />
         </property>
-        <Bag name="empresas" table="empresa" inverse="true" lazy="false" fetch="select">
+        <bag name="empresas" table="empresa" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="Fk_Localizacion" not-null="true" />
             </key>
-            <one-to-many class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Empresa" lazy="false"/>
-        </Bag>
-        <Bag name="oferentes" table="oferente" inverse="true" lazy="false" fetch="select">
+            <one-to-many class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Empresa" />
+        </bag>
+        <bag name="oferentes" table="oferente" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="Fk_Localizacion" not-null="true" />
             </key>
-            <one-to-many class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Oferente" lazy="false"/>
-        </Bag>
+            <one-to-many class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Oferente" />
+        </bag>
     </class>
 </hibernate-mapping>
