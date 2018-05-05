@@ -8,10 +8,10 @@
             <column name="PK_Id_Emp" />
             <generator class="identity" />
         </id>
-        <many-to-one name="localizacion" class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Localizacion" fetch="select">
+        <many-to-one name="localizacion" class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Localizacion" fetch="select" lazy="false">
             <column name="Fk_Localizacion" not-null="true" />
         </many-to-one>
-        <many-to-one name="usuario" class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Usuario" fetch="select">
+        <many-to-one name="usuario" class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Usuario" fetch="select" lazy="false">
             <column name="Usuario_PK_Usuario" />
         </many-to-one>
         <property name="nombre" type="string">
@@ -32,11 +32,11 @@
         <property name="fechaCambios" type="date">
             <column name="fechaCambios" length="10" />
         </property>
-        <set name="puestos" table="puesto" inverse="true" lazy="true" fetch="select">
+        <Bag name="puestos" table="puesto" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="Fk_id_Emp" not-null="true" />
             </key>
-            <one-to-many class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Puesto" />
-        </set>
+            <one-to-many class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Puesto" lazy="false"/>
+        </Bag>
     </class>
 </hibernate-mapping>

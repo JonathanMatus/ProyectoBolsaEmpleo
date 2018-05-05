@@ -17,11 +17,11 @@
         <property name="fechaCambios" type="date">
             <column name="fechaCambios" length="10" />
         </property>
-        <set name="subcategorias" table="subcategoria" inverse="true" lazy="true" fetch="select">
+        <Bag name="subcategorias" table="subcategoria" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="Fk_Id_categoria" not-null="true" />
             </key>
-            <one-to-many class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Subcategoria" />
-        </set>
+            <one-to-many class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Subcategoria" lazy="false"/>
+        </Bag>
     </class>
 </hibernate-mapping>

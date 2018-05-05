@@ -8,10 +8,10 @@
             <column name="Pk_Cedula" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="localizacion" class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Localizacion" fetch="select">
+        <many-to-one name="localizacion" class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Localizacion" fetch="select" lazy="false">
             <column name="Fk_Localizacion" not-null="true" />
         </many-to-one>
-        <many-to-one name="usuario" class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Usuario" fetch="select">
+        <many-to-one name="usuario" class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Usuario" fetch="select" lazy="false">
             <column name="Usuario_PK_Usuario" />
         </many-to-one>
         <property name="nombre" type="string">
@@ -38,21 +38,21 @@
         <property name="fechaCambios" type="date">
             <column name="fechaCambios" length="10" />
         </property>
-        <set name="subcategorias" table="caracteristicasoferente" inverse="false" lazy="true" fetch="select">
+        <Bag name="subcategorias" table="caracteristicasoferente" inverse="false" lazy="false" fetch="select">
             <key>
                 <column name="Oferente_Pk_Cedula" not-null="true" />
             </key>
-            <many-to-many entity-name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Subcategoria">
+            <many-to-many entity-name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Subcategoria" lazy="false">
                 <column name="Pk_Fk_Id_subcategoria" not-null="true" />
             </many-to-many>
-        </set>
-        <set name="puestos" table="aplicacionpuesto" inverse="false" lazy="true" fetch="select">
+        </Bag>
+        <Bag name="puestos" table="aplicacionpuesto" inverse="false" lazy="false" fetch="select">
             <key>
                 <column name="Oferente_Pk_Cedula" not-null="true" />
             </key>
-            <many-to-many entity-name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Puesto">
+            <many-to-many entity-name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Puesto" lazy="false">
                 <column name="Pk_Fk_Id_puesto" not-null="true" />
             </many-to-many>
-        </set>
+        </Bag>
     </class>
 </hibernate-mapping>

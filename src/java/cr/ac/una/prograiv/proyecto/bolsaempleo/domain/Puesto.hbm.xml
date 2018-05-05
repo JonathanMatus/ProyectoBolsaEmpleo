@@ -8,7 +8,7 @@
             <column name="Pk_Id_Puesto" />
             <generator class="identity" />
         </id>
-        <many-to-one name="empresa" class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Empresa" fetch="select">
+        <many-to-one name="empresa" class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Empresa" fetch="select" lazy="false">
             <column name="Fk_id_Emp" not-null="true" />
         </many-to-one>
         <property name="tipoPublicacion" type="string">
@@ -26,21 +26,21 @@
         <property name="nombre" type="string">
             <column name="nombre" length="45" not-null="true" />
         </property>
-        <set name="oferentes" table="aplicacionpuesto" inverse="false" lazy="true" fetch="select">
+        <Bag name="oferentes" table="aplicacionpuesto" inverse="false" lazy="false" fetch="select">
             <key>
                 <column name="Pk_Fk_Id_puesto" not-null="true" />
             </key>
-            <many-to-many entity-name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Oferente">
+            <many-to-many entity-name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Oferente" lazy="false">
                 <column name="Oferente_Pk_Cedula" not-null="true" />
             </many-to-many>
-        </set>
-        <set name="subcategorias" table="subcategoriapuesto" inverse="false" lazy="true" fetch="select">
+        </Bag>
+        <Bag name="subcategorias" table="subcategoriapuesto" inverse="false" lazy="false" fetch="select">
             <key>
                 <column name="Pk_Fk_Id_puesto" not-null="true" />
             </key>
-            <many-to-many entity-name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Subcategoria">
+            <many-to-many entity-name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Subcategoria" lazy="false">
                 <column name="Pk_Fk_Id_subcategoria" not-null="true" />
             </many-to-many>
-        </set>
+        </Bag>
     </class>
 </hibernate-mapping>
