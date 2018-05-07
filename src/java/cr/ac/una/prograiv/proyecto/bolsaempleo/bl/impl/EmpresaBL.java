@@ -31,7 +31,7 @@ public class EmpresaBL extends BaseBL implements IBaseBL<Empresa, Integer> {
     }
 
     @Override
-    public void delete(Integer o) {
+    public void delete(Empresa o) {
         this.getDAO(o.getClass().getName()).delete(o);
     }
 

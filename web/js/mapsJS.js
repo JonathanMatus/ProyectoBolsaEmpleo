@@ -23,13 +23,14 @@ function initMap() {
     //Map options.
     var options = {
         center: centerOfMap, //Set center.
-        zoom: 7 //The zoom value.
+        zoom: 12 //The zoom value.
     };
 
     //Create the map object.
     map = new google.maps.Map(document.getElementById('map'), options);
 
     //Listen for any clicks on the map.
+
     google.maps.event.addListener(map, 'click', function (event) {
         //Get the location that the user clicked.
         var clickedLocation = event.latLng;
@@ -63,7 +64,15 @@ function markerLocation() {
     document.getElementById('lat').value = currentLocation.lat(); //latitude
     document.getElementById('lng').value = currentLocation.lng(); //longitude
 }
-
+function handleLocationError() {
+    var infoWindow = new google.maps.InfoWindow({map: map});
+    var pos = {
+        lat: 9.941525,
+        lng: -84.094637
+    };
+    infoWindow.setPosition(pos);
+    infoWindow.setContent('Error, no ha seleccionado ningun punto en el mapa.');
+}
 
 //Load the map when the page has finished loading.
 google.maps.event.addDomListener(window, 'load', initMap);

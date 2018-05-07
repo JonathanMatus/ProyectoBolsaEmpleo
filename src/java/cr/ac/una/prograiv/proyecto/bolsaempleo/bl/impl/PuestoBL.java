@@ -32,7 +32,7 @@ public class PuestoBL extends BaseBL implements IBaseBL<Puesto, Integer>{
     }
 
     @Override
-    public void delete(Integer o) {
+    public void delete(Puesto o) {
         this.getDAO(o.getClass().getName()).delete(o);
     }
 

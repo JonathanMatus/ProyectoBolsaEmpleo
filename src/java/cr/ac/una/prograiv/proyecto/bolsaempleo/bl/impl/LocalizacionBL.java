@@ -35,7 +35,7 @@ public class LocalizacionBL extends BaseBL implements IBaseBL<Localizacion, Inte
     }
 
     @Override
-    public void delete(Integer o) {
+    public void delete(Localizacion o) {
          this.getDAO(o.getClass().getName()).delete(o);
     }
 

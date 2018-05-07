@@ -32,8 +32,12 @@
         <script src="../js/jscode.js" type="text/javascript"></script>
         <script src="../js/EmpresaJS.js" type="text/javascript"></script>
         <script src="../js/mapsJS.js" type="text/javascript"></script>
+        <script src="../js/jscode.js" type="text/javascript"></script>
+        <!-- Script's de sweet alert -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         
         
+
     </head>
     <body>
 
@@ -141,7 +145,7 @@
                                     </div>
                                     <div class="col-sm-4 form-group" id="groupCorreo">
                                         <label>Correo</label>
-                                        <input type="text" placeholder="Ingresar correo.." class="form-control" id="correo">
+                                        <input type="email" placeholder="Ingresar correo.." class="form-control" id="correo">
                                     </div>
                                     <div class="col-sm-4 form-group" id="groupTelefono">
                                         <label>Telefono</label>
@@ -165,7 +169,7 @@
                                         <input type="hidden" value="agregarEmpresa" id="empresaAction"/>
                                         <button type="button" id="registrar" class="btn btn-lg btn-info">Registrar</button>
                                     </div>
-                                    					
+
                                 </div>
                             </div>
                         </form> 

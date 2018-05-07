@@ -33,7 +33,7 @@ public class OferenteBL extends BaseBL implements IBaseBL<Oferente, Integer> {
     }
 
     @Override
-    public void delete(Integer o) {
+    public void delete(Oferente o) {
         this.getDAO(o.getClass().getName()).delete(o);
 
     }

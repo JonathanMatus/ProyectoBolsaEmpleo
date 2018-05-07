@@ -31,7 +31,7 @@ public class SubcategoriaBL extends BaseBL implements IBaseBL<Subcategoria, Inte
     }
 
     @Override
-    public void delete(Integer o) {
+    public void delete(Subcategoria o) {
         this.getDAO(o.getClass().getName()).delete(o);
     }
 

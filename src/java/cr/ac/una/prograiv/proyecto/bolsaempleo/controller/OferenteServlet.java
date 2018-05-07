@@ -99,6 +99,10 @@ public class OferenteServlet extends HttpServlet {
                     ofeBL.save(ofe);
    
                     break;
+                   case "consultarOferentes":
+                    json = new Gson().toJson(ofeBL.findAll());
+                    out.print(json);
+                    break;
 
                 default:
                     out.print("E~No se indico la acción que se desea realizare");

@@ -16,7 +16,7 @@ public interface IBaseBL<T,K> {
 
     public abstract T merge(T o);
 
-    public abstract void delete(K o);
+    public abstract void delete(T o);
     
     //k ES LA LLAVE PRIMARIA DE LA BASE DE DATOS
     
