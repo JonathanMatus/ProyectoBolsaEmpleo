@@ -32,7 +32,7 @@ public class test {
 //        System.out.print(json.get(i).getNombre());
         LocalizacionBL lpBL = new LocalizacionBL();
         Localizacion l1 = lpBL.findById(2);
-        Empresa l = new Empresa(l1, "linux", "correo", "84944026");
+        Empresa l = pBL.findById(1);
         String json = new Gson().toJson(l);
         System.out.print(json);
     }

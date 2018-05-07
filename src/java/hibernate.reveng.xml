@@ -40,15 +40,15 @@ made subject to such option by the copyright holder.
 Contributor(s):
 -->
 <hibernate-reverse-engineering>
-  <schema-selection match-catalog="mydbproyecto"/>
-  <table-filter match-name="oferente"/>
+  <schema-selection match-catalog="mydbProyecto"/>
+  <table-filter match-name="subcategoriapuesto"/>
+  <table-filter match-name="localizacion"/>
   <table-filter match-name="usuario"/>
-  <table-filter match-name="empresa"/>
+  <table-filter match-name="aplicacionpuesto"/>
+  <table-filter match-name="oferente"/>
+  <table-filter match-name="puesto"/>
   <table-filter match-name="subcategoria"/>
+  <table-filter match-name="empresa"/>
   <table-filter match-name="categoria"/>
   <table-filter match-name="caracteristicasoferente"/>
-  <table-filter match-name="localizacion"/>
-  <table-filter match-name="subcategoriapuesto"/>
-  <table-filter match-name="aplicacionpuesto"/>
-  <table-filter match-name="puesto"/>
 </hibernate-reverse-engineering>

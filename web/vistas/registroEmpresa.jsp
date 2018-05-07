@@ -12,7 +12,7 @@
         <title>Registro Empresa</title>
 
         <script async defer
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxlbEC78ZOZXfM5bKqfyp0BPfgq5m5p4g&callback=initMap">
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpZr8nWrS89projtLnNso9aRGkA12PXhY&callback=initMap">
         </script>
         <!--CSS Lbrary -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">

@@ -8,8 +8,10 @@ package cr.ac.una.prograiv.proyecto.bolsaempleo.controller;
 import com.google.gson.Gson;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.bl.impl.LocalizacionBL;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.bl.impl.OferenteBL;
+import cr.ac.una.prograiv.proyecto.bolsaempleo.bl.impl.UsuarioBL;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Localizacion;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Oferente;
+import cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
@@ -49,6 +51,8 @@ public class OferenteServlet extends HttpServlet {
             Oferente ofe = new Oferente();
             Localizacion l = new Localizacion();
             Localizacion l1 = new Localizacion();
+            Usuario u = new Usuario();
+            UsuarioBL ubl = new UsuarioBL();
 
             //Se crea el objeto de la logica de negocio
             OferenteBL ofeBL = new OferenteBL();
@@ -75,43 +79,25 @@ public class OferenteServlet extends HttpServlet {
                     ofe.setNacionalidad(request.getParameter("nacionalidad"));
                     ofe.setCorreo(request.getParameter("correo"));
                     ofe.setResidencia(request.getParameter("residencia"));
-     
-                    //--------------------castear a bigDecimal--------------------------------
                     DecimalFormatSymbols symbols = new DecimalFormatSymbols();
                     symbols.setGroupingSeparator(',');
                     symbols.setDecimalSeparator('.');
                     String pattern = "#,##0.0#";
                     DecimalFormat decimalFormat = new DecimalFormat(pattern, symbols);
                     decimalFormat.setParseBigDecimal(true);
+                    BigDecimal latitud = (BigDecimal) decimalFormat.parse(request.getParameter("latitud"));
+                    l.setLatitud(latitud);
+                    BigDecimal longitud = (BigDecimal) decimalFormat.parse(request.getParameter("longitud"));
+                    l.setLongitud(longitud);
 
-                    // parse the string
-                    BigDecimal bigDecimal1 = (BigDecimal) decimalFormat.parse(request.getParameter("latitud"));
-                    l.setLatitud(bigDecimal1);
-                    BigDecimal bigDecimal2 = (BigDecimal) decimalFormat.parse(request.getParameter("longitud"));
-                    l.setLongitud(bigDecimal2);
-                    // ----------------------------------------------------------------------------
+                    lpBL.save(l);
+                    List<Localizacion> list = lpBL.findAll(Localizacion.class.getName());
 
-                    //Guardar Correctamente en la base de datos
-                    if (accion.equals("agregarOferente")) { //es insertar personas
-                        //Se guarda el objeto
-                        lpBL.save(l);
-                        List<Localizacion> list = lpBL.findAll(Localizacion.class.getName());
+                    l1 = lpBL.findById(list.get(list.size() - 1).getPkIdLocalizacion());
+                   ofe.setLocalizacion(l1.getPkIdLocalizacion());
 
-                        l1 = lpBL.findById(list.get(list.size() - 1).getPkIdLocalizacion());
-                        ofe.setLocalizacion(l1);
-                        ofeBL.save(ofe);
-
-                        //Se imprime la respuesta con el response
-                        out.print("C~La empresa fue ingresada correctamente");
-
-                    } else {//es modificar persona
-                        //Se guarda el objeto
-                        ofeBL.merge(ofe);
-
-                        //Se imprime la respuesta con el response
-                        out.print("C~La Empresa fue modificada correctamente");
-                    }
-
+                    ofeBL.save(ofe);
+   
                     break;
 
                 default:
@@ -125,7 +111,6 @@ public class OferenteServlet extends HttpServlet {
             out.print("E~" + e.getMessage());
         }
     }
-    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

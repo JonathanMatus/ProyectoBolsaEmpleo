@@ -10,7 +10,7 @@ $(function () {
         datatable = $('#tablaEmpresas1').DataTable({
         responsive: true
     });
-        consultarEmpresas(1);
+        consultarEmpresas();
     });
     
   
@@ -21,14 +21,7 @@ $(function () {
     });
 
     //agrega los eventos las capas necesarias
-    $("#cancelar").click(function () {
-        limpiarForm();
-        $("#myModalFormulario").modal("hide");
-    });
-
-    $("#btMostarForm").click(function () {
-        limpiarForm();
-    });
+    
 
 
 });
@@ -59,7 +52,7 @@ function consultarEmpresas() {
         success: function (data) { //si todo esta correcto en la respuesta del ajax, la respuesta queda en el data
             dibujarTabla(data);
             // se oculta el modal esta funcion se encuentra en el utils.js
-            ocultarModal("myModal");
+           
 
         },
         type: 'POST',
@@ -75,15 +68,15 @@ function dibujarTabla(dataJson) {
 
         rowData = dataJson[i];
         datatable.row.add([
-            rowData.pkCedula,
             rowData.nombre,
-            rowData.apellido1,
-            rowData.apellido2,
-            rowData.fecNacimiento,
-            '<button type="button" class="btn btn-default btn-xs" aria-label="Left Align" onclick="consultarPersonaByID(' + rowData.pkCedula + ');">' +
+            rowData.correo,
+            rowData.telefono,
+            rowData.descripcion,
+            rowData.localizacion,
+            '<button type="button" class="btn btn-default btn-xs" aria-label="Left Align" onclick="consultarEmpresaByID(' + rowData.pkIdEmp + ');">' +
                     '<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>' +
                     '</button>' +
-                    '<button type="button" class="btn btn-default btn-xs" aria-label="Left Align" onclick="eliminarPersona(' + rowData.pkCedula + ');">' +
+                    '<button type="button" class="btn btn-default btn-xs" aria-label="Left Align" onclick="eliminarEmpresa(' + rowData.pkIdEmp + ');">' +
                     '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>' +
                     '</button>'
         ]).draw(false);

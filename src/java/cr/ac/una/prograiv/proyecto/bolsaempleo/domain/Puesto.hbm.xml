@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 05-may-2018 8:54:32 by Hibernate Tools 4.3.1 -->
+<!-- Generated 05-may-2018 16:26:21 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Puesto" table="puesto" catalog="mydbproyecto" optimistic-lock="version">
         <id name="pkIdPuesto" type="java.lang.Integer">
             <column name="Pk_Id_Puesto" />
             <generator class="identity" />
         </id>
-        <many-to-one name="empresa" class="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Empresa" fetch="select" lazy="false">
+        <property name="empresa" type="java.lang.Integer" >
             <column name="Fk_id_Emp" not-null="true" />
-        </many-to-one>
+        </property>
         <property name="tipoPublicacion" type="string">
             <column name="tipo_publicacion" length="45" not-null="true" />
         </property>
@@ -26,21 +26,6 @@
         <property name="nombre" type="string">
             <column name="nombre" length="45" not-null="true" />
         </property>
-        <bag name="oferentes" table="aplicacionpuesto" inverse="false" lazy="false" fetch="select">
-            <key>
-                <column name="Pk_Fk_Id_puesto" not-null="true" />
-            </key>
-            <many-to-many entity-name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Oferente" >
-                <column name="Oferente_Pk_Cedula" not-null="true" />
-            </many-to-many>
-        </bag>
-        <bag name="subcategorias" table="subcategoriapuesto" inverse="false" lazy="false" fetch="select">
-            <key>
-                <column name="Pk_Fk_Id_puesto" not-null="true" />
-            </key>
-            <many-to-many entity-name="cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Subcategoria" >
-                <column name="Pk_Fk_Id_subcategoria" not-null="true" />
-            </many-to-many>
-        </bag>
+        
     </class>
 </hibernate-mapping>

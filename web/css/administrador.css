@@ -115,7 +115,26 @@
     padding-left: 15px;
   }
   .contenedorSideBar{
-      position: relative;
-      height: 250px;
+      position: absolute;
+      height: 220px;
+      z-index: 1;
   }
-  
+  /*------------------------------------------------------------*/
+  /*--------------------------tablas------------------------------*/
+  @media (min-width: 1330px) {
+      
+      #empresa1{
+          margin-left: 50px;
+          position: relative;
+          height: 200px;
+          max-height: 1000px;
+          border:2px solid black;
+      }
+  }
+  #empresa1{
+          margin-left: 50px;
+          position: relative;
+          height: 500px;
+          max-height: 1000px;
+         
+      }
