@@ -30,10 +30,19 @@
         <script src="../js/jscode.js" type="text/javascript"></script>
         <link href="../css/administrador.css" rel="stylesheet" type="text/css"/>
         <script src="../js/Administrador.js" type="text/javascript"></script>
+        
+        <!-- ********************************************************** -->
+        <!-- Script's de datatable -->
+        <!-- ********************************************************** -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/r-2.2.1/datatables.min.css"/>
+
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/r-2.2.1/datatables.min.js"></script>
+           <!-- Script's de sweet alert -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     </head>
     <body>
+
 
         <div class="container encabezado">
             <img src="../img/Logo.png" alt="Bolsa Empleo CR" class="img-responsive img-rounded"/>
@@ -140,7 +149,7 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Empresa<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a>
                                 <ul class="dropdown-menu forAnimate" role="menu">
-                                    <li><button type="button" id="listaEmpresas">lista empresas</button></li>
+                                    <li><a type="button" id="listaEmpresas">lista empresas</a></li>
                                     <li><a  id="listaEmpresasSinUsu">lista empresas en espera</a></li>
 
                                 </ul>
@@ -166,7 +175,7 @@
 
         </div>
         <div id="empresa1">
-            <table class="table table-hover table-condensed" id="tablaEmpresas1" width="100%">
+            <table class="table table-hover table-condensed" id="tablaEmpresas1" width="100%" >
                 <thead>
                     <tr>
                         <td>Nombre</td>

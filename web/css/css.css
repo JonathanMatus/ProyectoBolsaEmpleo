@@ -257,3 +257,6 @@ display: none;
 #registrar{
     margin-left: 15px;
 }
+#salir,#txtBusqueda{
+    display: none;
+}

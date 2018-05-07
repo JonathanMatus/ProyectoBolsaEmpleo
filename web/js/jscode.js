@@ -4,11 +4,6 @@
  * and open the template in the editor.
  */
 
-$(document).ready(function () {
-    $("#salir").hide();
-    $("#txtBusqueda").hide();
-});
-
 
 
 $(document).ready(function ()

@@ -48,8 +48,7 @@ public class EmpresaServlet extends HttpServlet {
             //Se crea el objeto Persona
             Empresa p = new Empresa();
             Localizacion l = new Localizacion();
-            Localizacion l1 = new Localizacion();
-
+            
             //Se crea el objeto de la logica de negocio
             EmpresaBL pBL = new EmpresaBL();
             LocalizacionBL lpBL = new LocalizacionBL();
@@ -66,6 +65,17 @@ public class EmpresaServlet extends HttpServlet {
             //**********************************************************************
             String accion = request.getParameter("accion");
             switch (accion) {
+                case "eliminarEmpresa":
+
+                    p.setPkIdEmp(Integer.parseInt(request.getParameter("idEmpresa")));
+
+                    //Se elimina el objeto
+                    pBL.delete(p);
+
+                    //Se imprime la respuesta con el response
+                    out.print("La empresa fue eliminada correctamente");
+
+                    break;
                 case "consultarEmpresas":
                     json = new Gson().toJson(pBL.findAll(Empresa.class.getName()));
                     out.print(json);
@@ -99,8 +109,8 @@ public class EmpresaServlet extends HttpServlet {
                         lpBL.save(l);
                         List<Localizacion> list = lpBL.findAll(Localizacion.class.getName());
 
-                        l1 = lpBL.findById(list.get(list.size() - 1).getPkIdLocalizacion());
-                        p.setLocalizacion(l1.getPkIdLocalizacion());
+                        l = lpBL.findById(list.get(list.size() - 1).getPkIdLocalizacion());
+                        p.setLocalizacion(l.getPkIdLocalizacion());
                         pBL.save(p);
 
                         //Se imprime la respuesta con el response

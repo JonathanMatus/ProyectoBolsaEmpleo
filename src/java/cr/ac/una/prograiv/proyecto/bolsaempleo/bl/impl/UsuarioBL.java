@@ -34,7 +34,7 @@ public class UsuarioBL extends BaseBL implements IBaseBL<Usuario, Integer> {
     }
 
     @Override
-    public void delete(Integer o) {
+    public void delete(Usuario o) {
         this.getDAO(o.getClass().getName()).delete(o);
     }
 

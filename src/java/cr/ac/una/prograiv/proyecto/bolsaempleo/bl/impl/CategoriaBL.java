@@ -36,7 +36,7 @@ public class CategoriaBL  extends BaseBL implements IBaseBL<Categoria, Integer> 
     }
 
     @Override
-    public void delete(Integer o) {
+    public void delete(Categoria o) {
         this.getDAO(o.getClass().getName()).delete(o);
 
     }
