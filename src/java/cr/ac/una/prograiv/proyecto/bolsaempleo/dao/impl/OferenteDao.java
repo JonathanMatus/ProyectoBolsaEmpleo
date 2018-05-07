@@ -15,7 +15,8 @@ import org.hibernate.HibernateException;
  *
  * @author patei
  */
-public class OferenteDao extends HibernateUtil implements IBaseDAO<Oferente, Integer>{
+public class OferenteDao extends HibernateUtil implements IBaseDAO<Oferente, Integer> {
+
     public void save(Oferente o) {
 
         try {
@@ -36,7 +37,7 @@ public class OferenteDao extends HibernateUtil implements IBaseDAO<Oferente, Int
             iniciaOperacion();
             o = (Oferente) getSesion().merge(o);
             getTransac().commit();
-        } catch(HibernateException he)  {
+        } catch (HibernateException he) {
             manejaExcepcion(he);
             throw he;
         } finally {
@@ -47,17 +48,17 @@ public class OferenteDao extends HibernateUtil implements IBaseDAO<Oferente, Int
 
     @Override
     public void delete(Oferente o) {
-       try {
+        try {
             iniciaOperacion();
             getSesion().delete(o);
             getTransac().commit();
-        } catch(HibernateException he)  {
+        } catch (HibernateException he) {
             manejaExcepcion(he);
             throw he;
         } finally {
             getSesion().close();
         }
-       
+
     }
 
     @Override
@@ -85,4 +86,10 @@ public class OferenteDao extends HibernateUtil implements IBaseDAO<Oferente, Int
         }
         return listaOferentes;
     }
+
+//    public Long ultimoID() {
+//            iniciaOperacion();
+//             return  (Long)getSesion().createQuery("select MAX(last_insert_id(PK_Id_localizacion)) from Localizacion").uniqueResult();
+//    }
+
 }

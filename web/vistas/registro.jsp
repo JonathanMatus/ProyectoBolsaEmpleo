@@ -174,7 +174,7 @@
                                 </div>
 
                                 <div class=" form-group">
-                                    
+                                     <input type="hidden" value="agregarOferente" id="oferenteAction"/>
                                     <button type="button" id="registrar" class="btn btn-lg btn-info">Registrar</button>
                                 </div>					
 

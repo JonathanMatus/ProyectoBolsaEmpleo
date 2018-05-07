@@ -12,7 +12,7 @@
         <title>Registro Empresa</title>
 
         <script async defer
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxlbEC78ZOZXfM5bKqfyp0BPfgq5m5p4g&callback=initMap">
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpZr8nWrS89projtLnNso9aRGkA12PXhY&callback=initMap">
         </script>
         <!--CSS Lbrary -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -32,8 +32,13 @@
         <script src="../js/jscode.js" type="text/javascript"></script>
         <script src="../js/EmpresaJS.js" type="text/javascript"></script>
         <script src="../js/mapsJS.js" type="text/javascript"></script>
+<<<<<<< HEAD
         <!-- Script's de sweet alert -->
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+=======
+        
+        
+>>>>>>> 22efe9fa5a9c23e77a78e2519953f2172ce73dfd
     </head>
     <body>
 

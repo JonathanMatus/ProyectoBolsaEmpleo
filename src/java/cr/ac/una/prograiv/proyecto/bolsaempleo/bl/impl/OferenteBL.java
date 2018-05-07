@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package cr.ac.una.prograiv.proyecto.bolsaempleo.bl.impl;
 
 import cr.ac.una.prograiv.proyecto.bolsaempleo.bl.BaseBL;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.bl.IBaseBL;
+import cr.ac.una.prograiv.proyecto.bolsaempleo.dao.impl.OferenteDao;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Oferente;
 import java.util.List;
 
 /**
- * 
+ *
  * @author Sammy Guergachi <sguergachi at gmail.com>
  */
 public class OferenteBL extends BaseBL implements IBaseBL<Oferente, Integer> {
@@ -21,7 +21,6 @@ public class OferenteBL extends BaseBL implements IBaseBL<Oferente, Integer> {
         super();
     }
 
-    
     @Override
     public void save(Oferente o) {
         this.getDAO(o.getClass().getName()).save(o);
@@ -29,7 +28,7 @@ public class OferenteBL extends BaseBL implements IBaseBL<Oferente, Integer> {
 
     @Override
     public Oferente merge(Oferente o) {
-            return (Oferente) this.getDAO(o.getClass().getName()).merge(o);
+        return (Oferente) this.getDAO(o.getClass().getName()).merge(o);
 
     }
 
@@ -47,7 +46,12 @@ public class OferenteBL extends BaseBL implements IBaseBL<Oferente, Integer> {
 
     @Override
     public List<Oferente> findAll(String className) {
-         return this.getDAO(className).findAll();
+        return this.getDAO(className).findAll();
     }
+
+//    public Long ultimoID() {
+//        OferenteDao ofeDAO = new OferenteDao();
+//        return (Long) ofeDAO.ultimoID();
+//    }
 
 }
