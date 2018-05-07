@@ -32,13 +32,12 @@
         <script src="../js/jscode.js" type="text/javascript"></script>
         <script src="../js/EmpresaJS.js" type="text/javascript"></script>
         <script src="../js/mapsJS.js" type="text/javascript"></script>
-<<<<<<< HEAD
+        <script src="../js/jscode.js" type="text/javascript"></script>
         <!-- Script's de sweet alert -->
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-=======
         
         
->>>>>>> 22efe9fa5a9c23e77a78e2519953f2172ce73dfd
+
     </head>
     <body>
 

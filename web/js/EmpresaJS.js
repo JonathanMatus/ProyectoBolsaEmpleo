@@ -107,6 +107,9 @@ function validar() {
         $("#groupCorreo").addClass("has-error");
         validacion = false;
     }
+    else{
+       validacion=validateEmail("correo");
+    }
     if ($("#telefono").val() === "") {
         $("#groupTelefono").addClass("has-error");
         validacion = false;
