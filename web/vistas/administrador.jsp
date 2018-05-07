@@ -29,6 +29,9 @@
         <link href="../css/css.css" rel="stylesheet" type="text/css"/>
         <script src="../js/jscode.js" type="text/javascript"></script>
         <link href="../css/administrador.css" rel="stylesheet" type="text/css"/>
+        <script src="../js/Administrador.js" type="text/javascript"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/r-2.2.1/datatables.min.js"></script>
+
     </head>
     <body>
 
@@ -137,42 +140,44 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Empresa<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a>
                                 <ul class="dropdown-menu forAnimate" role="menu">
-                                    <li><a href="#" id="listaEmpresas">lista empresas</a></li>
-                                    <li><a href="#" id="listaEmpresasSinUsu">lista empresas en espera</a></li>
+                                    <li><button type="button" id="listaEmpresas">lista empresas</button></li>
+                                    <li><a  id="listaEmpresasSinUsu">lista empresas en espera</a></li>
 
                                 </ul>
                             </li>                               
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Oferente<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a>
-                                <ul class="dropdown-menu forAnimate" role="menu">
-                                    <li><a href="#" id="listaEmpresas">lista Oferentes</a></li>
-                                    <li><a href="#" id="listaEmpresasSinUsu">lista oferentes en espera</a></li>
+                                <ul class="dropdown-menu forAnimate" rlistaEmpresasole="menu">
+                                    <li><a href="#" id="listaOferentes">lista Oferentes</a></li>
+                                    <li><a href="#" id="listaOferentesSinUsu">lista oferentes en espera</a></li>
                                 </ul>
                             </li>          
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Puesto<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-briefcase"></span></a>
                                 <ul class="dropdown-menu forAnimate" role="menu">
-                                    <li><a href="#" id="listaEmpresas">lista puestos</a></li>
+                                    <li><a href="#" id="listaPuestos">lista puestos</a></li>
 
                                 </ul>
-                            </li>                             </ul>
+                            </li>    
+                        </ul>
                     </div>
                 </div>
             </nav>
-            <div id="empresa1">
-                <table class="table table-hover table-condensed" id="tablaEmpresas1" width="100%">
-                    <thead>
-                        <tr>
-                            <td>Nombre</td>
-                            <td>correo</td>
-                            <td>Telefono</td>
-                            <td>Descripcion</td>
-                            <td>localizacion</td>
-                            <td>Accion</td>
-                        </tr>
-                    </thead>
-                </table>
-            </div>
+
+        </div>
+        <div id="empresa1">
+            <table class="table table-hover table-condensed" id="tablaEmpresas1" width="100%">
+                <thead>
+                    <tr>
+                        <td>Nombre</td>
+                        <td>correo</td>
+                        <td>Telefono</td>
+                        <td>Descripcion</td>
+                        <td>localizacion</td>
+                        <td>Accion</td>
+                    </tr>
+                </thead>
+            </table>
         </div>
         <!--footer-->
         <div >

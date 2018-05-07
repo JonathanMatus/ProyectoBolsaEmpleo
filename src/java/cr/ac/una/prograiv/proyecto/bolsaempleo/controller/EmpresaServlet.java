@@ -100,7 +100,7 @@ public class EmpresaServlet extends HttpServlet {
                         List<Localizacion> list = lpBL.findAll(Localizacion.class.getName());
 
                         l1 = lpBL.findById(list.get(list.size() - 1).getPkIdLocalizacion());
-                        p.setLocalizacion(l1);
+                        p.setLocalizacion(l1.getPkIdLocalizacion());
                         pBL.save(p);
 
                         //Se imprime la respuesta con el response
