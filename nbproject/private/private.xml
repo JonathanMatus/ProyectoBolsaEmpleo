@@ -3,8 +3,34 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/ProyectoBolsaEmpleo/ProyectoBolsaEmpleo/web/PaginaPrincipal.jsp</file>
-            <file>file:/C:/wamp64/www/ProyectoBolsaEmpleo/ProyectoBolsaEmpleo/web/css/css.css</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/src/java/cr/ac/una/prograiv/proyecto/bolsaempleo/controller/OferenteServlet.java</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/src/java/cr/ac/una/prograiv/proyecto/bolsaempleo/controller/EmpresaServlet.java</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/web/js/OferenteJS.js</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/src/java/cr/ac/una/prograiv/proyecto/bolsaempleo/controller/UsuarioServlet.java</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/src/java/cr/ac/una/prograiv/proyecto/bolsaempleo/domain/Puesto.hbm.xml</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/web/js/EmpresaJS.js</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/web/vistas/acerca.jsp</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/src/java/cr/ac/una/prograiv/proyecto/bolsaempleo/domain/Oferente.hbm.xml</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/web/vistas/registro.jsp</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/src/java/cr/ac/una/prograiv/proyecto/bolsaempleo/domain/Categoria.java</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/web/vistas/administrador.jsp</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/web/css/css.css</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/web/vistas/contacto.jsp</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/src/java/hibernate.cfg.xml</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/src/java/cr/ac/una/prograiv/proyecto/bolsaempleo/dao/IBaseDAO.java</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/src/java/cr/ac/una/prograiv/proyecto/bolsaempleo/domain/Subcategoria.hbm.xml</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/web/vistas/registroEmpresa.jsp</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/src/java/cr/ac/una/prograiv/proyecto/bolsaempleo/domain/Empresa.hbm.xml</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/src/java/cr/ac/una/prograiv/proyecto/bolsaempleo/test/test.java</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/src/java/cr/ac/una/prograiv/proyecto/bolsaempleo/controller/PuestoServlet.java</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/src/java/cr/ac/una/prograiv/proyecto/bolsaempleo/domain/Usuario.hbm.xml</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/web/PaginaPrincipal.jsp</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/web/css/administrador.css</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/web/js/Administrador.js</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/web/js/jscode.js</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/src/java/cr/ac/una/prograiv/proyecto/bolsaempleo/domain/Localizacion.hbm.xml</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/src/java/cr/ac/una/prograiv/proyecto/bolsaempleo/domain/Categoria.hbm.xml</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/src/java/cr/ac/una/prograiv/proyecto/bolsaempleo/dao/impl/CategoriaDao.java</file>
         </group>
     </open-files>
 </project-private>
