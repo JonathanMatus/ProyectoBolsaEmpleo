@@ -26,7 +26,7 @@
         <!--google fonts -->
         <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
        <script type="text/javascript" src='http://maps.google.com/maps/api/js?sensor=false&libraries=places&key=AIzaSyAwELjEzE3b3KXFZF7bS8AR1JTJSj6_e6o'></script>
-
+       <link href="../css/cssRegistro.css" rel="stylesheet" type="text/css"/>
         <link href="../css/css.css" rel="stylesheet" type="text/css"/>
         <script src="../js/jscode.js" type="text/javascript"></script>
         <script src="../js/OferenteJS.js" type="text/javascript"></script>
@@ -128,8 +128,8 @@
         <!----------------------------Formulario------------------------>
         <div class="content fondo">
             <div class="container">
-                <h1 class="well">Registro</h1>
-                <div class="col-lg-12 well">
+                <h1 class="well" id="titulo">Registro</h1>
+                <div class="col-lg-12 well" id="cam-form">
                     <div class="row">
                         <form>
                             <div class="col-sm-12">
