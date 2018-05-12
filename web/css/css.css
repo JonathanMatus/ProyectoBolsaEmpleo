@@ -51,7 +51,7 @@ and open the template in the editor.
 /* Style the links inside the navigation bar */
 .topnav a,.topnav input, .topnav button {
     float: left;
-    color: #f2f2f2;
+    color: #797979;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -60,13 +60,13 @@ and open the template in the editor.
 
 /* Change the color of links on hover */
 .topnav a:hover {
-    background-color: #ddd;
+    background-color: #34495E  ;
     color: black;
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
-    background-color: #4CAF50;
+    background-color: #16A085    ;
     color: white;
 }
 
@@ -79,7 +79,7 @@ and open the template in the editor.
     width: 25px;
 }
 #registro{
-    background-color: #4CAF50;
+    background-color: #16A085;
 }
 #registro:hover{
     background-color: #ddd;

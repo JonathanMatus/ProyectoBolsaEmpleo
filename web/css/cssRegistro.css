@@ -1,0 +1,26 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12/05/2018, 02:04:27 PM
+    Author     : Sammy Guergachi <sguergachi at gmail.com>
+*/
+
+
+#titulo{
+    
+    background: #424949;
+}
+
+h1{
+   color: white;
+}
+#cam-form{
+    background: #515A5A;
+}
+
+#registrar{
+    background: #16A085;
+}

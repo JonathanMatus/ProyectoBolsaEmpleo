@@ -48,7 +48,8 @@
                 <a id="registro" href="vistas/registro.jsp"> <img src="img/registro.png" alt="registro" class="img-responsive"/></a>
             </div>
         </div>
-       
+        <br>
+        <br>
         <!---------------------Carrousel-------------------->
         <div class="container carouselCont">
 
@@ -155,8 +156,10 @@
                 </div>
             </div>
         </div>
+        <br>
+        <br>
         <!--footer-->
-        <div >
+        <div  id="pie">
             <footer id="myFooter">
                 <div class="container footer">
                     <h4>Links:</h4>
