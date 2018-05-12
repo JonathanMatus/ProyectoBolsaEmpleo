@@ -42,7 +42,7 @@
     <body>
 
         <div class="container encabezado">
-            <img src="../img/Logo.png" alt="Bolsa Empleo CR" class="img-responsive img-rounded"/>
+            <img src="../img/logo_1.png" alt="Bolsa Empleo CR" class="img-responsive img-rounded"/>
         </div>
         <!-- responsive top nav -->
         <div class="topnav">
@@ -148,7 +148,8 @@
                                         <input type="email" placeholder="Ingresar correo.." class="form-control" id="correo">
                                     </div>
                                     <div class="col-sm-4 form-group" id="groupTelefono">
-                                        <label>Telefono</label>
+                                        <label>Telefon
+                                            o</label>
                                         <input type="text" placeholder="Ingresar numero telefono.." class="form-control" id="telefono">
                                     </div>
                                 </div>					

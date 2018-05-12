@@ -69,8 +69,25 @@ public class OferenteServlet extends HttpServlet {
             //se consulta cual accion se desea realizar
             //**********************************************************************
             String accion = request.getParameter("accion");
-            switch (accion) {
+            switch (accion) {         
+                  case "eliminarOferente":
+
+                    ofe.setPkCedula(Integer.parseInt(request.getParameter("idOferente")));
+
+                    //Se elimina el objeto
+                    ofeBL.delete(ofe);
+
+                    //Se imprime la respuesta con el response
+                    out.print("El oferente fue eliminada correctamente");
+
+                    break;
+                    
+                    case "consultarOferente":
+                    json = new Gson().toJson(ofeBL.findAll(Oferente.class.getName()));
+                    out.print(json);
+                    break;
                 case "agregarOferente":
+                case "modificarEmpresa":
                     //Se llena el objeto con los datos enviados por AJAX por el metodo post
                     ofe.setPkCedula(Integer.parseInt(request.getParameter("cedula")));
                     ofe.setNombre(request.getParameter("nombre"));
@@ -89,19 +106,23 @@ public class OferenteServlet extends HttpServlet {
                     l.setLatitud(latitud);
                     BigDecimal longitud = (BigDecimal) decimalFormat.parse(request.getParameter("longitud"));
                     l.setLongitud(longitud);
+                    if (accion.equals("agregarOferente")) {
+                        lpBL.save(l);
+                        List<Localizacion> list = lpBL.findAll(Localizacion.class.getName());
 
-                    lpBL.save(l);
-                    List<Localizacion> list = lpBL.findAll(Localizacion.class.getName());
+                        l1 = lpBL.findById(list.get(list.size() - 1).getPkIdLocalizacion());
+                        ofe.setLocalizacion(l1.getPkIdLocalizacion());
+                        ofeBL.save(ofe);
+                        //Se imprime la respuesta con el response
+                        out.print("C~El oferente fue ingresado correctamente");
+                    } else {//es modificar persona
+                        //Se guarda el objeto
+                        ofeBL.merge(ofe);
 
-                    l1 = lpBL.findById(list.get(list.size() - 1).getPkIdLocalizacion());
-                   ofe.setLocalizacion(l1.getPkIdLocalizacion());
+                        //Se imprime la respuesta con el response
+                        out.print("C~El oferente fue modificada correctamente");
+                    }
 
-                    ofeBL.save(ofe);
-   
-                    break;
-                   case "consultarOferentes":
-                    json = new Gson().toJson(ofeBL.findAll());
-                    out.print(json);
                     break;
 
                 default:

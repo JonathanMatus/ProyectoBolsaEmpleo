@@ -45,7 +45,7 @@
 
 
         <div class="container encabezado">
-            <img src="../img/Logo.png" alt="Bolsa Empleo CR" class="img-responsive img-rounded"/>
+            <img src="../img/logo_1.png" alt="Bolsa Empleo CR" class="img-responsive img-rounded"/>
         </div>
         <!-- responsive top nav -->
         <div class="topnav">
@@ -156,8 +156,8 @@
                             </li>                               
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Oferente<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a>
-                                <ul class="dropdown-menu forAnimate" rlistaEmpresasole="menu">
-                                    <li><a href="OferentesAdministrador.jsp" id="listaOferentes">lista Oferentes</a></li>
+                                <ul class="dropdown-menu forAnimate" role="menu">
+                                    <li><a href="#" id="listaOferentes">lista Oferentes</a></li>
                                     <li><a href="#" id="listaOferentesSinUsu">lista oferentes en espera</a></li>
                                 </ul>
                             </li>          
@@ -188,6 +188,26 @@
                 </thead>
             </table>
         </div>
+        
+        
+        <div id="oferente1">
+            <table class="table table-hover table-condensed" id="tablaOferente1" width="100%" >
+                <thead>
+                    <tr>
+                        <td>Cedula</td>
+                        <td>Nombre</td>
+                        <td>Primer apellido</td>
+                        <td>Segundo Apellido</td>
+                        <td>Nacionalidad</td>
+                        <td>correo</td>
+                        <td>residencia</td>
+                        <td>Accion</td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        
+        
         <!--footer-->
         <div >
             <footer id="myFooter">

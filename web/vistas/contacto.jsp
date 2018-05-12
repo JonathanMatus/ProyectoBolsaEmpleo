@@ -28,7 +28,7 @@
     </head>
     <body>
         <div class="container encabezado">
-            <img src="../img/Logo.png" alt="Bolsa Empleo CR" class="img-responsive img-rounded"/>
+            <img src="../img/logo_1.png" alt="Bolsa Empleo CR" class="img-responsive img-rounded"/>
         </div>
         <!-- responsive top nav -->
         <div class="topnav">

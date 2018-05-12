@@ -4,50 +4,42 @@
  * and open the template in the editor.
  */
 
-//$(document).ready(function () {
-//    $('#tablaEmpresas1').hide();
-//});
+$(document).ready(function () {
+    mostrarOferentes();
+     mostrarEmpresas();
+});
 var datatable;
-$(function () {
 
-    //Genera el datapicker
-//    $('#tablaEmpresas1').hide();
-    $('#listaEmpresas').click(function () {
 
-        datatable = $('#tablaEmpresas1').DataTable({
+function mostrarOferentes(){
+    
+      $('#listaOferentes').click(function () {
+        datatable = $('#tablaOferente1').DataTable({
             responsive: true,
             "destroy": true
         });
 
+        $('#tablaOferente1').show();
+        consultarOferente();    
+    });
+    
+};
+function mostrarEmpresas(){
+   
+    $('#listaEmpresas').click(function () {
+        datatable = $('#tablaEmpresas1').DataTable({
+            responsive: true,
+            "destroy": true
+        });
         $('#tablaEmpresas1').show();
-        consultarEmpresas();
+        consultarEmpresas();     
 
-    });
-
-
-
-    //agrega los eventos las capas necesarias
-    $("#enviar").click(function () {
-        enviar();
-    });
-
-    //agrega los eventos las capas necesarias
+    }); 
+ };
 
 
 
-});
 
-//******************************************************************************
-//Se ejecuta cuando la página esta completamente cargada
-//******************************************************************************
-
-
-
-//******************************************************************************
-//******************************************************************************
-//metodos para consultas el listado de las personas
-//******************************************************************************
-//******************************************************************************
 
 function consultarEmpresas() {
     swal({
@@ -68,6 +60,34 @@ function consultarEmpresas() {
         },
         success: function (data) { //si todo esta correcto en la respuesta del ajax, la respuesta queda en el data
             dibujarTabla(data);
+            // se oculta el modal esta funcion se encuentra en el utils.js
+            swal("Correcto!", "La informacion ha sido cargada correctamente.", "success");
+
+        },
+        type: 'POST',
+        dataType: "json"
+    });
+}
+
+function consultarOferente() {
+    swal({
+        title: "Espere por favor..",
+        text: "Consultando la información de oferentes en la base de datos",
+        icon: "info",
+        buttons: false
+    });
+
+    //Se envia la información por ajax
+    $.ajax({
+        url: 'OferenteServlet',
+        data: {
+            accion: "consultarOferente"
+        },
+        error: function () { //si existe un error en la respuesta del ajax
+            swal("Error", "Se presento un error a la hora de cargar la información de los oferentes en la base de datos", "error");
+        },
+        success: function (data) { //si todo esta correcto en la respuesta del ajax, la respuesta queda en el data
+            dibujarTablaOferente(data);
             // se oculta el modal esta funcion se encuentra en el utils.js
             swal("Correcto!", "La informacion ha sido cargada correctamente.", "success");
 
@@ -102,62 +122,34 @@ function dibujarTabla(dataJson) {
 
 }
 
+function dibujarTablaOferente(dataJson) {
+//    //limpia la información que tiene la tabla
+    var rowData;
+    datatable.clear();
+    for (var i = 0; i < dataJson.length; i++) {
 
-
-//******************************************************************************
-//******************************************************************************
-//El metodo enviar funciona tanto para el insertar como para el modificar
-//******************************************************************************
-//******************************************************************************
-
-function enviar() {
-    if (validar()) {
-//Se envia la información por ajax
-        $.ajax({
-            url: 'PersonasServlet',
-            data: {
-                accion: $("#personasAction").val(),
-                cedula: $("#cedula").val(),
-                nombre: $("#nombre").val(),
-                apellido1: $("#apellido1").val(),
-                apellido2: $("#apellido2").val(),
-                fechaNacimiento: $("#dpFechaNacimiento").data('date'),
-                sexo: $("#sexo").val(),
-                observaciones: $("#observaciones").val()
-            },
-            error: function () { //si existe un error en la respuesta del ajax
-                mostrarMensaje("alert alert-danger", "Se genero un error, contacte al administrador (Error del ajax)", "Error!");
-            },
-            success: function (data) { //si todo esta correcto en la respuesta del ajax, la respuesta queda en el data
-                var respuestaTxt = data.substring(2);
-                var tipoRespuesta = data.substring(0, 2);
-                if (tipoRespuesta === "C~") {
-                    mostrarMensaje("alert alert-success", respuestaTxt, "Correcto!");
-                    $("#myModalFormulario").modal("hide");
-                    consultarPersonas();
-                } else {
-                    if (tipoRespuesta === "E~") {
-                        mostrarMensaje("alert alert-danger", respuestaTxt, "Error!");
-                    } else {
-                        mostrarMensaje("alert alert-danger", "Se genero un error, contacte al administrador", "Error!");
-                    }
-                }
-
-            },
-            type: 'POST'
-        });
-    } else {
-        mostrarMensaje("alert alert-danger", "Debe digitar los campos del formulario", "Error!");
+        rowData = dataJson[i];
+        datatable.row.add([
+            rowData.pkCedula,
+            rowData.nombre,
+            rowData.apellido1,
+            rowData.apellido2,
+            rowData.nacionalidad,
+            rowData.correo,
+            rowData.residencia,
+            '<button type="button" class="btn btn-default btn-xs" aria-label="Left Align" onclick="consultarEmpresaByID(' + rowData.pkCedula + ');">' +
+                    '<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>' +
+                    '</button>' +
+                    '<button type="button" class="btn btn-default btn-xs" aria-label="Left Align" onclick="eliminarOferente(' + rowData.pkCedula + ');">' +
+                    '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>' +
+                    '</button>'
+        ]).draw(false);
     }
+
+
 }
 
 
-
-//******************************************************************************
-//******************************************************************************
-//metodos para eliminar personas
-//******************************************************************************
-//******************************************************************************
 
 function eliminarEmpresa(idEmpresa) {
 
@@ -194,6 +186,57 @@ function eliminarEmpresa(idEmpresa) {
                             } else {
                                 swal("Correcto", "El dato ha sido eliminado con exito!", "success")
                                         .then(consultarEmpresas());
+                            }
+                        },
+                        type: 'POST',
+                        dataType: "text"
+                    });
+
+                } else {
+                    swal("Cancelado", "Se cancelo con exito!", "info");
+                }
+            });
+
+}
+
+
+
+
+function eliminarOferente(idOferente) {
+
+    swal({
+        title: "Esta seguro?",
+        text: "Una vez eliminado, no se podra recuperar el dato eliminado!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    })
+            .then((willDelete) => {
+                if (willDelete) {
+                    swal({
+                        title: "Espere por favor..",
+                        text: "Eliminando la información del oferente de la base de datos",
+                        icon: "info",
+                        buttons: false
+                    });
+                    $.ajax({
+                        url: 'OferenteServlet',
+                        data: {
+                            accion: "eliminarOferente",
+                            idOferente: idOferente
+                        },
+                        error: function () { //si existe un error en la respuesta del ajax
+                            swal("Resultado acción", "Se presento un error, contactar al administador", "error");
+                        },
+                        success: function (data) { //si todo esta correcto en la respuesta del ajax, la respuesta queda en el data
+                            // se cambia el mensaje del modal por la respuesta del ajax
+                            var respuestaTxt = data.substring(2);
+                            var tipoRespuesta = data.substring(0, 2);
+                            if (tipoRespuesta === "E~") {
+                                swal("Resultado acción", respuestaTxt, "info");
+                            } else {
+                                swal("Correcto", "El dato ha sido eliminado con exito!", "success")
+                                        .then(consultarOferente());
                             }
                         },
                         type: 'POST',
@@ -256,14 +299,4 @@ function eliminarEmpresa(idEmpresa) {
 //        dataType: "json"
 //    });
 //}
-
-
-//******************************************************************************
-//******************************************************************************
-
-
-
-//******************************************************************************
-//******************************************************************************
-
 

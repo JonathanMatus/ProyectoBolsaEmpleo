@@ -10,10 +10,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Registro</title>
-        <script async defer
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxlbEC78ZOZXfM5bKqfyp0BPfgq5m5p4g&callback=initMap">
-        </script>
         
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpZr8nWrS89projtLnNso9aRGkA12PXhY&callback=initMap">
+        </script>
         <!--CSS Lbrary -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -27,15 +27,19 @@
 
         <!--google fonts -->
         <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+
         <link href="../css/css.css" rel="stylesheet" type="text/css"/>
         <script src="../js/jscode.js" type="text/javascript"></script>
-        
         <script src="../js/OferenteJS.js" type="text/javascript"></script>
         <script src="../js/mapsJS.js" type="text/javascript"></script>
+        <script src="../js/jscode.js" type="text/javascript"></script>
+        <!-- Script's de sweet alert -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        
     </head>
     <body>
         <div class="container encabezado">
-            <img src="../img/Logo.png" alt="Bolsa Empleo CR" class="img-responsive img-rounded"/>
+            <img src="../img/logo_1.png" alt="Bolsa Empleo CR" class="img-responsive img-rounded"/>
         </div>
         <!-- responsive top nav -->
         <div class="topnav">
@@ -174,7 +178,7 @@
                                 </div>
 
                                 <div class=" form-group">
-                                     <input type="hidden" value="agregarOferente" id="oferenteAction"/>
+                                    <input type="hidden" value="agregarOferente" id="oferenteAction"/>
                                     <button type="button" id="registrar" class="btn btn-lg btn-info">Registrar</button>
                                 </div>					
 

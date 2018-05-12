@@ -46,14 +46,14 @@ function enviar() {
                 var respuestaTxt = data.substring(2);
                 var tipoRespuesta = data.substring(0, 2);
                 if (tipoRespuesta === "C~") {
-                    mostrarMensaje("alert alert-success", respuestaTxt, "Correcto!");
-                   
-                  
+                    swal("Correcto!", respuestaTxt, "success");
+
+
                 } else {
                     if (tipoRespuesta === "E~") {
-                        mostrarMensaje("alert alert-danger", respuestaTxt, "Error!");
+                        swal("Error!", respuestaTxt, "error");
                     } else {
-                        mostrarMensaje("alert alert-danger", "Se genero un error, contacte al administrador", "Error!");
+                        swal("Error!", "Se genero un error, contacte al administrador", "error");
                     }
                 }
 
@@ -70,28 +70,48 @@ function validar() {
     //Elimina estilo de error en los css
     //notese que es sobre el grupo que contienen el input
     
+    $("#groupCedula").removeClass("has-error");
     $("#groupNombre").removeClass("has-error");
-    $("#groupCorreo").removeClass("has-error");
     $("#groupTelefono").removeClass("has-error");
-    $("#groupDescripcion").removeClass("has-error");
+    $("#groupApellido1").removeClass("has-error");
+    $("#groupApellido2").removeClass("has-error");
+    $("#groupNacionalidad").removeClass("has-error");
+    $("#groupCorreo").removeClass("has-error");
+    $("#groupResidencia").removeClass("has-error");
     
     
+    if ($("#cedula").val() === "") {
+        $("#groupCedula").addClass("has-error");
+        validacion = false;
+    }
     if ($("#nombre").val() === "") {
         $("#groupNombre").addClass("has-error");
         validacion = false;
     }
-    if ($("#correo").val() === "") {
+     if ($("#priApellido").val() === "") {
+        $("#groupApellido1").addClass("has-error");
+        validacion = false;
+    }
+    if ($("#segApellido").val() === "") {
+        $("#groupApellido2").addClass("has-error");
+        validacion = false;
+    }
+    if ($("#nacionalidad").val() === "") {
+        $("#groupNacionalidad").addClass("has-error");
+        validacion = false;
+    }
+     if ($("#correo").val() === "") {
         $("#groupCorreo").addClass("has-error");
         validacion = false;
     }
-    if ($("#telefono").val() === "") {
-        $("#groupTelefono").addClass("has-error");
+     if ($("#residencia").val() === "") {
+        $("#groupResidencia").addClass("has-error");
         validacion = false;
     }
-    if ($("#descripcion").data('date') === "") {
-        $("#groupDescripcion").addClass("has-error");
-        validacion = false;
-    }
+//     if ($("#nacionalidad").data('date') === "") {
+//        $("#groupNacionalidad").addClass("has-error");
+//        validacion = false;
+//    }
 
     return validacion;
 }
