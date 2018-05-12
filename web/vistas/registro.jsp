@@ -172,8 +172,8 @@
 
                                 <div class="col-sm-12 form-group">
                                     <fieldset>
-                                        <legend>Dirección</legend>
-                                        <div id="us2" style="height: 400px;" class="col-md-12"></div>
+                                        <label>Dirección</label>
+                                        <div id="map"  class="col-md-12"></div>
                                         <div class="row">
                                             <div id="coordenadas">
                                             <div class="form-group col-md-6">

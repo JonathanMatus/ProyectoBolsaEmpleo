@@ -11,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Registro Empresa</title>
 
-     
+
         <!--CSS Lbrary -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -31,7 +31,7 @@
         <link href="../css/css.css" rel="stylesheet" type="text/css"/>
         <script src="../js/jscode.js" type="text/javascript"></script>
         <script src="../js/EmpresaJS.js" type="text/javascript"></script>
-       
+
         <script src="../js/jscode.js" type="text/javascript"></script>
         <script src="../js/locationpicker.jquery.js" type="text/javascript"></script>
         <!-- Script's de sweet alert -->
@@ -141,57 +141,65 @@
                         <form>
                             <div class="col-sm-12">
                                 <div class="row">
-                                    <div class="col-sm-4 form-group" id="groupNombre">
-                                        <label>Nombre</label>
-                                        <input type="text" placeholder="Ingresar Nombre.." class="form-control" id="nombre">
-                                    </div>
-                                    <div class="col-sm-4 form-group" id="groupCorreo">
-                                        <label>Correo</label>
-                                        <input type="email" placeholder="Ingresar correo.." class="form-control" id="correo">
-                                    </div>
-                                    <div class="col-sm-4 form-group" id="groupTelefono">
-                                        <label>Telefono</label>
-                                        <input type="text" placeholder="Ingresar numero telefono.." class="form-control" id="telefono">
-                                    </div>
-                                     <div class="col-sm-6 form-group" id="groupResidencia">
-                                        <label>Residencia</label>
-                                        <input type="text" placeholder="Ingresar Residencia.." class="form-control" id="residencia">
-                                    </div>
+
+
+
                                 </div>					
                                 <div class="row">
 
-                                    <div class="col-sm-12 form-group"><label>Descripcion</label></div>
-                                    <div class="col-sm-4 form-group" id="groupDescripcion">
-
-                                        <textarea placeholder="Ingresar descripcion.." rows="9" class="form-control" id="descripcion"></textarea>
+                                    <div class="col-sm-4 form-group" id="groupResidencia">
+                                        <label>Residencia</label>
+                                        <input type="text" placeholder="Ingresar Residencia.." class="form-control" id="residencia">
+                                        <div class=" form-group" id="groupNombre">
+                                            <label>Nombre</label>
+                                            <input type="text" placeholder="Ingresar Nombre.." class="form-control" id="nombre">
+                                        </div>
+                                        <div class=" form-group" id="groupCorreo">
+                                            <label>Correo</label>
+                                            <input type="email" placeholder="Ingresar correo.." class="form-control" id="correo">
+                                        </div>
+                                        <div class=" form-group" id="groupTelefono">
+                                            <label>Telefono</label>
+                                            <input type="text" placeholder="Ingresar numero telefono.." class="form-control" id="telefono">
+                                        </div>
                                     </div>
-                                    <div class="col-sm-8 form-group">
+                                    <div class="col-sm-4 form-group" id="groupDescripcion">
+                                        <label>Descripción</label>
+                                        <textarea placeholder="Ingresar descripción.." rows="11" class="form-control" id="descripcion"></textarea>
+                                    </div>
 
-                                        <div class="col-sm-12 form-group">
-                                            <fieldset>
-                                                <legend>Dirección</legend>
-                                                <div id="us2" style="height: 400px;" class="col-md-12"></div>
-                                                <div class="row">
-                                                    <div id="coordenadas">
-                                                        <div class="form-group col-md-6">
-                                                            Lat.: <input type="text" class="form-control" readonly="yes" id="lat" />
-                                                        </div>
-                                                        <div class="form-group col-md-6">
-                                                            Long.: <input type="text" class="form-control" readonly="yes" id="lng"/>
-                                                        </div>
+                                    <div class="col-sm-4 form-group" id="groupDireccion">
+                                        <fieldset>
+                                            <label>Dirección</label>
+                                            <div id="us2" ></div>
+                                            <div class="row">
+                                                <div id="coordenadas">
+                                                    <div class="form-group col-md-6">
+                                                        Lat.: <input type="text" class="form-control" readonly="yes" id="lat" />
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        Long.: <input type="text" class="form-control" readonly="yes" id="lng"/>
                                                     </div>
                                                 </div>
+                                            </div>
 
-                                            </fieldset>
-                                        </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <div class="row">
 
 
-                                        <div class=" form-group">
-                                            <input type="hidden" value="agregarEmpresa" id="empresaAction"/>
-                                            <button type="button" id="registrar" class="btn btn-lg btn-info">Registrar</button>
-                                        </div>
+                                    <div class="col-sm-6 form-group">
 
                                     </div>
+
+
+                                    <div class=" form-group">
+                                        <input type="hidden" value="agregarEmpresa" id="empresaAction"/>
+                                        <button type="button" id="registrar" class="btn btn-lg btn-info">Registrar</button>
+                                    </div>
+
+
                                 </div>
                         </form> 
                     </div>
@@ -214,24 +222,24 @@
                     </div></div>
             </footer></div>
     </body>
-           <script> 
-    $('#us2').locationpicker({
-        location: {
-            latitude: 9.9280694,
-            longitude: -84.09072459999999
-        },
-        radius: 0,
-        inputBinding: {
-            latitudeInput: $('#lat'),
-            longitudeInput: $('#lng'),
-            radiusInput: $('#us2-radius'),
-            locationNameInput: $('#residencia')
-        },
-        enableAutocomplete: true,
-        autocompleteOptions: {
-        types: ['(cities)']
-    }
-    });
-    //Para mas información:    http://logicify.github.io/jquery-locationpicker-plugin/     
-</script>
+    <script>
+        $('#us2').locationpicker({
+            location: {
+                latitude: 9.9280694,
+                longitude: -84.09072459999999
+            },
+            radius: 0,
+            inputBinding: {
+                latitudeInput: $('#lat'),
+                longitudeInput: $('#lng'),
+                radiusInput: $('#us2-radius'),
+                locationNameInput: $('#residencia')
+            },
+            enableAutocomplete: true,
+            autocompleteOptions: {
+                types: ['(cities)']
+            }
+        });
+        //Para mas información:    http://logicify.github.io/jquery-locationpicker-plugin/     
+    </script>
 </html>

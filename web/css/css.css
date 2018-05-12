@@ -247,12 +247,17 @@ and open the template in the editor.
 }
 /*----------------------------------------------------*/
 #map {
-    height: 188px;
+    height: 400px;
     width: 100%;
     border: 2px solid grey;
 }
+#us2{
+    height: 230px;
+    width: 100%;
+    border: 2px solid grey; 
+}
 #coordenadas{
-display: none;
+    display: none;
 }
 #registrar{
     margin-left: 15px;
