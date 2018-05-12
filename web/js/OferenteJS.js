@@ -7,14 +7,14 @@
 
 $(function () {
     //Genera el datapicker
-   
+
     //agrega los eventos las capas necesarias
     $("#registrar").click(function () {
         enviar();
     });
 
     //agrega los eventos las capas necesarias
-   
+
 
 
 });
@@ -23,6 +23,12 @@ $(function () {
 function enviar() {
     if (validar()) {
 //Se envia la información por ajax
+        swal({
+            title: "Espere por favor..",
+            text: "Ingresando la información de la empresa en la base de datos",
+            icon: "info",
+            buttons: false
+        });
         $.ajax({
             url: 'OferenteServlet',
             data: {
@@ -37,10 +43,10 @@ function enviar() {
                 residencia: $("#residencia").val(),
                 latitud: $("#lat").val(),
                 longitud: $("#lng").val()
-              
+
             },
             error: function () { //si existe un error en la respuesta del ajax
-                mostrarMensaje("alert alert-danger", "Se genero un error, contacte al administrador (Error del ajax)", "Error!");
+                swal("Error!", "Se genero un error, contacte al administrador (Error del ajax)", "error");
             },
             success: function (data) { //si todo esta correcto en la respuesta del ajax, la respuesta queda en el data
                 var respuestaTxt = data.substring(2);
@@ -61,7 +67,7 @@ function enviar() {
             type: 'POST'
         });
     } else {
-        mostrarMensaje("alert alert-danger", "Debe digitar los campos del formulario", "Error!");
+        swal("Error!", "Debe digitar los campos del formulario y seleccionar la ubicación", "error");
     }
 }
 
@@ -69,7 +75,7 @@ function validar() {
     var validacion = true;
     //Elimina estilo de error en los css
     //notese que es sobre el grupo que contienen el input
-    
+
     $("#groupCedula").removeClass("has-error");
     $("#groupNombre").removeClass("has-error");
     $("#groupTelefono").removeClass("has-error");
@@ -78,8 +84,8 @@ function validar() {
     $("#groupNacionalidad").removeClass("has-error");
     $("#groupCorreo").removeClass("has-error");
     $("#groupResidencia").removeClass("has-error");
-    
-    
+
+
     if ($("#cedula").val() === "") {
         $("#groupCedula").addClass("has-error");
         validacion = false;
@@ -88,7 +94,7 @@ function validar() {
         $("#groupNombre").addClass("has-error");
         validacion = false;
     }
-     if ($("#priApellido").val() === "") {
+    if ($("#priApellido").val() === "") {
         $("#groupApellido1").addClass("has-error");
         validacion = false;
     }
@@ -100,11 +106,11 @@ function validar() {
         $("#groupNacionalidad").addClass("has-error");
         validacion = false;
     }
-     if ($("#correo").val() === "") {
+    if ($("#correo").val() === "") {
         $("#groupCorreo").addClass("has-error");
         validacion = false;
     }
-     if ($("#residencia").val() === "") {
+    if ($("#residencia").val() === "") {
         $("#groupResidencia").addClass("has-error");
         validacion = false;
     }

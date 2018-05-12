@@ -12,7 +12,7 @@ nav.sidebar, .main{
 }
 
 @media (min-width: 765px) {
-    #empresa1{
+    #empresa1,#oferente1{
         margin-left: 50px;
 
         position: relative;
@@ -149,6 +149,7 @@ section{
     max-height: 1000px;
 
 }
-#tablaEmpresas1{
+
+#tablaEmpresas1,#tablaOferente1{
     display: none;
 }

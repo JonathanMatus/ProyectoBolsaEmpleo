@@ -30,14 +30,14 @@
         <script src="../js/jscode.js" type="text/javascript"></script>
         <link href="../css/administrador.css" rel="stylesheet" type="text/css"/>
         <script src="../js/Administrador.js" type="text/javascript"></script>
-        
+
         <!-- ********************************************************** -->
         <!-- Script's de datatable -->
         <!-- ********************************************************** -->
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/r-2.2.1/datatables.min.css"/>
 
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/r-2.2.1/datatables.min.js"></script>
-           <!-- Script's de sweet alert -->
+        <!-- Script's de sweet alert -->
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     </head>
@@ -187,10 +187,6 @@
                     </tr>
                 </thead>
             </table>
-        </div>
-        
-        
-        <div id="oferente1">
             <table class="table table-hover table-condensed" id="tablaOferente1" width="100%" >
                 <thead>
                     <tr>
@@ -206,8 +202,11 @@
                 </thead>
             </table>
         </div>
-        
-        
+
+
+
+
+
         <!--footer-->
         <div >
             <footer id="myFooter">

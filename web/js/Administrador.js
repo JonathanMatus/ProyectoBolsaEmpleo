@@ -4,41 +4,43 @@
  * and open the template in the editor.
  */
 
-$(document).ready(function () {
-    mostrarOferentes();
-     mostrarEmpresas();
-});
-var datatable;
+//$(document).ready(function () {
+//    mostrarOferentes();
+//     mostrarEmpresas();
+//});
 
-
-function mostrarOferentes(){
-    
-      $('#listaOferentes').click(function () {
+var datatable=null;
+$(function () {
+    $('#listaOferentes').click(function () {
+        ocultarTablas();
         datatable = $('#tablaOferente1').DataTable({
             responsive: true,
             "destroy": true
         });
 
         $('#tablaOferente1').show();
-        consultarOferente();    
+        consultarOferente();
+
     });
-    
-};
-function mostrarEmpresas(){
-   
     $('#listaEmpresas').click(function () {
+        ocultarTablas();
         datatable = $('#tablaEmpresas1').DataTable({
             responsive: true,
             "destroy": true
         });
         $('#tablaEmpresas1').show();
-        consultarEmpresas();     
+        consultarEmpresas();
 
-    }); 
- };
-
-
-
+    });
+});
+function ocultarTablas() {
+    $('#tablaOferente1').hide();
+    $('#tablaEmpresas1').hide();
+    if (datatable !== null)
+        datatable.destroy();
+//    if (datatable)
+//    datatable.clear();
+}
 
 
 function consultarEmpresas() {
