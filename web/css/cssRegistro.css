@@ -8,23 +8,21 @@ and open the template in the editor.
     Author     : Sammy Guergachi <sguergachi at gmail.com>
 */
 
-.fondo{
-    background-color: #1C1C1C;
-}
+
 #titulo{
     
-    background: #424949;
+    background: #16A085;
 }
 
 h1{
    color: white;
 }
-#cam-form{
+/*#cam-form{
     background: #515A5A;
 }
 label{
     color:white;
 }
-#registrar{
+*/#registrar{
     background: #16A085;
 }

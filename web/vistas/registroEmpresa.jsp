@@ -29,7 +29,7 @@
 
 
         <link href="../css/css.css" rel="stylesheet" type="text/css"/>
-        <script src="../js/jscode.js" type="text/javascript"></script>
+        <link href="../css/cssRegistro.css" rel="stylesheet" type="text/css"/>
         <script src="../js/EmpresaJS.js" type="text/javascript"></script>
 
         <script src="../js/jscode.js" type="text/javascript"></script>
@@ -135,7 +135,7 @@
         <div class="content fondo">
 
             <div class="container">
-                <h1 class="well">Registro Empresa</h1>
+                <h1 class="well" id="titulo">Registro Empresa</h1>
                 <div class="col-lg-12 well">
                     <div class="row">
                         <form>
