@@ -217,7 +217,7 @@
             </footer></div>
     </body>
         <script> 
-    $('#us2').locationpicker({
+    $('#map').locationpicker({
         location: {
             latitude: 9.9280694,
             longitude: -84.09072459999999
