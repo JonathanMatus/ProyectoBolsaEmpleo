@@ -11,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Registro</title>
 
-    
+
         <!--CSS Lbrary -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -25,16 +25,16 @@
 
         <!--google fonts -->
         <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
-       <script type="text/javascript" src='http://maps.google.com/maps/api/js?sensor=false&libraries=places&key=AIzaSyAwELjEzE3b3KXFZF7bS8AR1JTJSj6_e6o'></script>
-       <link href="../css/cssRegistro.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src='http://maps.google.com/maps/api/js?sensor=false&libraries=places&key=AIzaSyAwELjEzE3b3KXFZF7bS8AR1JTJSj6_e6o'></script>
+        <link href="../css/cssRegistro.css" rel="stylesheet" type="text/css"/>
         <link href="../css/css.css" rel="stylesheet" type="text/css"/>
         <script src="../js/jscode.js" type="text/javascript"></script>
         <script src="../js/OferenteJS.js" type="text/javascript"></script>
         <script src="../js/mapsJS.js" type="text/javascript"></script>
-        <script src="../js/jscode.js" type="text/javascript"></script>
+       
         <!-- Script's de sweet alert -->
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        
+
         <script src="../js/locationpicker.jquery.js" type="text/javascript"></script>
     </head>
     <body>
@@ -173,16 +173,16 @@
                                 <div class="col-sm-12 form-group">
                                     <fieldset>
                                         <label>Dirección</label>
-                                        <div id="map"  class="col-md-12"></div>
+                                        <div id="us2"  class="col-md-12"></div>
                                         <div class="row">
                                             <div id="coordenadas">
-                                            <div class="form-group col-md-6">
-                                                Lat.: <input type="text" class="form-control" readonly="yes" id="lat" />
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                Long.: <input type="text" class="form-control" readonly="yes" id="lng"/>
-                                            </div>
+                                                <div class="form-group col-md-6">
+                                                    Lat.: <input type="text" class="form-control" readonly="yes" id="lat" />
                                                 </div>
+                                                <div class="form-group col-md-6">
+                                                    Long.: <input type="text" class="form-control" readonly="yes" id="lng"/>
+                                                </div>
+                                            </div>
                                         </div>
 
                                     </fieldset>
@@ -217,7 +217,7 @@
             </footer></div>
     </body>
         <script> 
-    $('#map').locationpicker({
+    $('#us2').locationpicker({
         location: {
             latitude: 9.9280694,
             longitude: -84.09072459999999
