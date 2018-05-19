@@ -20,6 +20,7 @@ public class Usuario  implements java.io.Serializable {
      private int tipo;
      private Date fechaCambios;
      private Integer ultimoUsuario;
+    
 
 
     public Usuario() {
@@ -100,7 +101,7 @@ public class Usuario  implements java.io.Serializable {
     public void setUltimoUsuario(Integer ultimoUsuario) {
         this.ultimoUsuario = ultimoUsuario;
     }
-   
+
 
 }
 

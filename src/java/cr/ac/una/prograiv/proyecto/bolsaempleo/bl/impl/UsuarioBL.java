@@ -48,5 +48,15 @@ public class UsuarioBL extends BaseBL implements IBaseBL<Usuario, Integer> {
         return this.getDAO(className).findAll();
 
     }
+    
+       public Usuario findByNombreUsuario(String name){
+        List<Usuario> usuarios = findAll(Usuario.class.getName());
+        for (Usuario nom: usuarios) {
+            if(nom.getUsuario().equals(name)){
+                return nom;
+            }
+        }
+        return null;
+    }
 
 }
