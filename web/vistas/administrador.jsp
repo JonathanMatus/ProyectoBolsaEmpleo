@@ -174,53 +174,59 @@
             </nav>
 
         </div>
-        <div id="empresa1">
-            <table class="table table-hover table-condensed" id="tablaEmpresas1" width="100%" >
-                <thead>
-                    <tr>
-                        <td>Nombre</td>
-                        <td>correo</td>
-                        <td>Telefono</td>
-                        <td>Descripcion</td>
-                        <td>localizacion</td>
-                        <td>Accion</td>
-                    </tr>
-                </thead>
-            </table>
-            <table class="table table-hover table-condensed" id="tablaOferente1" width="100%" >
-                <thead>
-                    <tr>
-                        <td>Cedula</td>
-                        <td>Nombre</td>
-                        <td>Primer apellido</td>
-                        <td>Segundo Apellido</td>
-                        <td>Nacionalidad</td>
-                        <td>correo</td>
-                        <td>residencia</td>
-                        <td>Accion</td>
-                    </tr>
-                </thead>
-            </table>
+        <div class="container-fluid">
+            <div id="empresa1">
+                <table class="table table-hover table-condensed" id="tablaEmpresas1" width="100%" >
+                    <thead>
+                        <tr>
+                            <td>Nombre</td>
+                            <td>correo</td>
+                            <td>Telefono</td>
+                            <td>Descripcion</td>
+                            <td>localizacion</td>
+                            <td>Accion</td>
+                        </tr>
+                    </thead>
+                </table>
+                <table class="table table-hover table-condensed" id="tablaOferente1" width="100%" >
+                    <thead>
+                        <tr>
+                            <td>Cedula</td>
+                            <td>Nombre</td>
+                            <td>Primer apellido</td>
+                            <td>Segundo Apellido</td>
+                            <td>Nacionalidad</td>
+                            <td>correo</td>
+                            <td>residencia</td>
+                            <td>Accion</td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
         </div>
+<!--footer-->
+        <div class="navbar navbar-default navbar-static-bottom navbar-fixed-bottom">
+            <div class="container-fluid footer " id="myFooter">
+                <div class="row">
+                    <div class="footer-1">
+                        <div class="col-sm-2 col-md-2 col-lg-2"></div>
+                        <div class="col-sm-4 col-md-4 col-lg-4">
+                            <ul>
 
-
-
-
-
-        <!--footer-->
-        <div >
-            <footer id="myFooter">
-                <div class="container footer">
-                    <ul>
-
-                        <li><a href="contacto.jsp">Contacto</a></li>
-                        <li><a href="acerca.jsp">Sobre nosotros</a></li>
-                        <li><a href="registroEmpresa.jsp">Empresa</a></li>
-                    </ul>
-
-                    <div class="footer-copyright">
+                                <li><a href="contacto.jsp">Contacto</a></li>
+                                <li><a href="acerca.jsp">Sobre nosotros</a></li>
+                                <li><a href="registroEmpresa.jsp">Empresa</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6"></div>
+                    </div>
+                   
+                    <div class="copyright col-sm-12">
                         <p>© 2018 Copyright Bolsa de Empleo CR </p>
-                    </div></div>
-            </footer></div>
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
     </body>
 </html>

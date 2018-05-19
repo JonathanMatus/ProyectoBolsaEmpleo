@@ -9,8 +9,9 @@
 //     mostrarEmpresas();
 //});
 
-var datatable=null;
+var datatable = null;
 $(function () {
+    
     $('#listaOferentes').click(function () {
         ocultarTablas();
         datatable = $('#tablaOferente1').DataTable({
@@ -33,6 +34,9 @@ $(function () {
 
     });
 });
+
+
+
 function ocultarTablas() {
     $('#tablaOferente1').hide();
     $('#tablaEmpresas1').hide();
@@ -186,8 +190,8 @@ function eliminarEmpresa(idEmpresa) {
                             if (tipoRespuesta === "E~") {
                                 swal("Resultado acción", respuestaTxt, "info");
                             } else {
-                                swal("Correcto", "El dato ha sido eliminado con exito!", "success")
-                                        .then(consultarEmpresas());
+                                swal("Correcto", "El dato ha sido eliminado con exito!", "success").then(setTimeout(consultarEmpresas(), 3000));
+
                             }
                         },
                         type: 'POST',

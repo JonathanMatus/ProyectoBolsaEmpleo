@@ -133,14 +133,15 @@ section{
 
     #empresa1{
         margin-left: 50px;
-        margin-top: 120px;
+/*        margin-top: 120px;*/
         position: relative;
         height: auto;
         min-height: 220px;
-        max-height: 1000px;
+      
 
     }
 }
+
 #empresa1{
     margin-left: 50px;
     position: relative;
@@ -149,7 +150,14 @@ section{
     max-height: 1000px;
 
 }
+.datos{
+   
+    height: available;
+}
 
 #tablaEmpresas1,#tablaOferente1{
     display: none;
+}
+body{
+    padding-bottom: 150px;
 }

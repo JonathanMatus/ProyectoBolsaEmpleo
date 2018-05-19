@@ -4,6 +4,23 @@
     Author     : Sammy Guergachi <sguergachi at gmail.com>
 --%>
 
+<%
+
+    HttpSession sesion = request.getSession(true);
+    String tipoUsuario = "";
+    if(sesion!=null){
+        if (sesion.getAttribute("usuario")  == null) {
+          
+        }else{
+            tipoUsuario = (String)sesion.getAttribute("tipo");
+        }
+    }else{
+      
+    }
+%>
+
+
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -28,6 +45,8 @@
 
         <script src="js/jscode.js" type="text/javascript"></script>
         <script src="js/LoginJS.js" type="text/javascript"></script>
+           <!-- Script's de sweet alert -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </head>
     <body>
         <div class="container encabezado">
@@ -132,8 +151,9 @@
                                                     <div class="form-group">
                                                         <div class="row">
                                                             <div class="btnLogin">
-                                                                <button type="button" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" onclick="Entrar();" value="Iniciar sesión"></button>
+                                                                <button type="button" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" onclick="Entrar();" value="Iniciar sesión">Ingresar</button>
                                                             </div>
+                                                            
                                                         </div>
                                                     </div>
                                                  
@@ -165,20 +185,29 @@
         <br>
         <br>
         <!--footer-->
-        <div  id="pie">
-            <footer id="myFooter">
-                <div class="container footer">
-                    <h4>Links:</h4>
-                    <ul>
-                        <li><a href="vistas/contacto.jsp">Contacto</a></li>
-                        <li><a href="vistas/contacto.jsp">Sobre nosotros</a></li>
-                        <li><a href="vistas/contacto.jsp">Empresa</a></li>
-                    </ul>
+         <!-- Footer -->
+        <div class="navbar navbar-default navbar-static-bottom navbar-fixed-bottom">
+            <div class="container-fluid footer " id="myFooter">
+                <div class="row">
+                    <div class="footer-1">
+                        <div class="col-sm-2 col-md-2 col-lg-2"></div>
+                        <div class="col-sm-4 col-md-4 col-lg-4">
+                            <ul>
 
-                    <div class="footer-copyright">
+                                <li><a href="contacto.jsp">Contacto</a></li>
+                                <li><a href="acerca.jsp">Sobre nosotros</a></li>
+                                <li><a href="registroEmpresa.jsp">Empresa</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6"></div>
+                    </div>
+                   
+                    <div class="copyright col-sm-12">
                         <p>© 2018 Copyright Bolsa de Empleo CR </p>
-                    </div></div>
-            </footer>
+                    </div>
+                  
+                </div>
+            </div>
         </div>
     </body>
 </html>

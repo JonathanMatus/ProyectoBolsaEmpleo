@@ -12,7 +12,9 @@ and open the template in the editor.
     margin: 0;
     padding: 0;
 }
-
+body{
+    padding-bottom: 150px;
+}
 .encabezado{
     background: rgba(76,76,76,1);
     background: -moz-linear-gradient(left, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(82,82,82,1) 23%, rgba(76,76,76,1) 32%, rgba(71,71,71,1) 39%, rgba(0,0,0,1) 51%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%);
@@ -87,10 +89,14 @@ and open the template in the editor.
 }
 
 /*----------------------Footer-----------------------------*/
+
+.copyright{
+    text-align: center;
+}
 #myFooter {
     background-color: #3c3d41;
     color: white;
-    padding-top: 30px;
+   bottom:  auto;
 }
 #myFooter p{
     word-break: break-all;  
@@ -100,40 +106,23 @@ and open the template in the editor.
 }
 
 
-#myFooter .footer-copyright {
+#myFooter .copyright {
     background-color: #333333;
-    padding-top: 3px;
-    padding-bottom: 3px;
     text-align: center;
 }
 
 #myFooter .row {
-    margin-bottom: 60px;
+    margin-top:  10px;
 }
 
 
 
-#myFooter .footer-copyright p {
-    margin: 10px;
+#myFooter .copyright p {
+   
     color: #ccc;
 }
 
-.content{
-    flex: 1 0 auto;
-    -webkit-flex: 1 0 auto;
 
-
-}
-
-#myFooter{
-    flex: 0 0 auto;
-    -webkit-flex: 0 0 auto;
-
-}
-.footer{
-    padding-top: 25px;
-    border-top: 2px solid #2E2E2E;
-}
 /*---------------------------------------------------*/
 .carousel {
     width:auto;
