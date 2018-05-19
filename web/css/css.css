@@ -42,11 +42,13 @@ body{
 /*                top nav*/
 /* Add a black background color to the top navigation */
 /* Add a black background color to the top navigation */
+
 .topnav {
     background-color: #333;
     overflow: hidden;
     height: 50px;
 }
+
 .topnav input[type="text"]{
     color:black;
 }
@@ -82,9 +84,11 @@ body{
 }
 #registro{
     background-color: #16A085;
+     color: black;
+     
 }
 #registro:hover{
-    background-color: #ddd;
+    background-color: #34495E;
     color: black;
 }
 
@@ -153,18 +157,18 @@ body{
 
 
 
-.modal-header {
-    background-color:#5882FA;
-    padding-bottom: 5px;	
-    color: #1C2833  ;
-    padding: 2px;
+.modal-header1 {
+    background-color:#16A085;	
+    color: white;
     border-top: 8px solid #1C2833  ;
 }
-.modal-header h3{
-    text-align: center;
-    color:white;
-    font-family: 'Open Sans', sans-serif;
+.modal-header1 a{
+    	 	
+   color:white;
+   
 }
+
+
 
 /*Campo ingresar contraseña*/
 .panel-login input[type="text"],.panel-login input[type="email"],.panel-login input[type="password"] {

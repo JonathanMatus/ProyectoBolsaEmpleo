@@ -14,8 +14,8 @@ function Entrar() {
         url: 'ControllerLogin',
         data: {
             accion: "loginUsuario",
-            usuario: $("#usu").val(),
-            password: $("#contra").val()
+            usuario: $("#userid").val(),
+            password: $("#passwordinput").val()
         },
         error: function () { //si existe un error en la respuesta del ajax   
             swal("Error!", "Se genero un error, contacte al administrador (Error del ajax)", "error");
@@ -26,10 +26,15 @@ function Entrar() {
             var respuestaTxt = data.substring(2);
             var tipoRespuesta = data.substring(0, 2);
             if (tipoRespuesta === "C~") {
-                swal("Correcto!", respuestaTxt, "success");
-                 setTimeout(function(){
-                        window.location="PaginaPrincipal.jsp";
-                    }, 2000);
+                swal({
+                    title: "Espere por favor..",
+                    text: respuestaTxt,
+                    icon: "success",
+                    buttons: false
+                });
+                setTimeout(function () {
+                    window.location = "PaginaPrincipal.jsp";
+                }, 2000);
             } else {
                 if (tipoRespuesta === "E~") {
                     swal("Error!", respuestaTxt, "error");

@@ -20,6 +20,14 @@
         <servlet-name>ControllerLogin</servlet-name>
         <servlet-class>cr.ac.una.prograiv.proyecto.bolsaempleo.controller.ControllerLogin</servlet-class>
     </servlet>
+     <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>cr.ac.una.prograiv.proyecto.bolsaempleo.controller.Logout</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/Logout</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>EmpresaServlet</servlet-name>
         <url-pattern>/vistas/EmpresaServlet</url-pattern>
