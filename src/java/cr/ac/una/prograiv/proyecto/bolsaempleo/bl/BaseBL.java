@@ -6,12 +6,15 @@
 package cr.ac.una.prograiv.proyecto.bolsaempleo.bl;
 
 import cr.ac.una.prograiv.proyecto.bolsaempleo.dao.IBaseDAO;
+import cr.ac.una.prograiv.proyecto.bolsaempleo.dao.impl.AplicacionpuestoDao;
+import cr.ac.una.prograiv.proyecto.bolsaempleo.dao.impl.CaracteristicasoferenteDao;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.dao.impl.CategoriaDao;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.dao.impl.EmpresaDao;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.dao.impl.LocalizacionDao;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.dao.impl.OferenteDao;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.dao.impl.PuestoDao;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.dao.impl.SubcategoriaDao;
+import cr.ac.una.prograiv.proyecto.bolsaempleo.dao.impl.SubcategoriapuestoDao;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.dao.impl.UsuarioDao;
 import java.util.LinkedHashMap;
 
@@ -32,6 +35,10 @@ public class BaseBL {
         daos.put("cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Puesto", new PuestoDao());
         daos.put("cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Subcategoria", new SubcategoriaDao());
         daos.put("cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Usuario", new UsuarioDao());
+        daos.put("cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Aplicacionpuesto", new AplicacionpuestoDao());
+        daos.put("cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Caracteristicasoferente", new CaracteristicasoferenteDao());
+        daos.put("cr.am c.una.prograiv.proyecto.bolsaempleo.domain.Subcategoriapuesto", new SubcategoriapuestoDao());
+
     }
 
     public IBaseDAO getDAO(String className) {
