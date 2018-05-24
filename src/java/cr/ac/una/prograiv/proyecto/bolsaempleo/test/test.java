@@ -17,6 +17,7 @@ import cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Oferente;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Usuario;
 import java.util.Date;
 import java.util.List;
+import static javax.ws.rs.client.Entity.json;
 
 /**
  *
@@ -25,15 +26,29 @@ import java.util.List;
 public class test {
 
     public static void main(String[] arg) {
-        EmpresaBL pBL = new EmpresaBL();
+       // EmpresaBL pBL = new EmpresaBL();
 
 //       List<Empresa> json=pBL.findAll(Empresa.class.getName());
 //       for(int i=0;i<json.size();i++)
 //        System.out.print(json.get(i).getNombre());
-        LocalizacionBL lpBL = new LocalizacionBL();
-        Localizacion l1 = lpBL.findById(2);
-        Empresa l = pBL.findById(1);
-        String json = new Gson().toJson(l);
-        System.out.print(json);
+//        LocalizacionBL lpBL = new LocalizacionBL();
+//        Localizacion l1 = lpBL.findById(2);
+//        Empresa l = pBL.findById(1);
+        OferenteBL ofbl = new OferenteBL();
+     
+//        ofbl.findById(702330480);
+//        System.out.println("Nombre:" + ofbl.findById(ofe.sgetPkCedula()).getApellido1());
+
+        
+          List<Oferente> list;
+          list = ofbl.findByQuery("Select * from  mydbproyecto.oferente where oferente.Usuario_PK_Usuario is null");
+          for(int i=0;i<list.size();i++){
+          System.out.println(list.get(i));
+          }
+          
+          
+          
+            
+        
     }
 }

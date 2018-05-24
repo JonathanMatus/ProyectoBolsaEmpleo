@@ -91,7 +91,7 @@ public class CategoriaDao extends HibernateUtil implements IBaseDAO<Categoria, I
           List<Categoria> acesso;
         try{
             iniciaOperacion();
-            acesso = (List<Categoria>) getSesion().createQuery(query);
+            acesso = (List<Categoria>) getSesion().createQuery(query).list();
         }catch(HibernateException he){
             manejaExcepcion(he);
             throw he;

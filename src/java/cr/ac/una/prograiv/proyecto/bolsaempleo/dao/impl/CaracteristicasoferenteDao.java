@@ -91,7 +91,7 @@ public class CaracteristicasoferenteDao extends HibernateUtil implements IBaseDA
           List<Caracteristicasoferente> acesso;
         try{
             iniciaOperacion();
-            acesso = (List<Caracteristicasoferente>) getSesion().createQuery(query);
+            acesso = (List<Caracteristicasoferente>) getSesion().createQuery(query).list();
         }catch(HibernateException he){
             manejaExcepcion(he);
             throw he;

@@ -14,7 +14,8 @@
 
         <!--CSS Lbrary -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/r-2.2.1/datatables.min.css"/>
+ <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -34,8 +35,6 @@
         <!-- ********************************************************** -->
         <!-- Script's de datatable -->
         <!-- ********************************************************** -->
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/r-2.2.1/datatables.min.css"/>
-
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/r-2.2.1/datatables.min.js"></script>
         <!-- Script's de sweet alert -->
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -221,14 +220,25 @@
                 <table class="table table-hover table-condensed" id="tablaOferente1" width="100%" >
                     <thead>
                         <tr>
-                            <td>Cedula</td>
-                            <td>Nombre</td>
-                            <td>Primer apellido</td>
-                            <td>Segundo Apellido</td>
-                            <td>Nacionalidad</td>
-                            <td>correo</td>
-                            <td>residencia</td>
-                            <td>Accion</td>
+                            <th>Cedula</th>
+                            <th>Nombre</th>
+                            <th>Primer apellido</th>
+                            <th>Segundo Apellido</th>
+                            <th>Nacionalidad</th>
+                            <th>correo</th>
+                            <th>residencia</th>
+                            <th>Accion</th>
+                        </tr>
+                    </thead>
+                </table>
+                
+                  <table class="table table-hover table-condensed" id="tablaOferenteEspera1" width="100%" >
+                    <thead>
+                        <tr>
+                            <th>Cedula</th>
+                            <th>Usuario</th>
+                            <th>Contraseña</th>
+                            <th>Tipo</th>
                         </tr>
                     </thead>
                 </table>

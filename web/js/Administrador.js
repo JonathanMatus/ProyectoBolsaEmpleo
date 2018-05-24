@@ -23,6 +23,8 @@ $(function () {
         consultarOferente();
 
     });
+    
+    
     $('#listaEmpresas').click(function () {
         ocultarTablas();
         datatable = $('#tablaEmpresas1').DataTable({
@@ -33,6 +35,19 @@ $(function () {
         consultarEmpresas();
 
     });
+    
+    
+      $('#listaOferentesSinUsu').click(function () {
+        ocultarTablas();
+        datatable = $('#tablaOferenteEspera1').DataTable({
+            responsive: true,
+            "destroy": true
+        });
+        $('#tablaOferenteEspera1').show();
+        consultarOferenteEspera();
+
+    });
+    
 });
 
 
@@ -40,12 +55,18 @@ $(function () {
 function ocultarTablas() {
     $('#tablaOferente1').hide();
     $('#tablaEmpresas1').hide();
+    $('#tablaOferenteEspera1').hide();
     if (datatable !== null)
         datatable.destroy();
 //    if (datatable)
 //    datatable.clear();
 }
 
+
+
+
+
+//------------------ CONSULTAR EMPRESA---------------------------//
 
 function consultarEmpresas() {
     swal({
@@ -75,33 +96,7 @@ function consultarEmpresas() {
     });
 }
 
-function consultarOferente() {
-    swal({
-        title: "Espere por favor..",
-        text: "Consultando la información de oferentes en la base de datos",
-        icon: "info",
-        buttons: false
-    });
-
-    //Se envia la información por ajax
-    $.ajax({
-        url: 'OferenteServlet',
-        data: {
-            accion: "consultarOferente"
-        },
-        error: function () { //si existe un error en la respuesta del ajax
-            swal("Error", "Se presento un error a la hora de cargar la información de los oferentes en la base de datos", "error");
-        },
-        success: function (data) { //si todo esta correcto en la respuesta del ajax, la respuesta queda en el data
-            dibujarTablaOferente(data);
-            // se oculta el modal esta funcion se encuentra en el utils.js
-            swal("Correcto!", "La informacion ha sido cargada correctamente.", "success");
-
-        },
-        type: 'POST',
-        dataType: "json"
-    });
-}
+//------------------ DIBUJAR TABLA EMPRESA---------------------------//
 
 function dibujarTabla(dataJson) {
 //    //limpia la información que tiene la tabla
@@ -128,34 +123,7 @@ function dibujarTabla(dataJson) {
 
 }
 
-function dibujarTablaOferente(dataJson) {
-//    //limpia la información que tiene la tabla
-    var rowData;
-    datatable.clear();
-    for (var i = 0; i < dataJson.length; i++) {
-
-        rowData = dataJson[i];
-        datatable.row.add([
-            rowData.pkCedula,
-            rowData.nombre,
-            rowData.apellido1,
-            rowData.apellido2,
-            rowData.nacionalidad,
-            rowData.correo,
-            rowData.residencia,
-            '<button type="button" class="btn btn-default btn-xs" aria-label="Left Align" onclick="consultarEmpresaByID(' + rowData.pkCedula + ');">' +
-                    '<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>' +
-                    '</button>' +
-                    '<button type="button" class="btn btn-default btn-xs" aria-label="Left Align" onclick="eliminarOferente(' + rowData.pkCedula + ');">' +
-                    '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>' +
-                    '</button>'
-        ]).draw(false);
-    }
-
-
-}
-
-
+//------------------ ELIMINAR EMPRESA---------------------------//
 
 function eliminarEmpresa(idEmpresa) {
 
@@ -206,6 +174,70 @@ function eliminarEmpresa(idEmpresa) {
 }
 
 
+//------------------ CONSULTAR OFERENTE---------------------------//
+
+function consultarOferente() {
+    swal({
+        title: "Espere por favor..",
+        text: "Consultando la información de oferentes en la base de datos",
+        icon: "info",
+        buttons: false
+    });
+
+    //Se envia la información por ajax
+    $.ajax({
+        url: 'OferenteServlet',
+        data: {
+            accion: "consultarOferente"
+        },
+        error: function () { //si existe un error en la respuesta del ajax
+            swal("Error", "Se presento un error a la hora de cargar la información de los oferentes en la base de datos", "error");
+        },
+        success: function (data) { //si todo esta correcto en la respuesta del ajax, la respuesta queda en el data
+          
+            dibujarTablaOferente(data);
+            // se oculta el modal esta funcion se encuentra en el utils.js
+            swal("Correcto!", "La informacion ha sido cargada correctamente.", "success");
+
+        },
+        type: 'POST',
+        dataType: "json"
+    });
+}
+
+//------------------ DIBUJAR TABLA OFERENTE---------------------------//
+
+function dibujarTablaOferente(dataJson) {
+//    //limpia la información que tiene la tabla
+    var rowData;
+    datatable.clear();
+    for (var i = 0; i < dataJson.length; i++) {
+
+        rowData = dataJson[i];
+        datatable.row.add([
+            rowData.pkCedula,
+            rowData.nombre,
+            rowData.apellido1,
+            rowData.apellido2,
+            rowData.nacionalidad,
+            rowData.correo,
+            rowData.residencia,
+            '<button type="button" class="btn btn-default btn-xs" aria-label="Left Align" onclick="consultarEmpresaByID(' + rowData.pkCedula + ');">' +
+                    '<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>' +
+                    '</button>' +
+                    '<button type="button" class="btn btn-default btn-xs" aria-label="Left Align" onclick="eliminarOferente(' + rowData.pkCedula + ');">' +
+                    '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>' +
+                    '</button>'
+        ]).draw(false);
+    }
+
+
+}
+
+
+
+
+//------------------ ELIMINAR OFERENTE---------------------------//
 
 
 function eliminarOferente(idOferente) {
@@ -256,53 +288,54 @@ function eliminarOferente(idOferente) {
 
 }
 
-//******************************************************************************
-//******************************************************************************
-//metodos para eliminar personas
-//******************************************************************************
-//******************************************************************************
-//
-//function consultarPersonaByID(idPersona) {
-//    mostrarModal("myModal", "Espere por favor..", "Consultando la persona seleccionada");
-//    //Se envia la información por ajax
-//    $.ajax({
-//        url: 'PersonasServlet',
-//        data: {
-//            accion: "consultarPersonasByID",
-//            idPersona: idPersona
-//        },
-//        error: function () { //si existe un error en la respuesta del ajax
-//            cambiarMensajeModal("myModal", "Resultado acción", "Se presento un error, contactar al administador");
-//        },
-//        success: function (data) { //si todo esta correcto en la respuesta del ajax, la respuesta queda en el data
-//            // se oculta el mensaje de espera
-//            ocultarModal("myModal");
-//            limpiarForm();
-//            //se muestra el formulario
-//            $("#myModalFormulario").modal();
-//            //************************************************************************
-//            //carga información de la persona en el formulario
-//            //************************************************************************
-//            //se indicar que la cédula es solo readOnly
-//            $("#cedula").attr('readonly', 'readonly');
-//            //se modificar el hidden que indicar el tipo de accion que se esta realizando
-//            $("#personasAction").val("modificarPersona");
-//            //se carga la información en el formulario
-//            $("#cedula").val(data.pkCedula);
-//            $("#nombre").val(data.nombre);
-//            $("#apellido1").val(data.apellido1);
-//            $("#apellido2").val(data.apellido2);
-//            //carga de fecha
-//            var fecha = new Date(data.fecNacimiento);
-//            var fechatxt = fecha.getDate() + "/" + fecha.getMonth() + 1 + "/" + fecha.getFullYear();
-//            $("#dpFechaNacimiento").data({date: fechatxt});
-//            $("#dpFechaNacimientoText").val(fechatxt);
-//            //$("#dpFechaNacimiento")$('.datepicker').datepicker('update', new Date(2011, 2, 5));
-//            $("#sexo").val(data.sexo);
-//            $("#observaciones").val(data.observaciones);
-//        },
-//        type: 'POST',
-//        dataType: "json"
-//    });
-//}
+//------------------ CONSULTAR OFERENTE ESPERA---------------------------//
+
+
+function consultarOferenteEspera() {
+    swal({
+        title: "Espere por favor..",
+        text: "Consultando la información de oferentes en la base de datos",
+        icon: "info",
+        buttons: false
+    });
+
+    //Se envia la información por ajax
+    $.ajax({
+        url: 'OferenteServlet',
+        data: {
+            accion: "oferentesEspera"
+        },
+        error: function () { //si existe un error en la respuesta del ajax
+            swal("Error", "Se presento un error a la hora de cargar la información de los oferentes en la base de datos", "error");
+        },
+        success: function (data) { //si todo esta correcto en la respuesta del ajax, la respuesta queda en el data
+            dibujarTablaOferenteEspera(data);
+            // se oculta el modal esta funcion se encuentra en el utils.js
+            swal("Correcto!", "La informacion ha sido cargada correctamente.", "success");
+
+        },
+        type: 'POST',
+        dataType: "json"
+    });
+}
+
+
+
+//------------------ DIBUJAR TABLA OFERENTE---------------------------//
+
+function dibujarTablaOferenteEspera(dataJson) {
+//    //limpia la información que tiene la tabla
+    var rowData;
+    datatable.clear();
+    for (var i = 0; i < dataJson.length; i++) {
+        rowData = dataJson[i];
+        datatable.row.add([
+            rowData.pkCedula,
+            rowData = '<input type="text" id="usuario"/>',
+            rowData = '<input type="text" id="contra"/>',
+            rowData = '<input type="text" id="contra" value="Oferente" readonly/>'
+        ]).draw(false);
+    }
+}
+
 

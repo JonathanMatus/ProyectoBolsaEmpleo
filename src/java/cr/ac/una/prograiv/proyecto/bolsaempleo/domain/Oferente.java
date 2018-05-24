@@ -130,6 +130,11 @@ public class Oferente  implements java.io.Serializable {
     public void setFechaCambios(Date fechaCambios) {
         this.fechaCambios = fechaCambios;
     }
+
+    @Override
+    public String toString() {
+        return "Oferente{" + "pkCedula=" + pkCedula + ", localizacion=" + localizacion + ", usuario=" + usuario + ", nombre=" + nombre + ", apellido1=" + apellido1 + ", apellido2=" + apellido2 + ", nacionalidad=" + nacionalidad + ", correo=" + correo + ", residencia=" + residencia + ", ultimoUsuario=" + ultimoUsuario + ", fechaCambios=" + fechaCambios + '}';
+    }
    
 
 

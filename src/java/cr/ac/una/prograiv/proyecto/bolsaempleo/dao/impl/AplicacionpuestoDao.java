@@ -90,7 +90,7 @@ public class AplicacionpuestoDao extends HibernateUtil implements IBaseDAO<Aplic
          List<Aplicacionpuesto> acesso;
         try{
             iniciaOperacion();
-            acesso = (List<Aplicacionpuesto>) getSesion().createQuery(query);
+            acesso = (List<Aplicacionpuesto>) getSesion().createQuery(query).list();
         }catch(HibernateException he){
             manejaExcepcion(he);
             throw he;

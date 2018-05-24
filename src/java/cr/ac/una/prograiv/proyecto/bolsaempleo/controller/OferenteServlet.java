@@ -69,9 +69,12 @@ public class OferenteServlet extends HttpServlet {
             //se consulta cual accion se desea realizar
             //**********************************************************************
             String accion = request.getParameter("accion");
-            switch (accion) {         
+            switch (accion) {     
+                case "oferentesEspera":               
+                    json = new Gson().toJson(ofeBL.findByQuery("Select * from  mydbproyecto.oferente where oferente.Usuario_PK_Usuario is null"));
+                    out.print(json);  
+                    break;
                   case "eliminarOferente":
-
                     ofe.setPkCedula(Integer.parseInt(request.getParameter("idOferente")));
 
                     //Se elimina el objeto
