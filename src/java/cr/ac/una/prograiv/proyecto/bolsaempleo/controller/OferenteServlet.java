@@ -95,11 +95,7 @@ public class OferenteServlet extends HttpServlet {
                     ofe.setApellido2(request.getParameter("apellido2"));
                     ofe.setNacionalidad(request.getParameter("nacionalidad"));
                     ofe.setCorreo(request.getParameter("correo"));
-                    ofe.setResidencia(request.getParameter("residencia"));
-                    
-                    u.setPkUsuario(Integer.parseInt(request.getParameter("cedula")));
-                   
-                    
+                    ofe.setResidencia(request.getParameter("residencia")); 
                     
                     DecimalFormatSymbols symbols = new DecimalFormatSymbols();
                     symbols.setGroupingSeparator(',');
@@ -118,7 +114,7 @@ public class OferenteServlet extends HttpServlet {
                         l1 = lpBL.findById(list.get(list.size() - 1).getPkIdLocalizacion());
                         ofe.setLocalizacion(l1.getPkIdLocalizacion());
                         ofeBL.save(ofe);
-                        ubl.save(u);
+                       
                         //Se imprime la respuesta con el response
                         out.print("C~El oferente fue ingresado correctamente");
                     } else {//es modificar persona

@@ -53,8 +53,6 @@ function enviar() {
                 var tipoRespuesta = data.substring(0, 2);
                 if (tipoRespuesta === "C~") {
                     swal("Correcto!", respuestaTxt, "success");
-
-
                 } else {
                     if (tipoRespuesta === "E~") {
                         swal("Error!", respuestaTxt, "error");
