@@ -232,6 +232,17 @@
                         </tr>
                     </thead>
                 </table>
+                <table class="table table-hover table-condensed" id="tablaPuestos" width="100%" >
+                    <thead>
+                        <tr> 
+                            <td>Empresa</td>
+                            <td>Nombre</td>
+                            <td>Salario</td>
+                            <td>Tipo</td>
+                            <td>Accion</td>
+                        </tr>
+                    </thead>
+                </table>
             </div>
         </div>
 <!--footer-->

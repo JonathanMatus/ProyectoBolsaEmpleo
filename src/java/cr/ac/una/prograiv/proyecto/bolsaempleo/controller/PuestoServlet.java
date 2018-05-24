@@ -5,12 +5,19 @@
  */
 package cr.ac.una.prograiv.proyecto.bolsaempleo.controller;
 
+import com.google.gson.Gson;
+import cr.ac.una.prograiv.proyecto.bolsaempleo.bl.impl.PuestoBL;
+import cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Puesto;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -30,17 +37,96 @@ public class PuestoServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet PuestoServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet PuestoServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        PrintWriter out = response.getWriter();
+        try {
+            //String para guardar el JSON generaro por al libreria GSON
+            String json;
+
+            //Se crea el objeto Persona
+            Puesto p = new Puesto();
+
+            //Se crea el objeto de la logica de negocio
+            PuestoBL pBL = new PuestoBL();
+
+            //Se hace una pausa para ver el modal
+            Thread.sleep(1000);
+
+            //**********************************************************************
+            //se toman los datos de la session
+            //**********************************************************************
+            HttpSession session = request.getSession();
+
+            //**********************************************************************
+            //se consulta cual accion se desea realizar
+            //**********************************************************************
+            String accion = request.getParameter("accion");
+            switch (accion) {
+                case "eliminarPuesto":
+
+                    p.setPkIdPuesto(Integer.parseInt(request.getParameter("idPuesto")));
+
+                    //Se elimina el objeto
+                    pBL.delete(p);
+
+                    //Se imprime la respuesta con el response
+                    out.print("El puesto fue eliminado correctamente");
+
+                    break;
+                case "consultarPuestos":
+                    json = new Gson().toJson(pBL.findAll(Puesto.class.getName()));
+                    out.print(json);
+                    break;
+                case "agregarPuesto":
+                case "modificarPuesto":
+
+                    //Se llena el objeto con los datos enviados por AJAX por el metodo post
+                    p.setNombre(request.getParameter("nombre"));
+                    p.setEmpresa(Integer.parseInt(request.getParameter("idEmpresa")));
+                    p.setTipoPublicacion(request.getParameter("tipo"));
+                    
+
+                    //--------------------castear a bigDecimal--------------------------------
+                    DecimalFormatSymbols symbols = new DecimalFormatSymbols();
+                    symbols.setGroupingSeparator(',');
+                    symbols.setDecimalSeparator('.');
+                    String pattern = "#,##0.0#";
+                    DecimalFormat decimalFormat = new DecimalFormat(pattern, symbols);
+                    decimalFormat.setParseBigDecimal(true);
+
+                    // parse the string
+                    BigDecimal bigDecimal = (BigDecimal) decimalFormat.parse(request.getParameter("salario"));
+                   
+                   
+                    // ----------------------------------------------------------------------------
+                    p.setSalario(bigDecimal);
+                    //Guardar Correctamente en la base de datos
+                    if (accion.equals("agregarPuesto")) { //es insertar personas
+                        //Se guarda el objeto
+                        pBL.save(p);
+//
+
+                        //Se imprime la respuesta con el response
+                        out.print("C~El puesto fue ingresado correctamente");
+
+                    } else {//es modificar persona
+                        //Se guarda el objeto
+                        pBL.merge(p);
+
+                        //Se imprime la respuesta con el response
+                        out.print("C~El puesto fue modificada correctamente");
+                    }
+
+                    break;
+
+                default:
+                    out.print("E~No se indico la acción que se desea realizare");
+                    break;
+            }
+
+        } catch (NumberFormatException e) {
+            out.print("E~" + e.getMessage());
+        } catch (Exception e) {
+            out.print("E~" + e.getMessage());
         }
     }
 

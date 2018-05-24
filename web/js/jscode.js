@@ -6,26 +6,8 @@
 
 
 
-$(document).ready(function ()
-{
-    $("#buscar").on("click", function () {
-        if ($("#salir").hide()) {
-            $("#salir").show();
-            $("#txtBusqueda").show();
-        } else {
-            /*Buscar*/
 
 
-        }
-    });
-});
-$(document).ready(function ()
-{
-    $("#salir").on("click", function () {
-        $(this).hide();
-        $("#txtBusqueda").hide();
-    });
-});
 
 function validateEmail(id)
 {

@@ -68,6 +68,7 @@ public class ControllerLogin extends HttpServlet {
                             } else {
                                 HttpSession session = request.getSession(true);
                                 session.setAttribute("usuario", usuariotext);
+                                session.setAttribute("tipo", "Administrador");
                                 session.setAttribute("loginStatus", "login");
                                 out.print("C~Validación correcta... espere esta siendo redireccionado");
                             }
