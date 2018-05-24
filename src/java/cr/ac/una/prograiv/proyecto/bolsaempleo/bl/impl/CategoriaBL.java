@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package cr.ac.una.prograiv.proyecto.bolsaempleo.bl.impl;
 
 import cr.ac.una.prograiv.proyecto.bolsaempleo.bl.BaseBL;
@@ -12,26 +11,24 @@ import cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Categoria;
 import java.util.List;
 
 /**
- * 
+ *
  * @author Sammy Guergachi <sguergachi at gmail.com>
  */
-public class CategoriaBL  extends BaseBL implements IBaseBL<Categoria, Integer> {
+public class CategoriaBL extends BaseBL implements IBaseBL<Categoria, Integer> {
 
     public CategoriaBL() {
         super();
     }
 
-    
-    
     @Override
     public void save(Categoria o) {
-       this.getDAO(o.getClass().getName()).save(o);
+        this.getDAO(o.getClass().getName()).save(o);
 
     }
 
     @Override
     public Categoria merge(Categoria o) {
-            return (Categoria) this.getDAO(o.getClass().getName()).merge(o);
+        return (Categoria) this.getDAO(o.getClass().getName()).merge(o);
 
     }
 
@@ -40,7 +37,6 @@ public class CategoriaBL  extends BaseBL implements IBaseBL<Categoria, Integer> 
         this.getDAO(o.getClass().getName()).delete(o);
 
     }
-    
 
     @Override
     public Categoria findById(Integer o) {
@@ -51,6 +47,12 @@ public class CategoriaBL  extends BaseBL implements IBaseBL<Categoria, Integer> 
     @Override
     public List<Categoria> findAll(String className) {
         return this.getDAO(className).findAll();
+    }
+
+    @Override
+    public List<Categoria> findByQuery(String query) {
+        return this.getDAO(Categoria.class.getName()).findByQuery(query);
+
     }
 
 }

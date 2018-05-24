@@ -49,4 +49,9 @@ public class LocalizacionBL extends BaseBL implements IBaseBL<Localizacion, Inte
          return this.getDAO(className).findAll();
     }
 
+    @Override
+    public List<Localizacion> findByQuery(String query) {
+        return this.getDAO(Localizacion.class.getName()).findByQuery(query);
+    }
+
 }

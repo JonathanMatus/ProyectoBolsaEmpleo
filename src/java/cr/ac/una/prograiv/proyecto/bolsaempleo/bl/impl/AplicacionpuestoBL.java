@@ -46,5 +46,12 @@ public class AplicacionpuestoBL  extends BaseBL implements IBaseBL<Aplicacionpue
     public List<Aplicacionpuesto> findAll(String className) {
         return this.getDAO(className).findAll();
     }
+
+    @Override
+    public List<Aplicacionpuesto> findByQuery(String query) {
+        return this.getDAO(Aplicacionpuesto.class.getName()).findByQuery(query);
+    }
+    
+    
     
 }

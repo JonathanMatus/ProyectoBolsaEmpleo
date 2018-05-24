@@ -22,4 +22,6 @@ public interface IBaseDAO<T, K> {
     public abstract T findById(K id);
 
     public abstract List<T> findAll();
+    
+    public abstract List<T> findByQuery(String query);
 }

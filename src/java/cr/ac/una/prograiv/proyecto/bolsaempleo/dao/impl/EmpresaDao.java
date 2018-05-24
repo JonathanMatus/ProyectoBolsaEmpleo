@@ -85,4 +85,19 @@ public class EmpresaDao extends HibernateUtil implements IBaseDAO<Empresa, Integ
         }
         return listaEmpresas;
     }
+
+    @Override
+    public List<Empresa> findByQuery(String query) {
+          List<Empresa> acesso;
+        try{
+            iniciaOperacion();
+            acesso = (List<Empresa>) getSesion().createQuery(query);
+        }catch(HibernateException he){
+            manejaExcepcion(he);
+            throw he;
+        }finally{
+            getSesion().close();
+        }
+        return acesso;
+    }
 }

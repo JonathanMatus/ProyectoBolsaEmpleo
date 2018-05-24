@@ -51,5 +51,11 @@ public class CaracteristicasoferenteBL extends BaseBL implements IBaseBL<Caracte
       return this.getDAO(className).findAll();
 
     }
+
+    @Override
+    public List<Caracteristicasoferente> findByQuery(String query) {
+   return this.getDAO(Caracteristicasoferente.class.getName()).findByQuery(query);
+
+    }
     
 }

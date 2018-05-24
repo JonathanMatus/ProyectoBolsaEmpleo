@@ -54,4 +54,9 @@ public class OferenteBL extends BaseBL implements IBaseBL<Oferente, Integer> {
 //        return (Long) ofeDAO.ultimoID();
 //    }
 
+    @Override
+    public List<Oferente> findByQuery(String query) {
+        return this.getDAO(Oferente.class.getName()).findByQuery(query);
+    }
+
 }

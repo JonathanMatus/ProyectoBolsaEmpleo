@@ -91,5 +91,20 @@ public class SubcategoriapuestoDao extends HibernateUtil implements IBaseDAO<Sub
         }
         return listasub;
     }
+
+    @Override
+    public List<Subcategoriapuesto> findByQuery(String query) {
+           List<Subcategoriapuesto> acesso;
+        try{
+            iniciaOperacion();
+            acesso = (List<Subcategoriapuesto>) getSesion().createQuery(query);
+        }catch(HibernateException he){
+            manejaExcepcion(he);
+            throw he;
+        }finally{
+            getSesion().close();
+        }
+        return acesso;
+    }
     
 }

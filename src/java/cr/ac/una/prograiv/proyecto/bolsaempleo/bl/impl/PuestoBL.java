@@ -46,4 +46,9 @@ public class PuestoBL extends BaseBL implements IBaseBL<Puesto, Integer>{
         return this.getDAO(className).findAll();
     }
 
+    @Override
+    public List<Puesto> findByQuery(String query) {
+        return this.getDAO(Puesto.class.getName()).findByQuery(query);
+    }
+
 }
