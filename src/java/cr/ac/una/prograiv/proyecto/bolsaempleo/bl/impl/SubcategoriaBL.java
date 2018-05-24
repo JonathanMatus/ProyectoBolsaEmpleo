@@ -45,4 +45,9 @@ public class SubcategoriaBL extends BaseBL implements IBaseBL<Subcategoria, Inte
         return this.getDAO(className).findAll();
     }
 
+    @Override
+    public List<Subcategoria> findByQuery(String query) {
+        return this.getDAO(Subcategoria.class.getName()).findByQuery(query);
+    }
+
 }

@@ -85,4 +85,19 @@ public class SubcategoriaDao extends HibernateUtil implements IBaseDAO<Subcatego
         }
         return listaSubcategorias;
     } 
+
+    @Override
+    public List<Subcategoria> findByQuery(String query) {
+           List<Subcategoria> acesso;
+        try{
+            iniciaOperacion();
+            acesso = (List<Subcategoria>) getSesion().createQuery(query);
+        }catch(HibernateException he){
+            manejaExcepcion(he);
+            throw he;
+        }finally{
+            getSesion().close();
+        }
+        return acesso;
+    }
 }

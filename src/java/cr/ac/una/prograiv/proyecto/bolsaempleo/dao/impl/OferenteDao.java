@@ -92,4 +92,19 @@ public class OferenteDao extends HibernateUtil implements IBaseDAO<Oferente, Int
 //             return  (Long)getSesion().createQuery("select MAX(last_insert_id(PK_Id_localizacion)) from Localizacion").uniqueResult();
 //    }
 
+    @Override
+    public List<Oferente> findByQuery(String query) {
+          List<Oferente> acesso;
+        try{
+            iniciaOperacion();
+            acesso = (List<Oferente>) getSesion().createQuery(query);
+        }catch(HibernateException he){
+            manejaExcepcion(he);
+            throw he;
+        }finally{
+            getSesion().close();
+        }
+        return acesso;
+    }
+
 }

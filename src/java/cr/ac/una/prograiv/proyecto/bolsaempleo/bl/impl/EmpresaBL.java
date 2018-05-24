@@ -45,4 +45,10 @@ public class EmpresaBL extends BaseBL implements IBaseBL<Empresa, Integer> {
          return this.getDAO(className).findAll();
     }
 
+    @Override
+    public List<Empresa> findByQuery(String query) {
+           return this.getDAO(Empresa.class.getName()).findByQuery(query);
+
+    }
+
 }

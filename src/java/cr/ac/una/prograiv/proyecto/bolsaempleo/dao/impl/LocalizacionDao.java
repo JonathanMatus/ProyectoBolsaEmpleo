@@ -84,4 +84,19 @@ public class LocalizacionDao extends HibernateUtil implements IBaseDAO<Localizac
         }
         return listaLocalizaciones;
     }
+
+    @Override
+    public List<Localizacion> findByQuery(String query) {
+          List<Localizacion> acesso;
+        try{
+            iniciaOperacion();
+            acesso = (List<Localizacion>) getSesion().createQuery(query);
+        }catch(HibernateException he){
+            manejaExcepcion(he);
+            throw he;
+        }finally{
+            getSesion().close();
+        }
+        return acesso;
+    }
 }

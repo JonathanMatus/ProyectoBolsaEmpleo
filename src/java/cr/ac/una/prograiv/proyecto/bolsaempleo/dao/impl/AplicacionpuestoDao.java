@@ -84,5 +84,20 @@ public class AplicacionpuestoDao extends HibernateUtil implements IBaseDAO<Aplic
         }
         return listaAplipuesto;
     }
+
+    @Override
+    public List<Aplicacionpuesto> findByQuery(String query) {
+         List<Aplicacionpuesto> acesso;
+        try{
+            iniciaOperacion();
+            acesso = (List<Aplicacionpuesto>) getSesion().createQuery(query);
+        }catch(HibernateException he){
+            manejaExcepcion(he);
+            throw he;
+        }finally{
+            getSesion().close();
+        }
+        return acesso;
+    }
     
 }

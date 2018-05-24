@@ -23,4 +23,8 @@ public interface IBaseBL<T,K> {
     public abstract  T findById(K o);
 
     public abstract List<T> findAll(String className);
+    
+    public abstract List<T> findByQuery(String query);
+
+    
 }

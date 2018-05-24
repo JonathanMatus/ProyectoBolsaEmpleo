@@ -85,4 +85,19 @@ public class CategoriaDao extends HibernateUtil implements IBaseDAO<Categoria, I
         }
         return listaCategorias;
     }  
+
+    @Override
+    public List<Categoria> findByQuery(String query) {
+          List<Categoria> acesso;
+        try{
+            iniciaOperacion();
+            acesso = (List<Categoria>) getSesion().createQuery(query);
+        }catch(HibernateException he){
+            manejaExcepcion(he);
+            throw he;
+        }finally{
+            getSesion().close();
+        }
+        return acesso;
+    }
 }

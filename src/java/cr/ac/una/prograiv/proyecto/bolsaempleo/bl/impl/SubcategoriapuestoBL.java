@@ -50,5 +50,10 @@ public class SubcategoriapuestoBL extends BaseBL implements IBaseBL<Subcategoria
     public List<Subcategoriapuesto> findAll(String className) {
         return this.getDAO(className).findAll();
     }
+
+    @Override
+    public List<Subcategoriapuesto> findByQuery(String query) {
+        return this.getDAO(Subcategoriapuesto.class.getName()).findByQuery(query);
+    }
     
 }
