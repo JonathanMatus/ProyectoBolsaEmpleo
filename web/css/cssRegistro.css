@@ -14,10 +14,10 @@ and open the template in the editor.
     background: #16A085;
      font-family: 'Roboto', sans-serif;
 }
-
-h1{
-    color: white;
+.container>h1{
+     color: white;
 }
+
 h1,label{
     font-family: 'Roboto', sans-serif;
 }
@@ -29,4 +29,13 @@ label{
 }
 */#registrar{
     background: #16A085;
+}
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 0;
+    }
+
+    #page-wrapper {
+        padding: 22px 10px;
+    }
 }

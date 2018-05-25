@@ -3,14 +3,28 @@
     Created on : 18/04/2018, 12:11:51 PM
     Author     : Sammy Guergachi <sguergachi at gmail.com>
 --%>
+<%
 
+    HttpSession sesion = request.getSession(true);
+    String tipoUsuario = "-1";
+    if (sesion != null) {
+        if (sesion.getAttribute("usuario") == null) {
+
+        } else {
+            tipoUsuario = (String) sesion.getAttribute("tipo");
+        }
+    } else {
+
+    }
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Contacto</title>
-             <!--CSS Lbrary -->
+        <!--CSS Lbrary -->
+        <!--CSS Lbrary -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
         <!-- jQuery library -->
@@ -23,116 +37,214 @@
 
         <!--google fonts -->
         <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+        <!-- ********************************************************** -->
+        <!-- Script's de datatable -->
+        <!-- ********************************************************** -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/r-2.2.1/datatables.min.css"/>
+
+        <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/r-2.2.1/datatables.min.js"></script>
+        <!-- Script's de sweet alert -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <!--        select 2
+                ---------------------------------->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+        <!---------------------------------------------------------->
+        <!------------------------------------------------------------------->
         <link href="../css/css.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/cssRegistro.css" rel="stylesheet" type="text/css"/>
         <script src="../js/jscode.js" type="text/javascript"></script>
+        <script src="../js/LoginJS.js" type="text/javascript"></script>
+
     </head>
     <body>
-        <div class="container encabezado">
-            <img src="../img/logo_1.png" alt="Bolsa Empleo CR" class="img-responsive img-rounded"/>
-        </div>
-        <!-- responsive top nav -->
-        <!-- responsive top nav -->
-        <div class="topnav">
 
-            <a class="active" href="../PaginaPrincipal.jsp">Inicio</a>
+        <div id="wrapper">
 
-            <a href="contacto.jsp">Contacto</a>
+            <!-- Navigation -->
+            <nav class="navbar navbar-inverse navbar-fixed-top " role="navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
 
-            <div class="topnav-right">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <img src="../img/logo_1.png" alt="Bolsa Empleo CR" class="img-responsive img-rounded"/>
 
-                <button type="button" id="salir"><img src="../img/exit.png"  alt="exit" class="img-responsive"/></button>
-                <input type="text" id="txtBusqueda" placeholder="Buscar..">
 
-                <button type="button" id="buscar"><img src="../img/search.png" alt="buscar" class="img-responsive"/></button>
-                
 
-                <button class="btn btn-default" id="registro" data-toggle="modal" data-target="#squarespaceModal"> 
-                    <span class="glyphicon glyphicon-user user_icon"></span>
-                </button>
 
-            </div>
-        </div>
-        <br>
-        <br>
-        <div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header1">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                        <ul id="myTab" class="nav nav-tabs">
-                            <li class="active"><a href="#signin" data-toggle="tab">Ingresar</a></li>
-                            <li class=""><a href="#signup" data-toggle="tab">Registrar</a></li>
+                </div>
+
+                <!-- responsive top nav -->
+                <ul class="nav navbar-nav top-nav">
+
+                    <li class="activo"><a class="activo" href="../PaginaPrincipal.jsp">Inicio</a></li>
+
+                    <li> <a href="contacto.jsp">Contacto</a></li>
+                        <% if (tipoUsuario.equals("2")) { %> 
+                    <li> <a href="administrador.jsp">Administrador</a></li>
+                    <li> <a href="gestionEmpresa.jsp">Gestion Empresa</a></li>
+                        <% }%> 
+                </ul>
+                <ul class="nav navbar-right top-nav">
+
+
+                    <% if (tipoUsuario.equals("-1")) { %> 
+                    <li>
+                        <button class="btn btn-default" id="registro" data-toggle="modal" data-target="#squarespaceModal"> 
+                            <span class="glyphicon glyphicon-user user_icon"></span>
+                        </button>
+                    </li>
+                    <% }%> 
+                    <% if (!tipoUsuario.equals("-1")) { %> 
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><% out.print(sesion.getAttribute("usuario")); %> <b class="fa fa-angle-down"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
+                            <li><a href="#"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
+                            <li class="divider"></li>
+                            <li><a  id="logout2"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
                         </ul>
-                    </div>
-                    <div class="modal-body">
+                    </li>
+                    <% }%> 
+                </ul>
 
-                        <!-- content goes here -->
+                <!-- /.navbar-collapse -->
+            </nav>
 
-                        <div id="myTabContent" class="tab-content">
-                            <div class="tab-pane fade" id="signup">
+            <div id="page-wrapper">
+                <div class="container-fluid">
+                    <!-- Page Heading -->
+                    <div class="row" id="main" >
+                        <div class="container">
+                            <h1 class="well" id="titulo">Contactenos</h1>
+                            <div class="col-lg-12 well" id="cam-form">
                                 <div class="row">
-                                    <div class="panel-heading">
-                                        <div class="row">
-                                            <center> 
-                                                <h3>¿Que desea registrar?</h3>
-                                            </center>
+                                    <form>
+                                        <div class="col-sm-12">
 
+                                            <div class="row">
+
+                                                <div class="col-sm-4 form-group" id="groupNombre">
+                                                    <label>Nombre</label>
+                                                    <input type="text" placeholder="Ingresar Nombre.." class="form-control" id="nombre">
+                                                    <label>Correo</label>
+                                                    <input type="email" placeholder="Ingresar Correo.." class="form-control" id="correo">
+                                                    <label>Telefono</label>
+                                                    <input type="text" placeholder="Ingresar Telefono.." class="form-control" id="Telefono">
+                                                </div>
+
+                                                <div class="col-sm-8 form-group" id="groupMensaje">
+                                                    <label>Mensaje</label>
+                                                    <textarea placeholder="Ingresar mensaje.." rows="7" class="form-control" id="Mensaje"></textarea>
+                                                </div>
+
+
+                                            </div>
+
+
+
+
+
+
+                                            <div class=" form-group">
+
+                                                <button type="button" id="enviarConsulta" class="btn btn-lg btn-info">Enviar</button>
+                                            </div>					
 
                                         </div>
-                                        <hr>
-                                    </div>
-                                    <div class="col-md-6 "><div class="btnLogin">
-                                            <a id="" href="registroEmpresa.jsp"><button type="button"  id="registrarEmpresa" name="signupE" class="btn btn-success" >Registrar Empresa</button> </a>
-                                        </div></div>
-                                    <div class="col-md-6 "><div class="btnLogin">
-                                            <a id="" href="registro.jsp"><button type="button"  id="registrarOferente" name="signupO" class="btn btn-success" >Registrar Oferente</button> </a>
-                                        </div></div>
+                                    </form> 
                                 </div>
                             </div>
-                            <div class="tab-pane fade active in" id="signin">
-                                <div class="row">
-                                    <div class="col-md-12 ">
-                                        <div class="panel panel-login">
-                                            <div class="panel-heading">
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header1">
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                                        <ul id="myTab" class="nav nav-tabs">
+                                            <li class="active"><a href="#signin" data-toggle="tab">Ingresar</a></li>
+                                            <li class=""><a href="#signup" data-toggle="tab">Registrar</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <!-- content goes here -->
+
+                                        <div id="myTabContent" class="tab-content">
+                                            <div class="tab-pane fade" id="signup">
                                                 <div class="row">
+                                                    <div class="panel-heading">
+                                                        <div class="row">
+                                                            <center> 
+                                                                <h3>¿Que desea registrar?</h3>
+                                                            </center>
 
 
+                                                        </div>
+                                                        <hr>
+                                                    </div>
+                                                    <div class="col-md-6 "><div class="btnLogin">
+                                                            <a id="" href="vistas/registroEmpresa.jsp"><button type="button"  id="registrarEmpresa" name="signupE" class="btn btn-success" >Registrar Empresa</button> </a>
+                                                        </div></div>
+                                                    <div class="col-md-6 "><div class="btnLogin">
+                                                            <a id="" href="vistas/registro.jsp"><button type="button"  id="registrarOferente" name="signupO" class="btn btn-success" >Registrar Oferente</button> </a>
+                                                        </div></div>
                                                 </div>
-                                                <hr>
                                             </div>
-                                            <div class="panel-body">
+                                            <div class="tab-pane fade active in" id="signin">
                                                 <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <form id="login-form" action="" method="post" role="form" style="display: block;">
-                                                            <div class="form-group">
-                                                                <input type="text" name="correo" id="username" tabindex="1" class="form-control" placeholder="Correo" value="">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Contraseña">
-                                                            </div>
-                                                            <div class="form-group text-center">
-                                                                <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
-                                                                <label for="remember"> Recordarme</label>
-                                                            </div>
-                                                            <div class="form-group">
+                                                    <div class="col-md-12 ">
+                                                        <div class="panel panel-login">
+                                                            <div class="panel-heading">
                                                                 <div class="row">
-                                                                    <div class="btnLogin">
-                                                                        <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Iniciar sesión">
-                                                                    </div>
+
+
                                                                 </div>
+                                                                <hr>
                                                             </div>
-                                                            <div class="form-group">
+                                                            <div class="panel-body">
                                                                 <div class="row">
                                                                     <div class="col-lg-12">
-                                                                        <div class="text-center">
-                                                                            <a href="" tabindex="5" class="forgot-password">¿Has olvidado tu contraseña?</a>
-                                                                        </div>
+                                                                        <form id="login-form" action="" method="post" role="form" style="display: block;">
+                                                                            <div class="form-group">
+                                                                                <input type="text" name="userid" id="userid" tabindex="1" class="form-control" placeholder="usuario" value="">
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <input type="password" name="password" id="passwordinput" tabindex="2" class="form-control" placeholder="Contraseña">
+                                                                            </div>
+                                                                            <div class="form-group text-center">
+                                                                                <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+                                                                                <label for="remember"> Recordarme</label>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <div class="row">
+                                                                                    <div class="btnLogin">
+                                                                                        <button type="button"  id="ingresar2" name="ingresar" class="btn btn-success" >Ingresar</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <div class="text-center">
+                                                                                            <a href="" tabindex="5" class="forgot-password">¿Has olvidado tu contraseña?</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </form>
+
+
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </form>
-
-
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -142,91 +254,41 @@
                             </div>
                         </div>
                     </div>
+                    <!-- /.row -->
                 </div>
+                <!-- /.container-fluid -->
             </div>
-        </div>
-        <div class="content fondo">
-            <div class="container">
-                <div class="row main">
-                    <div class="main-login main-center">
-                        <h1>Contactenos.</h1>
-                        <form class="" method="post" action="#">
+            <!-- Footer -->
+            <div class="navbar navbar-default navbar-relative-bottom navbar-fixed-bottom  ">
+                <div class="container-fluid footer " id="myFooter">
+                    <div class="row">
+                        <div class="footer-1">
+                            <div class="col-sm-2 col-md-2 col-lg-2"></div>
+                            <div class="col-sm-4 col-md-4 col-lg-4">
+                                <ul>
 
-                            <div class="form-group">
-                                <label for="name" class="cols-sm-2 control-label">Nombre</label>
-                                <div class="cols-sm-10">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                        <input type="text" class="form-control" name="name" id="name"  placeholder="Ingresa tu nombre"/>
-                                    </div>
-                                </div>
+                                    <li><a href="contacto.jsp">Contacto</a></li>
+                                    <li><a href="acerca.jsp">Sobre nosotros</a></li>
+                                    <li><a href="registroEmpresa.jsp">Empresa</a></li>
+                                </ul>
                             </div>
-
-                            <div class="form-group">
-                                <label for="email" class="cols-sm-2 control-label">Correo Electronico</label>
-                                <div class="cols-sm-10">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                                        <input type="text" class="form-control" name="email" id="email"  placeholder="Ingresa tu Email"/>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="username" class="cols-sm-2 control-label">Telefono</label>
-                                <div class="cols-sm-10">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                                        <input type="text" class="form-control" name="username" id="username"  placeholder="Ingresa tu Telefono"/>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="password" class="cols-sm-2 control-label">Mensaje</label>
-                                <div class="cols-sm-10">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                        <textarea name="message"  class = "form-control" placeholder="Ingresar mensaje"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                            <div class="form-group ">
-                                <button  type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Enviar</button>
-                            </div>
-
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--footer-->
-        <!-- Footer -->
-        <div class="navbar navbar-default navbar-static-bottom navbar-fixed-bottom">
-            <div class="container-fluid footer " id="myFooter">
-                <div class="row">
-                    <div class="footer-1">
-                        <div class="col-sm-2 col-md-2 col-lg-2"></div>
-                        <div class="col-sm-4 col-md-4 col-lg-4">
-                            <ul>
-
-                                <li><a href="contacto.jsp">Contacto</a></li>
-                                <li><a href="acerca.jsp">Sobre nosotros</a></li>
-                                <li><a href="registroEmpresa.jsp">Empresa</a></li>
-                            </ul>
+                            <div class="col-sm-6 col-md-6 col-lg-6"></div>
                         </div>
-                        <div class="col-sm-6 col-md-6 col-lg-6"></div>
+
+                        <div class="copyright col-sm-12">
+                            <p>© 2018 Copyright Bolsa de Empleo CR </p>
+                        </div>
+
                     </div>
-                   
-                    <div class="copyright col-sm-12">
-                        <p>© 2018 Copyright Bolsa de Empleo CR </p>
-                    </div>
-                  
                 </div>
             </div>
         </div>
-    </body>
+        <!-- /#page-wrapper -->
+    </div><!-- /#wrapper -->
+
+
+    <!--footer-->
+
+</body>
 </html>
+

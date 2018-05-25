@@ -7,7 +7,7 @@
 <%
 
     HttpSession sesion = request.getSession(true);
-    String tipoUsuario = "";
+    String tipoUsuario = "-1";
     if (sesion != null) {
         if (sesion.getAttribute("usuario") == null) {
 
@@ -41,12 +41,13 @@
         <!--google fonts -->
         <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
 
+
+        <!-- Script's de sweet alert -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <link href="css/css.css" rel="stylesheet" type="text/css"/>
 
         <script src="js/jscode.js" type="text/javascript"></script>
         <script src="js/LoginJS.js" type="text/javascript"></script>
-        <!-- Script's de sweet alert -->
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <link href="css/gestionEmpresa.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
@@ -74,8 +75,11 @@
                 <li class="activo"><a class="activo" href="PaginaPrincipal.jsp">Inicio</a></li>
 
                 <li> <a href="vistas/contacto.jsp">Contacto</a></li>
-                    <% if (tipoUsuario.equals("Administrador")) { %> 
+                    <% if (tipoUsuario.equals("2")) { %> 
                 <li> <a href="vistas/administrador.jsp">Administrador</a></li>
+                <li> <a href="vistas/gestionEmpresa.jsp">Gestion Empresa</a></li>
+                    <% }%> 
+                    <% if (tipoUsuario.equals("1")) { %> 
                 <li> <a href="vistas/gestionEmpresa.jsp">Gestion Empresa</a></li>
                     <% }%> 
             </ul>
@@ -83,12 +87,14 @@
 
 
 
+                <% if (tipoUsuario.equals("-1")) { %> 
                 <li>
                     <button class="btn btn-default" id="registro" data-toggle="modal" data-target="#squarespaceModal"> 
                         <span class="glyphicon glyphicon-user user_icon"></span>
                     </button>
                 </li>
-                 <% if (tipoUsuario.equals("Administrador")) { %> 
+                <% }%> 
+                <% if (!tipoUsuario.equals("-1")) { %> 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><% out.print(sesion.getAttribute("usuario")); %> <b class="fa fa-angle-down"></b></a>
                     <ul class="dropdown-menu">
@@ -98,7 +104,7 @@
                         <li><a  id="logout"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
                     </ul>
                 </li>
-                  <% }%> 
+                <% }%> 
             </ul>
 
         </nav>
@@ -208,7 +214,7 @@
                                                             <div class="form-group">
                                                                 <div class="row">
                                                                     <div class="btnLogin">
-                                                                        <button type="button"  id="ingresar" name="ingresar" class="btn btn-success" onclick="Entrar();" >Ingresar</button>
+                                                                        <button type="button"  id="ingresar" name="ingresar" class="btn btn-success" >Ingresar</button>
                                                                     </div>
                                                                 </div>
                                                             </div>

@@ -50,29 +50,22 @@ public class ControllerLogin extends HttpServlet {
                     String usuariotext = request.getParameter("usuario");
                     String passwordtext = request.getParameter("password");
 
-                    if (usuariotext.equals("admin") && passwordtext.equals("admin123")) {
-                        HttpSession session = request.getSession(true);
-                        session.setAttribute("usuario", usuariotext);
-                         session.setAttribute("tipo", "Administrador");
-                        session.setAttribute("loginStatus", "login");
-                        out.print("C~Validación correcta... espere esta siendo redireccionado");
-                    } else {
-                        usuario = uBL.findByNombreUsuario(usuariotext);
+                    usuario = uBL.findByNombreUsuario(usuariotext);
 
-                        if (usuario == null) {
-                            out.print("E~Usuario no registrado en el sistema");
+                    if (usuario == null) {
+                        out.print("E~Usuario no registrado en el sistema");
+                    }
+                    if (usuario != null) {
+                        if (!usuario.getPassword().equals(passwordtext)) {
+                            out.print("E~Usuario o contraseña incorrectos");
+                        } else {
+                            HttpSession session = request.getSession(true);
+                            session.setAttribute("usuario", usuariotext);
+                            session.setAttribute("tipo", String.valueOf(usuario.getTipo()));
+                            session.setAttribute("loginStatus", "login");
+                            out.print("C~Validación correcta... espere esta siendo redireccionado");
                         }
-                        if (usuario != null) {
-                            if (!usuario.getPassword().equals(passwordtext)) {
-                                out.print("E~Usuario o contraseña incorrectos");
-                            } else {
-                                HttpSession session = request.getSession(true);
-                                session.setAttribute("usuario", usuariotext);
-                                session.setAttribute("tipo", "Administrador");
-                                session.setAttribute("loginStatus", "login");
-                                out.print("C~Validación correcta... espere esta siendo redireccionado");
-                            }
-                        }
+
                     }
 
                     break;

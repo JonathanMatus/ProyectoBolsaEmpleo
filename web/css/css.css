@@ -42,51 +42,172 @@ body{
 /*                top nav*/
 /* Add a black background color to the top navigation */
 /* Add a black background color to the top navigation */
-
-.topnav {
-    background-color: #333;
-    overflow: hidden;
-    height: 50px;
+.navbar-header img{
+    height: 60px;
+}
+.navbar-nav{
+    margin-left: 5px;
+    font-size: 15px;
+}
+.navbar-fixed-top a{
+    color: red ;
+}
+.activo{
+    background-color: #16A085 !important;
+    color:white !important;
 }
 
-.topnav input[type="text"]{
-    color:black;
+/*---------------------------------------------*/
+/*--------------------nav-bar--------------------*/
+@media(min-width:768px) {
+    body {
+        margin-top: 50px;
+    }
+    /*html, body, #wrapper, #page-wrapper {height: 100%; overflow: hidden;}*/
 }
-/* Style the links inside the navigation bar */
-.topnav a,.topnav input, .topnav button {
+
+#wrapper {
+    padding-left: 0;    
+}
+
+#page-wrapper {
+    width: 100%;        
+    padding: 0;
+    background-color: #fff;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 225px;
+    }
+
+    #page-wrapper {
+        padding: 22px 10px;
+    }
+}
+
+/* Top Navigation */
+
+.top-nav {
+    padding: 0 15px;
+}
+
+.top-nav>li {
+    display: inline-block;
     float: left;
-    color: #797979;
-    text-align: center;
-    padding: 14px 16px;
+}
+
+.top-nav>li>a {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 20px;
+    color: #fff;
+}
+
+.top-nav>li>a:hover,
+.top-nav>li>a:focus,
+.top-nav>.open>a,
+.top-nav>.open>a:hover,
+.top-nav>.open>a:focus {
+    color: #fff;
+    background-color: #1a242f;
+}
+
+
+.top-nav>.open>.dropdown-menu {
+    float: left;
+    position: absolute;
+    margin-top: 0;
+    /*border: 1px solid rgba(0,0,0,.15);*/
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.top-nav>.open>.dropdown-menu>li>a {
+    white-space: normal;
+}
+
+/* Side Navigation */
+
+@media(min-width:768px) {
+    .side-nav {
+        position: fixed;
+        top: 60px;
+        left: 225px;
+        width: 225px;
+        margin-left: -225px;
+        border: none;
+        border-radius: 0;
+        border-top: 1px rgba(0,0,0,.5) solid;
+        overflow-y: auto;
+        background-color: #222;
+        /*background-color: #5A6B7D;*/
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+    }
+
+    .side-nav>li>a {
+        width: 225px;
+        border-bottom: 1px rgba(0,0,0,.3) solid;
+    }
+
+    .side-nav li a:hover,
+    .side-nav li a:focus {
+        outline: none;
+        background-color: #1a242f !important;
+    }
+}
+
+.side-nav>li>ul {
+    padding: 0;
+    border-bottom: 1px rgba(0,0,0,.3) solid;
+}
+
+.side-nav>li>ul>li>a {
+    display: block;
+    padding: 10px 15px 10px 38px;
     text-decoration: none;
-    font-size: 17px;
+    /*color: #999;*/
+    color: #fff;    
 }
 
-/* Change the color of links on hover */
-.topnav a:hover {
-    background-color: #34495E  ;
-    color: black;
+.side-nav>li>ul>li>a:hover {
+    color: #fff;
 }
 
-/* Add a color to the active/current link */
-.topnav a.active {
-    background-color: #16A085    ;
-    color: white;
+.navbar .nav > li > a > .label {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    position: absolute;
+    top: 14px;
+    right: 6px;
+    font-size: 10px;
+    font-weight: normal;
+    min-width: 15px;
+    min-height: 15px;
+    line-height: 1.0em;
+    text-align: center;
+    padding: 2px;
 }
 
-/* Right-aligned section inside the top navigation */
-.topnav-right {
-    float: right;
+.navbar .nav > li > a:hover > .label {
+    top: 10px;
 }
-.topnav img{
-    height: 25px;
-    width: 25px;
+
+.navbar-brand {
+    padding: 5px 15px;
 }
+
 #registro{
     background-color: #16A085;
-     color: black;
-     height: 60px;
-     width: 60px;
+    color: black;
+    height: 60px;
+    width: 60px;
 }
 #registro:hover{
     background-color: #34495E;
@@ -101,7 +222,7 @@ body{
 #myFooter {
     background-color: #3c3d41;
     color: white;
-   bottom:  auto;
+    bottom:  auto;
 }
 #myFooter p{
     word-break: break-all;  
@@ -123,7 +244,7 @@ body{
 
 
 #myFooter .copyright p {
-   
+
     color: #ccc;
 }
 
@@ -146,27 +267,18 @@ body{
     max-width: available;
     margin: auto; 
 }
-/*------------------Pagina contacto---------------------------------*/
-.fondo h1{
-    font-family: Montserrat;
-}
-.fondo button{
-    width: 20%;
-    margin: auto;
-}
-/*---------------------------------------------------*/
 
 
-
+/*cuadro de login*/
+/*----------------------------------------------*/
 .modal-header1 {
     background-color:#16A085;	
     color: white;
     border-top: 8px solid #1C2833  ;
 }
 .modal-header1 a{
-    	 	
-   color:white;
-   
+
+    color:white;
 }
 
 

@@ -3,10 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/ProyectoBolsaEmpleo/src/java/cr/ac/una/prograiv/proyecto/bolsaempleo/controller/OferenteServlet.java</file>
-            <file>file:/C:/wamp64/www/ProyectoBolsaEmpleo/web/js/OferenteJS.js</file>
-            <file>file:/C:/wamp64/www/ProyectoBolsaEmpleo/src/java/cr/ac/una/prograiv/proyecto/bolsaempleo/domain/Oferente.java</file>
-            <file>file:/C:/wamp64/www/ProyectoBolsaEmpleo/src/java/hibernate.cfg.xml</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/web/css/css.css</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/src/java/cr/ac/una/prograiv/proyecto/bolsaempleo/controller/ControllerLogin.java</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/web/vistas/gestionEmpresa.jsp</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/src/java/hibernate.cfg.xml</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/web/vistas/registroEmpresa.jsp</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/src/java/cr/ac/una/prograiv/proyecto/bolsaempleo/controller/PuestoServlet.java</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/web/css/gestionEmpresa.css</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/web/js/LoginJS.js</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/web/css/administrador.css</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/web/PaginaPrincipal.jsp</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/web/WEB-INF/web.xml</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/web/js/EmpresaJS.js</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/web/js/Administrador.js</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/web/css/cssRegistro.css</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/web/js/gestionEmpresa.js</file>
+            <file>file:/C:/repositorios/ProyectoBolsaEmpleo/web/vistas/administrador.jsp</file>
         </group>
     </open-files>
 </project-private>

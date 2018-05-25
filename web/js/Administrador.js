@@ -11,7 +11,7 @@
 
 var datatable = null;
 $(function () {
-
+    $('.tablas').show();
     $('#listaOferentes').click(function () {
         ocultarTablas();
         datatable = $('#tablaOferente1').DataTable({
@@ -32,7 +32,7 @@ $(function () {
                     "previous": "Anterior"
                 }
             }
-                
+
         });
 
         $('#tablaOferente1').show();
@@ -41,7 +41,7 @@ $(function () {
     });
     $('#listaPuestos').click(function () {
         ocultarTablas();
-       
+
         datatable = $('#tablaPuestos').DataTable({
             responsive: true,
             "destroy": true,
@@ -60,11 +60,11 @@ $(function () {
                     "previous": "Anterior"
                 }
             }
-                
+
         });
 
         $('#tablaPuestos').show();
-       
+
         consultarPuestos();
 
     });
