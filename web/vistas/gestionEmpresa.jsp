@@ -63,10 +63,11 @@
         <!---------------------------------------------------------->
 
         <script src="../js/gestionEmpresa.js" type="text/javascript"></script>
-       
-   
+
+
         <link href="../css/gestionEmpresa.css" rel="stylesheet" type="text/css"/>
         <link href="../css/cssRegistro.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/css.css" rel="stylesheet" type="text/css"/>
 
     </head>
     <body>
@@ -196,8 +197,33 @@
                                                             <% }%>
                                                         </div>
                                                         <div class="col-sm-6 form-group" id="groupDescripcion">
-                                                            <label>Descripción</label>
-                                                            <textarea placeholder="Ingresar descripción.." rows="8" class="form-control" id="descripcion"></textarea>
+                                                            <div class=" form-group" >
+                                                                <label>Categoria</label>
+                                                                <select class="js-example-data-ajax form-control" id="categoria">
+                                                                </select>
+                                                            </div>
+                                                            <div class=" form-group " >
+                                                                <div class=" form-group col-sm-6 " >
+                                                                    <button type="button" id="ingresarCategoria" class="btn  btn-info " data-toggle="modal" data-target="#ModalCategorias">ingresar</button>
+                                                                </div>
+                                                                <div class=" form-group col-sm-6 " >
+                                                                    <button type="button" id="mostrarSubCategoria" class="btn  btn-info">mostrar subcategorias</button>
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class=" form-group " >
+                                                                <label>Sub Categoria</label>
+                                                                <select class="js-example-data-ajax form-control" id="subCategoria" disabled="true">
+                                                                </select>
+                                                            </div>
+                                                            <div class=" form-group" >
+                                                                <button type="button" id="ingresarSubCategoria" class="btn  btn-info " data-toggle="modal" data-target="#ModalSubCategorias">ingresar</button>
+                                                            </div>
+
+
+
+
                                                         </div>
 
 
@@ -218,6 +244,110 @@
 
                                                     </div>
                                             </form> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="ModalCategorias" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header1">
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                                        <ul id="myTab" class="nav nav-tabs">
+                                            <li class="active"><a href="#ingresarCat" data-toggle="tab">Registro</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <!-- content goes here -->
+
+                                        <div id="myTabContent" class="tab-content">
+
+                                            <div class="tab-pane fade active in" id="ingresarCat">
+                                                <div class="row">
+                                                    <div class="col-md-12 ">
+                                                        <div class="panel panel-login">
+
+                                                            <div class="panel-body">
+                                                                <div class="row">
+                                                                    <div class="col-lg-12">
+                                                                        <form id="login-form" action="" method="post" role="form" style="display: block;">
+                                                                            <div class="form-group">
+                                                                                <input type="text" name="nombreCat" id="nombreCat" tabindex="1" class="form-control" placeholder="Ingresar nombre" value="">
+                                                                            </div>
+
+
+                                                                            <div class="form-group">
+                                                                                <div class="row">
+                                                                                    <div class="btnLogin">
+                                                                                        <button type="button"  id="registrarCat" name="ingresar" class="btn btn-success" >Registrar</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </form>
+
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="ModalSubCategorias" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header1">
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                                        <ul id="myTab" class="nav nav-tabs">
+                                            <li class="active"><a href="#ingresarCat" data-toggle="tab">Registro</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <!-- content goes here -->
+
+                                        <div id="myTabContent" class="tab-content">
+
+                                            <div class="tab-pane fade active in" id="ingresarCat">
+                                                <div class="row">
+                                                    <div class="col-md-12 ">
+                                                        <div class="panel panel-login">
+
+                                                            <div class="panel-body">
+                                                                <div class="row">
+                                                                    <div class="col-lg-12">
+                                                                        <form id="login-form" action="" method="post" role="form" style="display: block;">
+                                                                            <div class="form-group">
+                                                                                <input type="text" name="nombreCat" id="nombreSubCat" tabindex="1" class="form-control" placeholder="Ingresar nombre" value="">
+                                                                            </div>
+
+
+                                                                            <div class="form-group">
+                                                                                <div class="row">
+                                                                                    <div class="btnLogin">
+                                                                                        <button type="button"  id="registrarSubCat" name="registrarSubCat" class="btn btn-success" >Registrar</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </form>
+
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
