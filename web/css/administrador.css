@@ -155,7 +155,7 @@ section{
     height: available;
 }
 
-#tablaEmpresas1,#tablaOferente1{
+#tablaEmpresas1,#tablaOferente1,#tablaPuestos{
     display: none;
 }
 body{

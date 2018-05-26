@@ -54,19 +54,33 @@
 
             <a href="contacto.jsp">Contacto</a>
 
-            <div class="topnav-right">
+            <ul class="topnav-right">
 
-                <button type="button" id="salir"><img src="../img/exit.png"  alt="exit" class="img-responsive"/></button>
-                <input type="text" id="txtBusqueda" placeholder="Buscar..">
+                <li> 
+                    <button type="button" id="salir"><img src="../img/exit.png"  alt="exit" class="img-responsive"/></button>
+                </li>
+                <li>
+                    <input type="text" id="txtBusqueda" placeholder="Buscar..">
+                </li>
+                <li> 
+                    <button type="button" id="buscar"><img src="../img/search.png" alt="buscar" class="img-responsive"/></button>
+                </li>
 
-                <button type="button" id="buscar"><img src="../img/search.png" alt="buscar" class="img-responsive"/></button>
-                
-
-                <button class="btn btn-default" id="registro" data-toggle="modal" data-target="#squarespaceModal"> 
-                    <span class="glyphicon glyphicon-user user_icon"></span>
-                </button>
-
-            </div>
+                <li>
+                    <button class="btn btn-default" id="registro" data-toggle="modal" data-target="#squarespaceModal"> 
+                        <span class="glyphicon glyphicon-user user_icon"></span>
+                    </button>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin User <b class="fa fa-angle-down"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
+                        <li><a href="#"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
         <br>
         <br>

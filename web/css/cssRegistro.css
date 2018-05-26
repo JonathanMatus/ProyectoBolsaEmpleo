@@ -10,12 +10,16 @@ and open the template in the editor.
 
 
 #titulo{
-    
+
     background: #16A085;
+     font-family: 'Roboto', sans-serif;
 }
 
 h1{
-   color: white;
+    color: white;
+}
+h1,label{
+    font-family: 'Roboto', sans-serif;
 }
 /*#cam-form{
     background: #515A5A;

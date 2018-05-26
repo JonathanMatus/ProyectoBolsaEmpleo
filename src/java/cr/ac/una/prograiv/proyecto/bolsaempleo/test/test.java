@@ -6,6 +6,8 @@
 package cr.ac.una.prograiv.proyecto.bolsaempleo.test;
 
 import com.google.gson.Gson;
+import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
+import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.bl.impl.EmpresaBL;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.bl.impl.LocalizacionBL;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.bl.impl.OferenteBL;
@@ -39,12 +41,20 @@ public class test {
 //        ofbl.findById(702330480);
 //        System.out.println("Nombre:" + ofbl.findById(ofe.sgetPkCedula()).getApellido1());
 
-        
-          List<Oferente> list;
-          list = ofbl.findByQuery("Select * from  mydbproyecto.oferente where oferente.Usuario_PK_Usuario is null");
-          for(int i=0;i<list.size();i++){
-          System.out.println(list.get(i));
-          }
+
+
+Oferente ofe = new Oferente(702330480,9,16,"usuario","usuarioP1","usuarioP2","tica","usuario@una.com","Calle 22, San José, Costa Rica",16,new Date());
+ofbl.merge(ofe);
+    
+  
+    
+//
+//        
+//          List<Oferente> list;
+//          list = ofbl.findByQuery("Select * from  mydbproyecto.oferente where oferente.Usuario_PK_Usuario is null");
+//          for(int i=0;i<list.size();
+//          System.out.println(list.get(i));
+//          }
           
           
           

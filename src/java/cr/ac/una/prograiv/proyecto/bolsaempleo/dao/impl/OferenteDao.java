@@ -32,7 +32,7 @@ public class OferenteDao extends HibernateUtil implements IBaseDAO<Oferente, Int
     }
 
     @Override
-    public Oferente merge(Oferente o) {
+    public Oferente merge(Oferente o) throws HibernateException {
         try {
             iniciaOperacion();
             o = (Oferente) getSesion().merge(o);

@@ -236,9 +236,22 @@
                     <thead>
                         <tr>
                             <th>Cedula</th>
+                            <th>Correo</th>
                             <th>Usuario</th>
                             <th>Contraseña</th>
                             <th>Tipo</th>
+                            <th>Accion</th>
+                        </tr>
+                    </thead>
+                </table>
+                <table class="table table-hover table-condensed" id="tablaPuestos" width="100%" >
+                    <thead>
+                        <tr> 
+                            <td>Empresa</td>
+                            <td>Nombre</td>
+                            <td>Salario</td>
+                            <td>Tipo</td>
+                            <td>Accion</td>
                         </tr>
                     </thead>
                 </table>

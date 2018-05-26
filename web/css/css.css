@@ -85,7 +85,8 @@ body{
 #registro{
     background-color: #16A085;
      color: black;
-     
+     height: 60px;
+     width: 60px;
 }
 #registro:hover{
     background-color: #34495E;
@@ -257,4 +258,7 @@ body{
 }
 #salir,#txtBusqueda{
     display: none;
+}
+h1,label{
+    font-family: 'Oswald', sans-serif;
 }
