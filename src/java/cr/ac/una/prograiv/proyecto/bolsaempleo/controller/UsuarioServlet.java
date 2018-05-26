@@ -87,10 +87,10 @@ public class UsuarioServlet extends HttpServlet {
 
                        ofer.setUsuario(us.getPkUsuario());
                        
-//                      ofer = ofeBL.merge(new Oferente
-//                      (ofer.getPkCedula(),ofer.getLocalizacion(),ofer.getUsuario(),
-//                       ofer.getNombre(),ofer.getApellido1(),ofer.getApellido2(),
-//                       ofer.getNacionalidad(),ofer.getCorreo()));
+                      ofer = ofeBL.merge(new Oferente
+                      (ofer.getPkCedula(),ofer.getLocalizacion(),ofer.getUsuario(),
+                       ofer.getNombre(),ofer.getApellido1(),ofer.getApellido2(),
+                       ofer.getNacionalidad(),ofer.getCorreo(),ofer.getResidencia(),ofer.getUltimoUsuario(),ofer.getFechaCambios()));
                        
                         out.print("C~El usuario fue ingresado correctamente");
                         

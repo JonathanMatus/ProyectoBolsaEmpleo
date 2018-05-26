@@ -98,7 +98,7 @@ public class OferenteServlet extends HttpServlet {
                     ofe.setApellido2(request.getParameter("apellido2"));
                     ofe.setNacionalidad(request.getParameter("nacionalidad"));
                     ofe.setCorreo(request.getParameter("correo"));
-                    ofe.setResidencia(request.getParameter("residencia")); 
+                  ofe.setResidencia(request.getParameter("residencia")); 
                     
                     DecimalFormatSymbols symbols = new DecimalFormatSymbols();
                     symbols.setGroupingSeparator(',');

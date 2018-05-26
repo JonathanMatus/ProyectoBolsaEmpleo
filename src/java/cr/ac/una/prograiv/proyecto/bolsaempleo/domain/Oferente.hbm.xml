@@ -11,7 +11,7 @@
         <property name="localizacion" type="int">
             <column name="Fk_Localizacion" not-null="true" />
         </property>
-        <property name="usuario" type="int" >
+        <property name="usuario" type="java.lang.Integer" >
             <column name="Usuario_PK_Usuario" />
         </property>
         <property name="nombre" type="string">

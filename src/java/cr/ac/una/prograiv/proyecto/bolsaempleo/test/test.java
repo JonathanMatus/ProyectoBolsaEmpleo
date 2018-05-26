@@ -43,7 +43,7 @@ public class test {
 
 
 
-Oferente ofe = new Oferente(702330480,9,16,"usuario","usuarioP1","usuarioP2","tica","usuario@una.com","Calle 22, San José, Costa Rica",16,new Date());
+Oferente ofe = new Oferente(702330480,1,1,"keren","usuarioP1","usuarioP2","tica","usuario@una.com","Calle 22, San José, Costa Rica",16,new Date());
 ofbl.merge(ofe);
     
   

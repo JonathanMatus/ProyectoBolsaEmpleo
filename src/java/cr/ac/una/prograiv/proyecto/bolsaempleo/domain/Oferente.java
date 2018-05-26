@@ -26,8 +26,8 @@ public class Oferente  implements java.io.Serializable {
 
 
      private int pkCedula;
-     private int localizacion;
-     private int usuario;
+     private Integer localizacion;
+     private Integer usuario;
      private String nombre;
      private String apellido1;
      private String apellido2;
@@ -41,7 +41,7 @@ public class Oferente  implements java.io.Serializable {
     }
 
 	
-    public Oferente(int pkCedula, int localizacion, String nombre, String apellido1, String apellido2, String nacionalidad, String correo) {
+    public Oferente(int pkCedula, Integer localizacion, String nombre, String apellido1, String apellido2, String nacionalidad, String correo) {
         this.pkCedula = pkCedula;
         this.localizacion = localizacion;
         this.nombre = nombre;
@@ -50,7 +50,7 @@ public class Oferente  implements java.io.Serializable {
         this.nacionalidad = nacionalidad;
         this.correo = correo;
     }
-    public Oferente(int pkCedula, int localizacion, int usuario, String nombre, String apellido1, String apellido2, String nacionalidad, String correo, String residencia, Integer ultimoUsuario, Date fechaCambios) {
+    public Oferente(int pkCedula, Integer localizacion, Integer usuario, String nombre, String apellido1, String apellido2, String nacionalidad, String correo, String residencia, Integer ultimoUsuario, Date fechaCambios) {
        this.pkCedula = pkCedula;
        this.localizacion = localizacion;
        this.usuario = usuario;
@@ -78,20 +78,20 @@ public class Oferente  implements java.io.Serializable {
 
 
     @Column(name="Fk_Localizacion", nullable=false)
-    public int getLocalizacion() {
+    public Integer getLocalizacion() {
         return this.localizacion;
     }
     
-    public void setLocalizacion(int localizacion) {
+    public void setLocalizacion(Integer localizacion) {
         this.localizacion = localizacion;
     }
 
     @Column(name="Usuario_PK_Usuario")
-    public int getUsuario() {
+    public Integer getUsuario() {
         return this.usuario;
     }
     
-    public void setUsuario(int usuario) {
+    public void setUsuario(Integer usuario) {
         this.usuario = usuario;
     }
 
