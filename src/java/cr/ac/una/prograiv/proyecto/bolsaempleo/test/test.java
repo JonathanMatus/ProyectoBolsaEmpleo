@@ -6,11 +6,13 @@
 package cr.ac.una.prograiv.proyecto.bolsaempleo.test;
 
 import com.google.gson.Gson;
+import cr.ac.una.prograiv.proyecto.bolsaempleo.bl.impl.CategoriaBL;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.bl.impl.EmpresaBL;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.bl.impl.LocalizacionBL;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.bl.impl.OferenteBL;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.dao.impl.CategoriaDao;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.dao.impl.UsuarioDao;
+import cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Categoria;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Empresa;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Localizacion;
 import cr.ac.una.prograiv.proyecto.bolsaempleo.domain.Oferente;
@@ -25,15 +27,11 @@ import java.util.List;
 public class test {
 
     public static void main(String[] arg) {
-        EmpresaBL pBL = new EmpresaBL();
 
-//       List<Empresa> json=pBL.findAll(Empresa.class.getName());
-//       for(int i=0;i<json.size();i++)
-//        System.out.print(json.get(i).getNombre());
-        LocalizacionBL lpBL = new LocalizacionBL();
-        Localizacion l1 = lpBL.findById(2);
-        Empresa l = pBL.findById(1);
-        String json = new Gson().toJson(l);
-        System.out.print(json);
+        CategoriaBL pBL = new CategoriaBL();
+
+        for (Categoria p1 : pBL.findAll(Categoria.class.getName())) {
+            System.out.print(p1.getNombreCat());
+        }
     }
 }
