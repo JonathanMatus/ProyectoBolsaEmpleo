@@ -508,6 +508,7 @@ function AsignarUsuarioOferente(correo,cedula){
                         swal("Error!", "Se genero un error, contacte al administrador", "error");
                     }
                 }
+                
 
             },
             type: 'POST'

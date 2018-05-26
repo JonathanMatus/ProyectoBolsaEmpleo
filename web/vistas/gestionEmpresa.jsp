@@ -353,6 +353,110 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="modal fade" id="ModalCategorias" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header1">
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                                        <ul id="myTab" class="nav nav-tabs">
+                                            <li class="active"><a href="#ingresarCat" data-toggle="tab">Registro</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <!-- content goes here -->
+
+                                        <div id="myTabContent" class="tab-content">
+
+                                            <div class="tab-pane fade active in" id="ingresarCat">
+                                                <div class="row">
+                                                    <div class="col-md-12 ">
+                                                        <div class="panel panel-login">
+
+                                                            <div class="panel-body">
+                                                                <div class="row">
+                                                                    <div class="col-lg-12">
+                                                                        <form id="login-form" action="" method="post" role="form" style="display: block;">
+                                                                            <div class="form-group">
+                                                                                <input type="text" name="nombreCat" id="nombreCat" tabindex="1" class="form-control" placeholder="Ingresar nombre" value="">
+                                                                            </div>
+
+
+                                                                            <div class="form-group">
+                                                                                <div class="row">
+                                                                                    <div class="btnLogin">
+                                                                                        <button type="button"  id="registrarCat" name="ingresar" class="btn btn-success" >Registrar</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </form>
+
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="ModalSubCategorias" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header1">
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                                        <ul id="myTab" class="nav nav-tabs">
+                                            <li class="active"><a href="#ingresarCat" data-toggle="tab">Registro</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <!-- content goes here -->
+
+                                        <div id="myTabContent" class="tab-content">
+
+                                            <div class="tab-pane fade active in" id="ingresarCat">
+                                                <div class="row">
+                                                    <div class="col-md-12 ">
+                                                        <div class="panel panel-login">
+
+                                                            <div class="panel-body">
+                                                                <div class="row">
+                                                                    <div class="col-lg-12">
+                                                                        <form id="login-form" action="" method="post" role="form" style="display: block;">
+                                                                            <div class="form-group">
+                                                                                <input type="text" name="nombreCat" id="nombreSubCat" tabindex="1" class="form-control" placeholder="Ingresar nombre" value="">
+                                                                            </div>
+
+
+                                                                            <div class="form-group">
+                                                                                <div class="row">
+                                                                                    <div class="btnLogin">
+                                                                                        <button type="button"  id="registrarSubCat" name="registrarSubCat" class="btn btn-success" >Registrar</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </form>
+
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- /.row -->
                 </div>
