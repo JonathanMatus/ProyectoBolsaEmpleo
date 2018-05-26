@@ -12,7 +12,6 @@
 var datatable = null;
 $(function () {
 
-
     $('#listaOferentes').click(function () {
         ocultarTablas();
         datatable = $('#tablaOferente1').DataTable({
