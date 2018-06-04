@@ -91,7 +91,7 @@ public class PuestoDao extends HibernateUtil implements IBaseDAO<Puesto, Integer
            List<Puesto> acesso;
         try{
             iniciaOperacion();
-            acesso = (List<Puesto>) getSesion().createQuery(query).list();
+            acesso = (List<Puesto>) getSesion().createSQLQuery(query).addEntity(Puesto.class).list();
         }catch(HibernateException he){
             manejaExcepcion(he);
             throw he;
